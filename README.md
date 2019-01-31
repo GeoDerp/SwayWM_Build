@@ -20,7 +20,7 @@ And have git installed, if you don't put *sudo dnf install git -y* in the termin
 In Terminal type:
 ```console
 cd ~/
-sudo git clone https://github.com/GeoDerp/Fedora-Sway-WM-Build-.git
+git clone https://github.com/GeoDerp/Fedora-Sway-WM-Build-.git
 cd "Fedora-Sway-WM-Build-"
 sudo chmod +x "FedoraSwayInstallScript"
 ./fedora Sway FedoraSwayInstallScript
