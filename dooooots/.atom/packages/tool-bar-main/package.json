@@ -1,0 +1,58 @@
+{
+  "_from": "https://www.atom.io/api/packages/tool-bar-main/versions/0.0.11/tarball",
+  "_id": "tool-bar-main@0.0.11",
+  "_inBundle": false,
+  "_integrity": "sha512-uEj6Ip8etNN0HNCY40MycsbAlJ83OSvJL8s5osQnZMBdvAP6o4o+ZGVUgMwoK3SgfT0ldx0AXoyw5pB3mslABg==",
+  "_location": "/tool-bar-main",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/tool-bar-main/versions/0.0.11/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/tool-bar-main/versions/0.0.11/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/tool-bar-main/versions/0.0.11/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/tool-bar-main/versions/0.0.11/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/tool-bar-main/versions/0.0.11/tarball",
+  "_shasum": "5f4a1025507250fb53f2f2565868747e3c68b203",
+  "_spec": "https://www.atom.io/api/packages/tool-bar-main/versions/0.0.11/tarball",
+  "_where": "/tmp/apm-install-dir-11907-2499-3ly0np.7ianw",
+  "bugs": {
+    "url": "https://github.com/suda/tool-bar-main/issues"
+  },
+  "bundleDependencies": false,
+  "consumedServices": {
+    "tool-bar": {
+      "versions": {
+        "^0 || ^1": "consumeToolBar"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-package-deps": "^4.6.1"
+  },
+  "deprecated": false,
+  "description": "Main tool bar",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/suda/tool-bar-main#readme",
+  "keywords": [
+    "toolbar",
+    "tool-bar"
+  ],
+  "license": "MIT",
+  "main": "./lib/tool-bar-main",
+  "name": "tool-bar-main",
+  "package-deps": [
+    "tool-bar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/suda/tool-bar-main.git"
+  },
+  "version": "0.0.11"
+}

@@ -1,0 +1,49 @@
+{
+  "_from": "https://www.atom.io/api/packages/rocket-dark-syntax/versions/1.0.0/tarball",
+  "_id": "rocket-dark-syntax@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-UEq/VA1R/6WJcfM2rAJ/GnRGKdKp3bSRq/oxufA8ZCc6nZthifPmmwRPrQlkfOLa7/7+0/e11yG1661vzCPRog==",
+  "_location": "/rocket-dark-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/rocket-dark-syntax/versions/1.0.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/rocket-dark-syntax/versions/1.0.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/rocket-dark-syntax/versions/1.0.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/rocket-dark-syntax/versions/1.0.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/rocket-dark-syntax/versions/1.0.0/tarball",
+  "_shasum": "31f692d6645e239bc797d86e6c91e385f7f75b2d",
+  "_spec": "https://www.atom.io/api/packages/rocket-dark-syntax/versions/1.0.0/tarball",
+  "_where": "/tmp/apm-install-dir-11907-29037-1hv1do8.gpiqh",
+  "bugs": {
+    "url": "https://github.com/polymoon/rocket-dark-syntax/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A colorful syntax theme inspired by the Atom homepage.",
+  "engines": {
+    "atom": ">=1.13.0 <2.0.0"
+  },
+  "homepage": "https://github.com/polymoon/rocket-dark-syntax#readme",
+  "keywords": [
+    "atom",
+    "syntax",
+    "theme",
+    "colorful",
+    "dark",
+    "vibrant"
+  ],
+  "license": "MIT",
+  "name": "rocket-dark-syntax",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polymoon/rocket-dark-syntax.git"
+  },
+  "theme": "syntax",
+  "version": "1.0.0"
+}

@@ -1,0 +1,306 @@
+# Geo's Fedora config for sway
+# Read `man 5 sway` for a complete reference.
+
+#font
+font Driod Sans Regular 9
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod1
+set $alt shift
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term kitty
+# Your preferred application launcher
+set $menu --no-startup-id albert show
+#dmenu_path | dmenu | xargs swaymsg exec
+#rofi -show run
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+### Key bindings
+#
+# Basics:
+#
+    # start a terminal
+    bindsym $mod+Return exec $term
+
+    # kill focused window
+    bindsym $mod+$alt+q kill
+
+    # start your launcher
+    bindsym $mod+d exec $menu
+
+    #Laptop menu launcher key
+    bindsym XF86Search exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # reload the configuration file
+    bindsym $mod+$alt+r reload
+
+    # exit sway (logs you out of your wayland session)
+    bindsym Mod4+$alt+l exit
+
+    #Geo's normal lock
+    bindsym Mod4+l exec swaylock -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill
+    #bindsym Mod4+l exec swaylock -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080 dosnt work at the moment
+
+#
+#Custom speshial keybindings
+
+    #opening file explorer
+    bindsym $mod+f exec nautilus
+
+    #google chrome
+    bindsym $mod+$alt+c exec google-chrome
+
+    #Run Atom
+    bindsym $mod+$alt+a exec atom
+
+
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+    # or use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # _move_ the focused window with the same, but add $alt
+    bindsym $mod+$alt+$left move left
+    bindsym $mod+$alt+$down move down
+    bindsym $mod+$alt+$up move up
+    bindsym $mod+$alt+$right move right
+    # ditto, with arrow keys
+    bindsym $mod+$alt+Left move left
+    bindsym $mod+$alt+Down move down
+    bindsym $mod+$alt+Up move up
+    bindsym $mod+$alt+Right move right
+#
+#Geos Set workstations
+  set $work1 "Main "
+  set $work2 "Web "
+  set $work3 "Editor "
+  set $work4 "Music "
+  set $work5 "Chat "
+  set $work6 "Security "
+  set $work7 "Files "
+  set $work8 "Art "
+  set $work9 "Work "
+  set $work10 "Gaming "
+
+# Workspaces:
+#
+    # switch to workspace
+    bindsym $mod+1 workspace $work1
+    bindsym $mod+2 workspace $work2
+    bindsym $mod+3 workspace $work3
+    bindsym $mod+4 workspace $work4
+    bindsym $mod+5 workspace $work5
+    bindsym $mod+6 workspace $work6
+    bindsym $mod+7 workspace $work7
+    bindsym $mod+8 workspace $work8
+    bindsym $mod+9 workspace $work9
+    bindsym $mod+0 workspace $work10
+    # move focused container to workspace
+    bindsym $mod+$alt+1 move container to workspace $work1
+    bindsym $mod+$alt+2 move container to workspace $work2
+    bindsym $mod+$alt+3 move container to workspace $work3
+    bindsym $mod+$alt+4 move container to workspace $work4
+    bindsym $mod+$alt+5 move container to workspace $work5
+    bindsym $mod+$alt+6 move container to workspace $work6
+    bindsym $mod+$alt+7 move container to workspace $work7
+    bindsym $mod+$alt+8 move container to workspace $work8
+    bindsym $mod+$alt+9 move container to workspace $work9
+    bindsym $mod+$alt+0 move container to workspace $work10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+
+#Workspace Assignments (Defult application workspace's )
+  assign [class="Google-chrome"] $work2
+  assign [class="Atom"] $work3
+  assign [class="keepassxc"] $work6
+  assign [class="kitty"] $work1
+  assign [class="nautilus"] $work8
+  assign [class="Rhythmbox"] $work4
+  assign [class="Spotify"] $work4
+  assign [class="Spotify Free"] $work4
+  assign [class="irssi"] $work5
+  assign [class="Franz"] $work5
+  assign [class="libreoffice"] $work9
+  assign [class="libreoffice-emailmerge"] $work9
+  assign [class="libreoffice-graphicfilter"] $work9
+  assign [class="libreoffice-impress"] $work9
+  assign [class="libreoffice-math"] $work9
+  assign [class="libreoffice-writer"] $work9
+  assign [class="libreoffice-base"] $work9
+  assign [class="libreoffice-pyuno"] $work9
+  assign [class="Eclipse"] $work3
+  assign [class="Ettercap"] $work6
+  assign [class="EterApe"] $work6
+  assign [class="Wireshark"] $work6
+  assign [class="darktable"] $work8
+  assign [class="Gimp-2.10"] $work8
+  assign [class="mail"] $work5
+  assign [class="Steam"] $work10
+  assign [class="HexChat"] $work5
+  assign [class="Wine"] $work10
+  assign [class="SCAP Workbench"] $work6
+  assign [class="gradio"] $work4
+  assign [class="crx_nckgahadagoaajjgafhacjanaoiihapd"] $work5
+  assign [class="gnome-boxes"] $work9
+  for_window [class="(?i)albert"] floating enable
+
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+$alt+b splith
+    bindsym $mod+$alt+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+$alt+f fullscreen
+
+    #change from workstations (WIN style :D)
+    bindsym Mod1+Tab workspace next
+    bindsym Mod1+Shift+Tab workspace prev
+      #If that dose not work try bindcode Mod1+23 workspace next & bindcode Mod1+Shift+23 workspace prev
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+$alt+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # move focus to the parent container
+    bindsym $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+$alt+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+$alt+equal scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10 px or 10 ppt
+    bindsym $down resize grow height 10 px or 10 ppt
+    bindsym $up resize shrink height 10 px or 10 ppt
+    bindsym $right resize grow width 10 px or 10 ppt
+
+    # ditto, with arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+#Window Colours
+  #red
+  set $bg-color            #ae1324
+  #other options #ae1324 #a33c3e #902b2d
+  #green
+  #set $bg-color            #62723a
+  set $inactive-bg-color   #822a2c
+  #4c1315
+  #other options #682123
+  set $text-color          #ffdbdf
+  #other options #ffbfc8 #ffb2bd
+  set $inactive-text-color #dd7c7e
+  #other options #c47f81 #ba868d #e29a9c
+  set $urgent-bg-color     #ae1324
+  set $indicator-color     #4c1315
+  #other option #445c02
+
+  # window config
+  #                       border              background         text                 indicator        child_border
+  client.focused          $bg-color           $bg-color          $text-color          $indicator-color $bg-color
+  client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color $bg-color
+  client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color $bg-color
+  client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator-color $bg-color
+
+#gaps (rim arround the windows)
+  gaps inner 5
+  gaps outer 8
+
+#Running Waybar (SwayBar alternative)
+  bar {
+      swaybar_command waybar
+  }
+
+  exec --no-startup-id waybar &
+  exec --no-startup-id albert
+  include /etc/sway/config.d/*
+
+#For the laptop speshial keys
+  #(sudo dnf install brightnessctl -y if your using an latop for chaning brightness)
+  #(sudo dnf flameshot -y for the ability to screenshot, you would also need to mkdir )
+  bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
+  bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
+  bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+  bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+  bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+  bindsym print exec flameshot full -p ~/Pictures/ScreenShots

@@ -1,0 +1,16 @@
+"*":
+  core:
+    autoHideMenuBar: true
+    disabledPackages: [
+      "tool-bar-almighty"
+      "tool-bar-main"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "base16-tomorrow-dark-theme"
+    ]
+  "exception-reporting":
+    userId: "7ddb2226-59e5-4f5d-b42d-94fa0253ac08"
+  welcome:
+    showOnStartup: fulse

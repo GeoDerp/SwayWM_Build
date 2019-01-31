@@ -1,0 +1,30 @@
+
+// COLOR PALETTE //
+
+// Base Color
+@syntax-hue:          11;
+@syntax-saturation:   2%;
+@syntax-brightness:   20%;
+
+
+// Monochrome Scale
+@mono-1: hsl(37, 63%, 83%); // default text
+@mono-2: hsl(37, 20%, 55%);
+@mono-3: hsl(37, 15%, 40%);
+
+// Hues
+@hue-1:   hsl(163, 40%, 70%); // Teal
+@hue-2:   hsl(207, 47%, 65%); // Blue
+@hue-3:   hsl(274, 36%, 70%); // Purple
+@hue-4:   hsl(39, 100%, 70%); // Yellow
+@hue-5:   hsl(11, 71%, 60%); // Red 1
+@hue-5-2: hsl(11, 71%, 50%); // Red 2
+@hue-6:   hsl(23, 81%, 60%); // Orange 1
+@hue-6-2: hsl(23, 81%, 50%); // Orange 2
+
+// Syntax
+@syntax-fg:     @mono-1;
+@syntax-bg:     hsl(@syntax-hue, @syntax-saturation, @syntax-brightness);
+@syntax-gutter: darken(@mono-2, 18%);
+@syntax-guide:  fade(@syntax-fg, 15%);
+@syntax-accent: @mono-1;

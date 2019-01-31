@@ -1,0 +1,49 @@
+{
+  "_from": "https://www.atom.io/api/packages/language-i3wm/versions/0.1.0/tarball",
+  "_id": "language-i3wm@0.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-tT+/XgaY6ZTsZ4IxPN3mfmnrMfFSvlCGefEkpjZtG5pTeNVz5/1XJpSOEuqsAYyiThnaTzQNa4uaKRpWjpyAYQ==",
+  "_location": "/language-i3wm",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/language-i3wm/versions/0.1.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/language-i3wm/versions/0.1.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/language-i3wm/versions/0.1.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/language-i3wm/versions/0.1.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/language-i3wm/versions/0.1.0/tarball",
+  "_shasum": "36b4644c927e035b9aaff44dd6ccb55da007f43c",
+  "_spec": "https://www.atom.io/api/packages/language-i3wm/versions/0.1.0/tarball",
+  "_where": "/tmp/apm-install-dir-11907-27067-1ye5b53.6vqc",
+  "author": {
+    "name": "Taylon Silva"
+  },
+  "bugs": {
+    "url": "https://github.com/taylon/language-i3wm/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Atom syntax definition for the i3wm configuration file",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/taylon/language-i3wm#readme",
+  "keywords": [
+    "i3",
+    "i3wm",
+    "language"
+  ],
+  "license": "MIT",
+  "name": "language-i3wm",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylon/language-i3wm.git"
+  },
+  "version": "0.1.0"
+}

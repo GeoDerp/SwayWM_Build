@@ -1,0 +1,86 @@
+/*
+ *author: John Whately <https://github.com/GeoDerp>
+ *Using Manuel Schneider's "Spotlight Dark" config as a reference <https://github.com/ManuelSchneid3r>
+ *
+ */
+
+* {
+    border: none;
+    color : #ffeaea;
+    background-color: #902b2d;
+}
+
+#frame {
+    padding: 6px 0px;
+    border-radius: 8px;
+    background-color: #822324;
+    min-width:640px;
+    max-width:640px;
+}
+
+#inputLine {
+    padding: 0px 6px;
+    font-size: 36px "Century Gothic";
+    selection-color: #902b2d;
+    selection-background-color: #822324;
+    background-color: transparent;
+}
+
+#settingsButton {
+    margin: 6px 6px 0px 0px;
+    color: #fff4f4;
+    background-color: transparent;
+    padding: 2px;
+    min-width:14px;
+    min-height:14px;
+    max-width:14px;
+    max-height:14px;
+}
+
+/********** ListViews ************/
+
+QListView {
+    background: #721d1e;
+    selection-color: #ffffff;
+}
+
+QListView::item:selected {
+    background: #b54a4c;
+}
+
+QListView QScrollBar:vertical  {
+    width: 3px;
+    background: transparent;
+}
+
+QListView QScrollBar::handle:vertical  {
+    background: #631719;
+    border-radius: 1px;
+    min-height: 24px;
+}
+
+QListView QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical,
+QListView QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical,
+QListView QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    border: 0px;
+    width: 0px;
+    height: 0px;
+    background: transparent;
+}
+
+/********** resultsList **********/
+
+QListView#resultsList {
+    icon-size: 40px;
+    font-size: 24px;
+}
+
+QListView#resultsList::item{
+    padding: 8px 0px 0px 0px;
+}
+
+/********** actionList **********/
+
+QListView#actionList {
+    font-size: 20px;
+}
