@@ -9,6 +9,7 @@ Before I can call it finished
 - [ ] Make sure all font awesome icons work in install
 - [ ] Learn how to make a GDM theme and make one, and maybe even a Grub?!?!!?
 - [ ] Make irssi config
-- [ ] Make Atom theme and upgrade UI
+- [ ] Make Atom theme, upgrade UI and add plugins 
+- [ ] Upgrade Terminal and rice 
 
 ***If Anyone would like to help with any of these that would be gladly appreciated***
