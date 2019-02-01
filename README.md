@@ -9,7 +9,7 @@ Introducing my Fedora Workstation Sway WM Build with custom rice for WayBar, irs
 Feel free to use the install script to install all the dependencies and the rice, or you can do it by hand.    
 
 ## Why I made this?
-The main goal for this was to crate a simple automation way of installing for sway.
+The main goal for this was to crate a simple automation way of installing sway on Fedora.
  While I was installing Sway for myself I found it to be quite challenging to get it running for Fedora 29, so I decided to create this script and make it public, so if any one else is having issues they can look to this for help.
 
 ## how to use install script
