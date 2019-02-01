@@ -87,6 +87,44 @@ Error Codes from dgb bt
 ```
 
 
+```
+(gdb) frame 1
+#1  0x00007ffff7a57f24 in _XFlush (dpy=0x51db30) at xcb_io.c:516
+516             _XSend(dpy, NULL, 0);
+(gdb) list
+511      * action is taken.
+512      */
+513     void _XFlush(Display *dpy)
+514     {
+515             require_socket(dpy);
+516             _XSend(dpy, NULL, 0);
+517
+518             _XEventsQueued(dpy, QueuedAfterReading);
+519     }
+520
+(gdb) frame 0
+#0  0x00007ffff7a57aa1 in _XSend (dpy=dpy@entry=0x51db30, data=data@entry=0x0, size=size@entry=0) at xcb_io.c:464
+464             if(dpy->bufptr == dpy->buffer && !size)
+(gdb) list
+459             _XExtension *ext;
+460             xcb_connection_t *c = dpy->xcb->connection;
+461             if(dpy->flags & XlibDisplayIOError)
+462                     return;
+463
+464             if(dpy->bufptr == dpy->buffer && !size)
+465                     return;
+466
+467             /* append_pending_request does not alter the dpy request number
+468              * therefore we can get it outside of the loop and the if
+(gdb) dpy->buffer
+Undefined command: "dpy->buffer".  Try "help".
+(gdb) p dpy->buffer
+$7 = 0x1 <error: Cannot access memory at address 0x1>
+(gdb) p dpy
+$8 = (Display *) 0x51db30
+
+```
+
 Note: I started with the rebo and it worked fine untill I installed _qt5-qtwayland-devel_ to fix  
 
 ```[WARN:qt.qpa.plugin] Could not find the Qt platform plugin "wayland" in "" ``` error and got the Segmentation error. Now even with _qt5-qtwayland-devel_ uninstalled I get the same error :(
