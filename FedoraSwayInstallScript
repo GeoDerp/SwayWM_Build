@@ -2,7 +2,7 @@
 ###Fedora Sway Build + red flower rice
 
 ##initial stuff
-sudo dnf update && sudo dnf system-upgrade --refresh
+sudo dnf update -y && sudo dnf system-upgrade -y --refresh
 
 ## Turning off unnessesery services
 ##(recommended for using fedora worstation on RaspberyPi )
@@ -11,45 +11,55 @@ sudo dnf update && sudo dnf system-upgrade --refresh
 ##install Sway New
   #Intsalling all dependencies
   sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-  sudo dnf install ffmpeg ffmpeg-devel-y
-  sudo dnf install -y --releasever=29 git gcc xcb-util-xrm-devel xcb-util-image-devel.x86_64 xcb-util-cursor-devel.x86_64 xcb-util-renderutil-devel.x86_64 xcb-util-keysyms-devel.x86_64 xcb-util-wm-devel libxcb-devel ctags ffmpeg-devel ctags-etags meson mesa-dri-drivers ninja-build wayland-devel wayland-protocols-devel mesa-libEGL-devel mesa-libGLES-devel mesa-dri-drivers libdrm-devel libgbm-devel libxkbcommon-devel libudev-devel pixman-devel libinput-devel libevdev-devel systemd-devel cairo-devel libpcap-devel jsoncpp libinput gnome-tweak-tool libsigc++ sassc glib2-devel gtk-murrine-engine gtk2-engines kmix pulseaudio-libs-devel libdbusmenu-gtk3-devel clang-devel.x86_64 fmt-devel gtkmm30-devel jsoncpp-devel libpulse.so.0 libnl3-devel libdbusmenu-gtk3 gcc-c++ clang json-c-devel pam-devel pango-devel pcre-devel gdk-pixbuf2-devel -y
+  sudo dnf install ffmpeg ffmpeg-devel -y
+  sudo dnf install cmake git gcc xcb-util-xrm-devel xcb-util-image-devel.x86_64 xcb-util-cursor-devel.x86_64 xcb-util-renderutil-devel.x86_64 xcb-util-keysyms-devel.x86_64 xcb-util-wm-devel libxcb-devel ctags ffmpeg-devel ctags-etags meson mesa-dri-drivers ninja-build wayland-devel wayland-protocols-devel mesa-libEGL-devel mesa-libGLES-devel mesa-dri-drivers libdrm-devel libgbm-devel libxkbcommon-devel libudev-devel pixman-devel libinput-devel libevdev-devel systemd-devel cairo-devel libpcap-devel jsoncpp libinput gnome-tweak-tool xcb-util-wm-devel libcap-devel libsigc++ sassc glib2-devel gtk-murrine-engine gtk2-engines kmix pulseaudio-libs-devel libdbusmenu-gtk3-devel clang-devel.x86_64 fmt-devel gtkmm30-devel jsoncpp-devel libpulse.so.0 libnl3-devel libdbusmenu-gtk3 gcc-c++ clang json-c-devel pam-devel pango-devel pcre-devel gdk-pixbuf2-devel -y
 
 #Making shore the filesystem knows where all the .pc's are
-sudo cat >> /etc/profile.d/wlroots.sh <<EOL
+sudo bash
+cat >> /etc/profile.d/wlroots.sh <<EOL
 export PATH=/usr/local/bin:$PATH
 export PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH
 export LD_LIBRARY_PATH=/usr/local/lib64/:$LD_LIBRARY_PATH
 EOL
-sudo echo "sudo cat /etc/ld.so.conf.d/sway.conf" < /etc/ld.so.conf.d/sway.conf
-sudo cat /etc/ld.so.conf.d/sway.conf
+source /etc/profile.d/wlroots.sh
+echo "/usr/local/lib64/" < /etc/ld.so.conf.d/sway.conf
+exit
 
 #Installing
 echo "Installing terminal of choice  (unnessesery)"
-  dnf copr enable oleastre/kitty-terminal -y
+  sudo dnf copr enable oleastre/kitty-terminal -y
   sudo dnf install kitty -y
 echo "wlroots (nessesery for sway to work with wayland)"
-  sudo git clone https://github.com/swaywm/wlroots.git
+  cd ~/
+  git clone https://github.com/swaywm/wlroots.git
   cd wlroots
-  sudo meson build
-  sudo ninja -C build install
+  meson build
+  ninja -C build install
+echo "scdoc(nessesery for sway to work)"
+  git clone https://git.sr.ht/~sircmpwn/scdoc
+  cd scdoc
+  make PREFIX=/usr
+  sudo make PREFIX=/usr install
 echo "Sway WM"
-  sudo git clone https://github.com/swaywm/sway
+  cd ~/
+  git clone https://github.com/swaywm/sway
   cd sway
-  sudo meson build
+  meson build
   ninja -C build install
   sudo chmod a+s /usr/local/bin/sway
 echo "Install WayBar (for swaybar replacement) (unnessesery, could use swaybar witch comes with sway)"
+  cd ~/
   git clone https://github.com/Alexays/Waybar
   cd Waybar
   meson build
-  sudo ninja -C build install
+  ninja -C build install
 echo "Installing [font awesome] for WayBar"
   cd ~/
-  sudo git clone https://github.com/FortAwesome/Font-Awesome.git
-  cd Font-Awesome/
-  cd webfonts/
+  git clone https://github.com/FortAwesome/Font-Awesome.git
+  cd Font-Awesome/webfonts/
   sudo mkdir ~/.fonts
-  sudo mv * ~/.fonts/
+  mv * ~/.fonts/
+  mv ~/Font-Awesome/otfs/* ~/.fonts/
   sudo wget "https://github.com/ox-it/hidden-museum/raw/master/fonts/Century%20Gothic.ttf" ~/.fonts/
   gsettings set org.gnome.desktop.interface monospace-font-name "Monospace Regular 11"
   gsettings set org.gnome.desktop.interface document-font-name 'Century Gothic Regular 10'
@@ -61,49 +71,35 @@ sleep 10
 
 ##putting all configs and images into its right replacement
   ###(this is for ricing and you do not need it if you dont want yours to look like mine)
-  cd ~/"Fedora-Sway-WM-Build-"
 #wallpaper images
 echo "wallpaper Images (there are two one Images, one christian, and one blank, on line 23 ish on ~/.config/sway/config there is a line with [output *bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch] change Wallpaper.jpg or Blank.jpg depending on what you prefer more)"
 sleep 10
-  cd Images
+  cd ~/"Fedora-Sway-WM-Build-"/Images
   mkdir ~/Pictures/Wallpapers/
   mv * ~/Pictures/Wallpapers/
   sudo cp ~/Pictures/Wallpapers/Blank.jpg /usr/share/backgrounds/Blank.jpg
-  cd ..
 #GTK3 for GNOME
-  cd dooooots
-  cd GTK3
-  cd theme
-  sudo mkdir ~/.theme
-  cd vimix-gtk-themes-master
+  cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/theme/vimix-gtk-themes-master
+  mkdir -p ~/.theme/VimixRedFlower
   ./Install -n VimixRedFlower -t ruby -o -f
-  mkdir ~/.theme/VimixRedFlower
-  cd ..
-  cd VimixRedFlower
+  cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/theme/VimixRedFlower
   mv * ~/.theme/VimixRedFlower
-  cd ..
-  cd ..
   gsettings set org.gnome.desktop.interface gtk-theme VimixRedFlower-dark-ruby
 #icon
-  cd Icon
+  cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/Icon/vimix-icon-theme-master
   sudo mkdir ~/.icons
-  cd vimix-icon-theme-master
   cp -r RedFlower-Paper-Vimix ~/.icons/
   cp -r Vimix ~/.icons/
   cp -r Paper-Vimix ~/.icons/
 echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   gsettings set org.gnome.desktop.interface icon-theme RedFlower-Paper-Vimix
   gtk-update-icon-cache RedRose-Paper-Vimix
-  cd ..
-  cd ..
 #cursor
-  sudo dnf copr enable tcg/themes
+  sudo dnf copr enable tcg/themes -y
   sudo dnf install la-capitaine-cursor-theme -y
   gsettings set org.gnome.desktop.interface cursor-theme 'la capitaine'
 #GDM (Login screen)
-  cd GDM
-  cd ..
-  cd ..
+  cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/Icon/GDM
   #comming soon
 
 #Grub theme (not tested and unnessesery)
@@ -112,34 +108,29 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   #cd grub2-theme-breeze
   #sudo ./install.sh"
 #irssi (for irc)
-  cd irssi
+  cd ~/"Fedora-Sway-WM-Build-"/dooooots/irssi
   dnf install irssi -y
-  sudo mkdir ~/.irssi
+  mkdir ~/.irssi
   mv * ~/.irssi/
-  cd ..
   #config comming soon
 #kitty (terminal)
-  cd kitty
-  sudo mkidr ~/.config/kitty
+  cd ~/"Fedora-Sway-WM-Build-"/dooooots/kitty
+  mkidr -p ~/.config/kitty
   mv * ~/.config/kitty/
-  cd ..
 #Albert config (my chosen aplication launcher (Aplication and theme install later))
-  cd Albert
-  sudo mkdir ~/.config/Albert
+  cd  ~/"Fedora-Sway-WM-Build-"/dooooots/Albert
+  mkdir ~/.config/Albert
   mv *  ~/.config/Albert/
-  cd ..
 #sway (the wm)
-  cd sway
-  sudo mkdir ~/.config/sway
+  cd ~/"Fedora-Sway-WM-Build-"/dooooots/sway
+  mkdir ~/.config/sway
   mv * ~/.config/sway/
-  cd ..
 #WayBar (the bar replacment for swaybar, wayland version of polybar for i3wm)
-  cd WayBar
+   ~/"Fedora-Sway-WM-Build-"/dooooots/waybar
   mkdir ~/.config/waybar
   mv * ~/.config/waybar/
-  cd ..
 #Albert (Aplication Launcher)
-  #Fixing
+  #Installing
   cd ~/
   mkdir Albert
   cd Albert
@@ -150,11 +141,9 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   cmake ../albert -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Debug
   make
   sudo make install
-  #installing albert RedFlower theme
+  #Installing albert RedFlower theme
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/AlbertTheme
-  mkdir /home/geo/.local/share/albert
-  mkdir /home/geo/.local/share/albert/org.albert.frontend.widgetboxmodel
-  mkdir /home/geo/.local/share/albert/org.albert.frontend.widgetboxmodel/themes
+  mkdir -p /home/geo/.local/share/albert/org.albert.frontend.widgetboxmodel/themes
   sudo mv * "/home/geo/.local/share/albert/org.albert.frontend.widgetboxmodel/themes/"
 
 echo "Finnished rice :D"
@@ -162,29 +151,33 @@ echo "Installing Regular used applications (completely unnecessary)"
 echo "quite now if you want to do all my applications i use (ctl + C)"
 sleep 15
 
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-#Atom
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+#Atom (Prefered IDE)
   sudo rpm --import https://packagecloud.io/AtomEditor/atom/gpgkey
   sudo sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
   sudo dnf install atom-beta -y
   mkdir ~/.Atom
   cd cd ~/"Fedora-Sway-WM-Build-"/dooooots/.atom
   sudo mv * ~/.Atom/
-#Spodify
+#Spodify (Music Player)
   sudo flatpak install flathub com.spotify.Client -y
-#keepassxc
+#keepassxc (Password Manager)
   sudo flatpak install flathub org.keepassxc.KeePassXC -y
-#franz
+#franz (Multi Messaging Aplication)
   sudo wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.22/franz-5.0.0-beta.22-x86_64.AppImage
   sudo chmod +x franz-5.0.0-beta.22-x86_64.AppImage
   ./franz-5.0.0-beta.22-x86_64.AppImage
-#LibreOffice
+#LibreOffice (office)
   sudo dnf groupinstall LibreOffice -y
 #security applications
   #sudo dnf groupinstall security-lab -y
   #intsall day-n-day apps (unnessesery)
-##installing nano
+##installing nano (Prefered Terminal Text Editor)
     sudo dnf install nano -y
+##Google chrome (Prefered Web Browser)
+  dnf install fedora-workstation-repositories
+  dnf config-manager --set-enabled google-chrome
+  dnf install dnf install google-chrome-beta
 
 echo "finnished, Have fun, Hopfully everything works :)"
 echo "Now restarting"
