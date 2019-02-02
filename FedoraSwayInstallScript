@@ -36,10 +36,13 @@ echo "wlroots (nessesery for sway to work with wayland)"
   meson build
   ninja -C build install
 echo "scdoc(nessesery for sway to work)"
+  mv ~/"Fedora-Sway-WM-Build-"/scdoc/* ~/rpmbuild/SOURCES/
+  cd ~/rpmbuild/SOURCES
   git clone https://git.sr.ht/~sircmpwn/scdoc
-  cd scdoc
-  make PREFIX=/usr
-  sudo make PREFIX=/usr install
+  mv scdoc scdoc-1.8.1
+  tar -czf scdoc-1.8.1.tar.gz ./scdoc-1.8.1/
+  rpmbuild -ba scdoc.spec
+  rpm -Uvh ~/rpmbuild/RPMS/x86_64/scdoc-1.8.1-1.fc29.x86_64.rpm
 echo "Sway WM"
   cd ~/
   git clone https://github.com/swaywm/sway
@@ -183,3 +186,4 @@ echo "finnished, Have fun, Hopfully everything works :)"
 echo "Now restarting"
 sleep 20
 sudo reboot
+
