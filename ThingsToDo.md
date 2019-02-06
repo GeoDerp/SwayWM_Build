@@ -11,5 +11,8 @@ Before I can call it finished
 - [ ] Make irssi config
 - [ ] Make Atom theme, upgrade UI and add plugins 
 - [ ] Upgrade Terminal and rice 
+- [ ] Add Vim theme 
+- [ ] make thumbnail gif for readme.md 
+
 
 ***If Anyone would like to help with any of these that would be gladly appreciated***
