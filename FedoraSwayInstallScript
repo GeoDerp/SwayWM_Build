@@ -113,14 +113,15 @@ sleep 10
 echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   gsettings set org.gnome.desktop.interface icon-theme RedFlower-Paper-Vimix
   gtk-update-icon-cache RedFlower-Paper-Vimix
-#cursor
+#cursor (x11 not wayland, might find a wayland verient down the line)
+  sudo dnf install inkscape xorg-x11-apps
   git clone https://github.com/keeferrourke/capitaine-cursors.git
   cd capitaine-cursors
   chmod +x build.sh
   ./build.sh
   gsettings set org.gnome.desktop.interface cursor-theme 'la capitaine'
 #GDM (Login screen)
-  cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/Icon/GDM
+  cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/GDM
   #comming soon (.....maby)
 
 #Grub theme (not tested and unnessesery)
@@ -137,7 +138,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
 
 #kitty (terminal)
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/kitty
-  mkidr -p ~/.config/kitty
+  mkdir -p ~/.config/kitty
   mv * ~/.config/kitty/
 #Albert config (my chosen aplication launcher (Aplication and theme install later))
   cd  ~/"Fedora-Sway-WM-Build-"/dooooots/Albert
@@ -148,7 +149,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   mkdir ~/.config/sway
   mv * ~/.config/sway/
 #WayBar (the bar replacment for swaybar, wayland version of polybar for i3wm)
-   ~/"Fedora-Sway-WM-Build-"/dooooots/waybar
+  cd ~/"Fedora-Sway-WM-Build-"/dooooots/waybar
   mkdir ~/.config/waybar
   mv * ~/.config/waybar/
 #Albert (Aplication Launcher)
@@ -186,11 +187,6 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
   sudo flatpak install flathub com.spotify.Client -y
 #keepassxc (Password Manager)
   sudo flatpak install flathub org.keepassxc.KeePassXC -y
-#franz (Multi Messaging Aplication)
-  cd ~/
-  sudo wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.22/franz-5.0.0-beta.22-x86_64.AppImage
-  sudo chmod +x franz-5.0.0-beta.22-x86_64.AppImage
-  ./franz-5.0.0-beta.22-x86_64.AppImage
 #LibreOffice (office)
   sudo dnf groupinstall LibreOffice -y
 #security applications
@@ -199,9 +195,14 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 ##installing nano (Prefered Terminal Text Editor)
   sudo dnf install nano -y
 ##Google chrome (Prefered Web Browser)
-  dnf install fedora-workstation-repositories
+  dnf install fedora-workstation-repositories -y
   dnf config-manager --set-enabled google-chrome
-  dnf install dnf install google-chrome-beta
+  dnf install dnf install google-chrome-beta -y
+##franz (Multi Messaging Aplication)
+  cd ~/
+  sudo wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.22/franz-5.0.0-beta.22-x86_64.AppImage
+  sudo chmod +x franz-5.0.0-beta.22-x86_64.AppImage
+  ./franz-5.0.0-beta.22-x86_64.AppImage &&
 
 echo "finnished, Have fun, Hopfully everything works :)"
 echo "Now restarting"
