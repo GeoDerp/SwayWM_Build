@@ -22,6 +22,8 @@ export LD_LIBRARY_PATH=/usr/local/lib64/:$LD_LIBRARY_PATH
 EOL'
 sudo bash -c ' echo "/usr/local/lib64/" > /etc/ld.so.conf.d/sway.conf'
 source /etc/profile.d/wlroots.sh
+gnome-shell-extension-tool -e user-theme
+gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
 
 #Installing
 echo "Installing terminal of choice  (unnessesery)"
@@ -72,7 +74,7 @@ echo "Installing [font awesome] for WayBar"
   cd ~/
   git clone https://github.com/FortAwesome/Font-Awesome.git
   cd Font-Awesome/webfonts/
-  sudo mkdir ~/.fonts
+  mkdir ~/.fonts
   mv * ~/.fonts/
   mv ~/Font-Awesome/otfs/* ~/.fonts/
   sudo wget "https://github.com/ox-it/hidden-museum/raw/master/fonts/Century%20Gothic.ttf" ~/.fonts/
@@ -95,15 +97,16 @@ sleep 10
   sudo cp ~/Pictures/Wallpapers/Blank.jpg /usr/share/backgrounds/Blank.jpg
 #GTK3 for GNOME
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/theme/vimix-gtk-themes-master
-  mkdir -p ~/.theme/VimixRedFlower
+  mkdir -p ~/.theme/
   chmod +x Install
+  chmod +x parse-sass.sh
   ./Install -n VimixRedFlower -t ruby -o -f
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/theme/VimixRedFlower
   mv * ~/.theme/VimixRedFlower
   gsettings set org.gnome.desktop.interface gtk-theme VimixRedFlower-dark-ruby
 #icon
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/Icon/vimix-icon-theme-master
-  sudo mkdir ~/.icons
+  mkdir ~/.icons
   cp -r RedFlower-Paper-Vimix ~/.icons/
   cp -r Vimix ~/.icons/
   cp -r Paper-Vimix ~/.icons/
