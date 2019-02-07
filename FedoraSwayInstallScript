@@ -51,14 +51,14 @@ echo "Sway WM"
   sudo chmod a+s /usr/local/bin/sway
 echo "swaylock (sway native plugin)"
   cd ~/
-  https://github.com/swaywm/swaylock
+  git clone https://github.com/swaywm/swaylock
   cd swaylock
   meson build
   ninja -C build install
   sudo chmod a+s /usr/local/bin/swaylock
 echo "swayidle (sway native plugin)"
   cd ~/
-  https://github.com/swaywm/swayidle.git
+  git clone https://github.com/swaywm/swayidle.git
   cd swayidle
   meson build
   ninja -C build install
