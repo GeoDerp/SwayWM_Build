@@ -142,8 +142,8 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   mv * ~/.config/kitty/
 #Albert config (my chosen aplication launcher (Aplication and theme install later))
   cd  ~/"Fedora-Sway-WM-Build-"/dooooots/Albert
-  mkdir ~/.config/Albert
-  mv * ~/.config/Albert/
+  mkdir ~/.config/albert
+  mv * ~/.config/albert/
 #sway (the wm)
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/sway
   mkdir ~/.config/sway
