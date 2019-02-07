@@ -12,7 +12,7 @@ sudo dnf update -y && sudo dnf system-upgrade -y --refresh
   #Intsalling all dependencies
   sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
   sudo dnf install ffmpeg ffmpeg-devel -y
-  sudo dnf install cmake git gcc xcb-util-xrm-devel xcb-util-image-devel.x86_64 xcb-util-cursor-devel.x86_64 xcb-util-renderutil-devel.x86_64 xcb-util-keysyms-devel.x86_64 xcb-util-wm-devel libxcb-devel ctags ffmpeg-devel ctags-etags meson mesa-dri-drivers ninja-build wayland-devel wayland-protocols-devel mesa-libEGL-devel mesa-libGLES-devel mesa-dri-drivers libdrm-devel libgbm-devel libxkbcommon-devel libudev-devel pixman-devel libinput-devel libevdev-devel systemd-devel cairo-devel libpcap-devel jsoncpp libinput rpm-build gnome-tweak-tool xcb-util-wm-devel libcap-devel libsigc++ sassc glib2-devel gtk-murrine-engine gtk2-engines kmix pulseaudio-libs-devel libdbusmenu-gtk3-devel clang-devel.x86_64 fmt-devel gtkmm30-devel jsoncpp-devel libpulse.so.0 libnl3-devel libdbusmenu-gtk3 gcc-c++ clang json-c-devel pam-devel pango-devel pcre-devel gdk-pixbuf2-devel -y
+  sudo dnf install cmake git gcc make xcb-util-xrm-devel xcb-util-image-devel.x86_64 xcb-util-cursor-devel.x86_64 xcb-util-renderutil-devel.x86_64 xcb-util-keysyms-devel.x86_64 xcb-util-wm-devel libxcb-devel ctags ffmpeg-devel ctags-etags meson mesa-dri-drivers ninja-build wayland-devel wayland-protocols-devel mesa-libEGL-devel mesa-libGLES-devel mesa-dri-drivers libdrm-devel libgbm-devel libxkbcommon-devel libudev-devel pixman-devel libinput-devel libevdev-devel systemd-devel cairo-devel libpcap-devel jsoncpp libinput rpm-build gnome-tweak-tool xcb-util-wm-devel libcap-devel libsigc++ sassc glib2-devel gtk-murrine-engine gtk2-engines kmix pulseaudio-libs-devel libdbusmenu-gtk3-devel clang-devel.x86_64 fmt-devel gtkmm30-devel jsoncpp-devel libpulse.so.0 libnl3-devel libdbusmenu-gtk3 gcc-c++ clang json-c-devel pam-devel pango-devel pcre-devel gdk-pixbuf2-devel -y
 
 #Making sure the filesystem knows where all the .pc's are
 sudo bash -c 'cat >> /etc/profile.d/wlroots.sh <<EOL
@@ -111,18 +111,20 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   gsettings set org.gnome.desktop.interface icon-theme RedFlower-Paper-Vimix
   gtk-update-icon-cache RedFlower-Paper-Vimix
 #cursor
-  sudo dnf copr enable tcg/themes -y
-  sudo dnf install la-capitaine-cursor-theme -y
+  git clone https://github.com/keeferrourke/capitaine-cursors.git
+  cd capitaine-cursors
+  chmod +x build.sh
+  ./build.sh
   gsettings set org.gnome.desktop.interface cursor-theme 'la capitaine'
 #GDM (Login screen)
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/Icon/GDM
   #comming soon (.....maby)
 
 #Grub theme (not tested and unnessesery)
-  #cd ~/
-  #github https://github.com/gustawho/grub2-theme-breeze.git
-  #cd grub2-theme-breeze
-  #sudo ./install.sh"
+  ##cd ~/
+  ##github https://github.com/gustawho/grub2-theme-breeze.git
+  ##cd grub2-theme-breeze
+  ##sudo ./install.sh"
 #irssi (for irc)
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/irssi
   dnf install irssi -y
@@ -137,7 +139,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
 #Albert config (my chosen aplication launcher (Aplication and theme install later))
   cd  ~/"Fedora-Sway-WM-Build-"/dooooots/Albert
   mkdir ~/.config/Albert
-  mv *  ~/.config/Albert/
+  mv * ~/.config/Albert/
 #sway (the wm)
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/sway
   mkdir ~/.config/sway
