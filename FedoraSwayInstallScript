@@ -110,14 +110,14 @@ sleep 10
   cp -r Paper-Vimix ~/.icons/
 echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   gsettings set org.gnome.desktop.interface icon-theme RedFlower-Paper-Vimix
-  gtk-update-icon-cache RedRose-Paper-Vimix
+  gtk-update-icon-cache RedFlower-Paper-Vimix
 #cursor
   sudo dnf copr enable tcg/themes -y
   sudo dnf install la-capitaine-cursor-theme -y
   gsettings set org.gnome.desktop.interface cursor-theme 'la capitaine'
 #GDM (Login screen)
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/Icon/GDM
-  #comming soon
+  #comming soon (.....maby)
 
 #Grub theme (not tested and unnessesery)
   #cd ~/
@@ -129,7 +129,8 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   dnf install irssi -y
   mkdir ~/.irssi
   mv * ~/.irssi/
-  #config comming soon
+  #config comming soon (maby)
+
 #kitty (terminal)
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/kitty
   mkidr -p ~/.config/kitty
@@ -170,6 +171,7 @@ sleep 15
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 #Atom (Prefered IDE)
+  cd ~/
   sudo rpm --import https://packagecloud.io/AtomEditor/atom/gpgkey
   sudo sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
   sudo dnf install atom-beta -y
@@ -181,6 +183,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 #keepassxc (Password Manager)
   sudo flatpak install flathub org.keepassxc.KeePassXC -y
 #franz (Multi Messaging Aplication)
+  cd ~/
   sudo wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.22/franz-5.0.0-beta.22-x86_64.AppImage
   sudo chmod +x franz-5.0.0-beta.22-x86_64.AppImage
   ./franz-5.0.0-beta.22-x86_64.AppImage
@@ -190,7 +193,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
   #sudo dnf groupinstall security-lab -y
   #intsall day-n-day apps (unnessesery)
 ##installing nano (Prefered Terminal Text Editor)
-    sudo dnf install nano -y
+  sudo dnf install nano -y
 ##Google chrome (Prefered Web Browser)
   dnf install fedora-workstation-repositories
   dnf config-manager --set-enabled google-chrome
