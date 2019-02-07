@@ -23,9 +23,9 @@ cd ~/
 git clone https://github.com/GeoDerp/Fedora-Sway-WM-Build-.git
 cd "Fedora-Sway-WM-Build-"
 sudo chmod +x "FedoraSwayInstallScript"
-./fedora Sway FedoraSwayInstallScript
+./FedoraSwayInstallScript
 ```
-If you are having any problems do command *sudo su* and run last command again
+
 
 ### GTK Theme
 ***Theme***:
