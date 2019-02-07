@@ -96,6 +96,7 @@ sleep 10
 #GTK3 for GNOME
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/theme/vimix-gtk-themes-master
   mkdir -p ~/.theme/VimixRedFlower
+  chmod +x Install
   ./Install -n VimixRedFlower -t ruby -o -f
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/theme/VimixRedFlower
   mv * ~/.theme/VimixRedFlower
