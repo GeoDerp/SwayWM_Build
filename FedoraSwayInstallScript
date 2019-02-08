@@ -97,12 +97,12 @@ sleep 10
   sudo cp ~/Pictures/Wallpapers/Blank.jpg /usr/share/backgrounds/Blank.jpg
 #GTK3 for GNOME
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/theme/vimix-gtk-themes-master
-  mkdir -p ~/.theme/
+  mkdir -p ~/.themes/
   chmod +x Install
   chmod +x parse-sass.sh
   ./Install -n VimixRedFlower -t ruby -o -f
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/theme/VimixRedFlower
-  mv * ~/.theme/VimixRedFlower
+  mv * ~/.themes/VimixRedFlower
   gsettings set org.gnome.desktop.interface gtk-theme VimixRedFlower-dark-ruby
 #icon
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/Icon/vimix-icon-theme-master
