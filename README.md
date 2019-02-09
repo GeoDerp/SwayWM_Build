@@ -2,7 +2,7 @@
 
 ***WARNING THIS IN BETA, some applications are broke and im currently troubleshooting. Sorry for the inconvenience***
 
-**Rice Name: Redflower**
+***Rice Name:*** **Redflower**
 ![alt text](https://raw.githubusercontent.com/GeoDerp/Fedora-Sway-WM-Build-/master/Images/img.png)
 
 Introducing my Fedora Workstation Sway WM Build with custom rice for WayBar, irssi, kitty, Albert, sway and GTK3.
