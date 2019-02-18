@@ -1,7 +1,7 @@
 #!/bin/bash
 ###Fedora Sway Build + red flower rice
 
-##initial stuff
+echo initial stuff
 sudo dnf update -y && sudo dnf system-upgrade -y --refresh
 
 ## Turning off unnessesery services
@@ -36,14 +36,7 @@ echo "wlroots (nessesery for sway to work with wayland)"
   meson build
   ninja -C build install
 echo "scdoc(nessesery for sway to work (sway's man page))"
-  mkdir -p ~/rpmbuild/SOURCES/
-  mv ~/"Fedora-Sway-WM-Build-"/build/scdoc/* ~/rpmbuild/SOURCES/
-  cd ~/rpmbuild/SOURCES
-  git clone https://git.sr.ht/~sircmpwn/scdoc
-  mv scdoc scdoc-1.8.1
-  tar -czf scdoc-1.8.1.tar.gz ./scdoc-1.8.1/
-  rpmbuild -ba scdoc.spec
-  rpm -Uvh ~/rpmbuild/RPMS/x86_64/scdoc-1.8.1-1.fc29.x86_64.rpm
+  sudo rpm -ivh https://copr-be.cloud.fedoraproject.org/results/shengis/scdoc/fedora-29-x86_64/00853655-scdoc/scdoc-1.8.1-1.fc29.x86_64.rpm
 echo "Sway WM"
   cd ~/
   git clone https://github.com/swaywm/sway
@@ -114,14 +107,16 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   gsettings set org.gnome.desktop.interface icon-theme RedFlower-Paper-Vimix
   gtk-update-icon-cache RedFlower-Paper-Vimix
 #cursor (x11 not wayland, might find a wayland verient down the line)
+  cd ~/	
   sudo dnf install inkscape xorg-x11-apps
   git clone https://github.com/keeferrourke/capitaine-cursors.git
   cd capitaine-cursors
   chmod +x build.sh
   ./build.sh
   gsettings set org.gnome.desktop.interface cursor-theme 'la capitaine'
+
 #GDM (Login screen)
-  cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/GDM
+  #cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/GDM
   #comming soon (.....maby)
 
 #Grub theme (not tested and unnessesery)
@@ -130,10 +125,10 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   ##cd grub2-theme-breeze
   ##sudo ./install.sh"
 #irssi (for irc)
-  cd ~/"Fedora-Sway-WM-Build-"/dooooots/irssi
-  dnf install irssi -y
-  mkdir ~/.irssi
-  mv * ~/.irssi/
+  #cd ~/"Fedora-Sway-WM-Build-"/dooooots/irssi
+  #dnf install irssi -y
+  #mkdir ~/.irssi
+  #mv * ~/.irssi/
   #config comming soon (maby)
 
 #kitty (terminal)
@@ -186,7 +181,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 #Spodify (Music Player)
   sudo flatpak install flathub com.spotify.Client -y
 #keepassxc (Password Manager)
-  sudo flatpak install flathub org.keepassxc.KeePassXC -y
+  sudo dnf install keepassxc -y
 #LibreOffice (office)
   sudo dnf groupinstall LibreOffice -y
 #security applications
@@ -195,9 +190,9 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 ##installing nano (Prefered Terminal Text Editor)
   sudo dnf install nano -y
 ##Google chrome (Prefered Web Browser)
-  dnf install fedora-workstation-repositories -y
-  dnf config-manager --set-enabled google-chrome
-  dnf install dnf install google-chrome-beta -y
+  sudo dnf install fedora-workstation-repositories -y
+  sudo dnf config-manager --set-enabled google-chrome
+  sudo dnf install google-chrome-beta -y
 ##franz (Multi Messaging Aplication)
   cd ~/
   sudo wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.22/franz-5.0.0-beta.22-x86_64.AppImage
@@ -206,5 +201,5 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 echo "finnished, Have fun, Hopfully everything works :)"
 echo "Now restarting"
-sleep 35
-sudo reboot
+  sleep 35
+  sudo reboot
