@@ -8,7 +8,7 @@ sudo dnf update -y && sudo dnf system-upgrade -y --refresh
 ##(recommended for using fedora worstation on RaspberyPi )
 #sudo systemctl status sshd && sudo systemctl enable sshd && sudo systemctl start sshd && systemctl list-units --type service --all | grep running && sudo systemctl disable libvirtd.service && sudo systemctl disable avahi-daemon.service && sudo systemctl mask bluetooth.service && sudo systemctl disable cups.service  && sudo systemctl disable iscsi.service && sudo systemctl mask iscsid.service && sudo systemctl disable ModemManager.service && sudo systemctl disable multipathd.service && sudo systemctl disable mdmonitor.service && sudo systemctl disable iscsi-shutdown.service && sudo systemctl mask gssproxy.service && sudo systemctl disable sssd.service && sudo systemctl mask wpa_supplicant.service && sudo systemctl disable sssd-kcm.service && sudo systemctl disable lvm2-monitor.service && sudo systemctl disable NetworkManager-wait-online.service && sudo systemd-analyze blame && sudo systemd-analyze critical-chain && sudo nmcli connection modify Wired\ connection\ 1 ipv6.method ignore && sudo systemctl stop NetworkManager.service && sudo systemctl disable NetworkManager.service && sudo dnf install network-scripts -y && sudo systemctl enable network.service && sudo systemctl start network.service
 
-##install Sway New
+##install Sway
   #Intsalling all dependencies
   sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
   sudo dnf install ffmpeg ffmpeg-devel -y
@@ -26,9 +26,6 @@ gnome-shell-extension-tool -e user-theme
 gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
 
 #Installing
-echo "Installing terminal of choice  (unnessesery)"
-  sudo dnf copr enable oleastre/kitty-terminal -y
-  sudo dnf install kitty -y
 echo "wlroots (nessesery for sway to work with wayland)"
   cd ~/
   git clone https://github.com/swaywm/wlroots.git
@@ -79,6 +76,9 @@ echo "installed nessesery tools, now installing configs for my rice"
 echo "quite now if you want to do all the config yourself (ctl + C)"
 sleep 10
 
+echo "Installing terminal of choice  (unnessesery)"
+  sudo dnf copr enable oleastre/kitty-terminal -y
+  sudo dnf install kitty -y
 ##putting all configs and images into its right replacement
   ###(this is for ricing and you do not need it if you dont want yours to look like mine)
 #wallpaper images
@@ -95,7 +95,7 @@ sleep 10
   chmod +x parse-sass.sh
   ./Install -n VimixRedFlower -t ruby -o -f
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/theme/VimixRedFlower
-  mv * ~/.themes/VimixRedFlower
+  mv * ~/.themes/VimixRedFlower-dark-ruby
   gsettings set org.gnome.desktop.interface gtk-theme VimixRedFlower-dark-ruby
 #icon
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/Icon/vimix-icon-theme-master
@@ -108,7 +108,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   gtk-update-icon-cache RedFlower-Paper-Vimix
 #cursor (x11 not wayland, might find a wayland verient down the line)
   cd ~/	
-  sudo dnf install inkscape xorg-x11-apps
+  sudo dnf install inkscape xorg-x11-apps -y
   git clone https://github.com/keeferrourke/capitaine-cursors.git
   cd capitaine-cursors
   chmod +x build.sh
@@ -166,7 +166,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
 
 echo "Finnished rice :D"
 echo "Installing Regular used applications (completely unnecessary)"
-echo "quite now if you want to do all my applications i use (ctl + C)"
+echo "quite now if you want to do all my applications use (ctl + C)"
 sleep 15
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -197,7 +197,8 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
   cd ~/
   sudo wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.22/franz-5.0.0-beta.22-x86_64.AppImage
   sudo chmod a+x franz-5.0.0-beta.22-x86_64.AppImage
-  ./franz-5.0.0-beta.22-x86_64.AppImage &
+  #./franz-5.0.0-beta.22-x86_64.AppImage 
+  #rm franz-5.0.0-beta.22-x86_64.AppImage
 
 echo "finnished, Have fun, Hopfully everything works :)"
 echo "Now restarting"
