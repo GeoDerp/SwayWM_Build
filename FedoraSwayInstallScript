@@ -1,7 +1,7 @@
 #!/bin/bash
 ###Fedora Sway Build + red flower rice
 
-echo initial stuff
+echo Initial stuff
 sudo dnf update -y && sudo dnf system-upgrade -y --refresh
 
 ## Turning off unnessesery services
@@ -20,8 +20,12 @@ export PATH=/usr/local/bin:$PATH
 export PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH
 export LD_LIBRARY_PATH=/usr/local/lib64/:$LD_LIBRARY_PATH
 EOL'
+sudo bash -c 'cat >> /etc/profile.d/albert.sh <<EOL
+export QT_QPA_PLATFORM="xcb"
+EOL'
 sudo bash -c ' echo "/usr/local/lib64/" > /etc/ld.so.conf.d/sway.conf'
 source /etc/profile.d/wlroots.sh
+source /etc/profile.d/albert.sh
 gnome-shell-extension-tool -e user-theme
 gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
 
@@ -53,6 +57,13 @@ echo "swayidle (sway native plugin)"
   git clone https://github.com/swaywm/swayidle.git
   cd swayidle
   meson build
+  ninja -C build install
+echo "grim (Grab images from a Wayland compositor)"
+  cd ~/
+  git clone https://github.com/emersion/grim.git
+  cd grim
+  meson build
+  ninja -C build
   ninja -C build install
 echo "Install WayBar (for swaybar replacement) (unnessesery, could use swaybar witch comes with sway)"
   cd ~/
@@ -107,7 +118,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   gsettings set org.gnome.desktop.interface icon-theme RedFlower-Paper-Vimix
   gtk-update-icon-cache RedFlower-Paper-Vimix
 #cursor (x11 not wayland, might find a wayland verient down the line)
-  cd ~/	
+  cd ~/
   sudo dnf install inkscape xorg-x11-apps -y
   git clone https://github.com/keeferrourke/capitaine-cursors.git
   cd capitaine-cursors
@@ -197,10 +208,14 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
   cd ~/
   sudo wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.22/franz-5.0.0-beta.22-x86_64.AppImage
   sudo chmod a+x franz-5.0.0-beta.22-x86_64.AppImage
-  #./franz-5.0.0-beta.22-x86_64.AppImage 
-  #rm franz-5.0.0-beta.22-x86_64.AppImage
+  ./franz-5.0.0-beta.22-x86_64.AppImage
+  rm franz-5.0.0-beta.22-x86_64.AppImage
+
+echo cleaning up
+  ~/
+  sudo rm -r capitaine-cursors swayidle sway swaylock Albert Font-Awesome Waybar wlroots
 
 echo "finnished, Have fun, Hopfully everything works :)"
 echo "Now restarting"
   sleep 35
-  sudo reboot
+  sudo init 6
