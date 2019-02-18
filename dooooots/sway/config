@@ -90,8 +90,7 @@ output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
     bindsym $mod+$alt+c exec google-chrome
 
     #Run Atom
-    bindsym $mod+$alt+a exec atom
-
+    bindsym $mod+$alt+a exec atom-beta
 
 # Moving around:
 #
@@ -159,9 +158,12 @@ output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
 #Workspace Assignments (Defult application workspace's )
   assign [class="Google-chrome"] $work2
   assign [class="Atom"] $work3
+  assign [class="atom"] $work3
+  assign [class="gedit"] $work3
+  assign [class="Atom-beta"] $work3
   assign [class="keepassxc"] $work6
   assign [class="kitty"] $work1
-  assign [class="nautilus"] $work8
+  assign [class="nautilus"] $work7
   assign [class="Rhythmbox"] $work4
   assign [class="Spotify"] $work4
   assign [class="Spotify Free"] $work4
@@ -291,7 +293,8 @@ bindsym $mod+r mode "resize"
       swaybar_command waybar
   }
 
-  exec --no-startup-id waybar &
+  #exec --no-startup-id waybar &
+  exec swayidle -w timeout 300 'swaylock -f -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080'
   exec --no-startup-id albert
   include /etc/sway/config.d/*
 
@@ -303,4 +306,4 @@ bindsym $mod+r mode "resize"
   bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
   bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
   bindsym XF86MonBrightnessUp exec brightnessctl set +5%
-  bindsym print exec flameshot full -p ~/Pictures/ScreenShots
+  bindsym print exec grim $(xdg-user-dir PICTURES)/$(date +'%Y-%m-%d-%H%M%S_grim.png')
