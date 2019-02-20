@@ -14,6 +14,7 @@ Before I can call it finished
 - [ ] Add Vim theme 
 - [ ] Make thumbnail/gif for readme.md 
 - [ ] Turn Sway,wlroots,waybar build into a automated rpm to allow easy install and uninstall (mainly for updates) 
+- [ ] Figure out issue with swaylock not acceptkng password 
 
 
 ***If Anyone would like to help with any of these that would be gladly appreciated***
