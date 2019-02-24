@@ -20,12 +20,8 @@ export PATH=/usr/local/bin:$PATH
 export PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig:$PKG_CONFIG_PATH
 export LD_LIBRARY_PATH=/usr/local/lib64/:$LD_LIBRARY_PATH
 EOL'
-sudo bash -c 'cat >> /etc/profile.d/albert.sh <<EOL
-export QT_QPA_PLATFORM="xcb"
-EOL'
 sudo bash -c ' echo "/usr/local/lib64/" > /etc/ld.so.conf.d/sway.conf'
 source /etc/profile.d/wlroots.sh
-source /etc/profile.d/albert.sh
 gnome-shell-extension-tool -e user-theme
 gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
 
@@ -52,6 +48,8 @@ echo "swaylock (sway native plugin)"
   meson build
   ninja -C build install
   sudo chmod a+s /usr/local/bin/swaylock
+  #making shore sway has login authentication
+  sudo bash -c sudo bash -c ' echo "auth include login" > /etc/pam.d/swaylock'
 echo "swayidle (sway native plugin)"
   cd ~/
   git clone https://github.com/swaywm/swayidle.git
@@ -159,17 +157,25 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   mkdir ~/.config/waybar
   mv * ~/.config/waybar/
 #Albert (Aplication Launcher)
-  #Installing
-  cd ~/
-  mkdir Albert
-  cd Albert
-  sudo dnf install python3-devel qt5-qtx11extras-devel qt5-qtsvg-devel muParser-devel libqalculate-devel qt5-qtcharts-devel qt5-qtwayland-devel -y
-  git clone --recursive https://github.com/albertlauncher/albert.git
-  mkdir albert-build
-  cd albert-build
-  cmake ../albert -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Debug
-  make
-  sudo make install
+  #Installing building from sorce
+    #sudo bash -c 'cat >> /etc/profile.d/albert.sh <<EOL
+    #export QT_QPA_PLATFORM="xcb"
+    #EOL'
+    #source /etc/profile.d/albert.sh
+    #cd ~/
+    #mkdir Albert
+    #cd Albert
+    #sudo dnf install python3-devel qt5-qtx11extras-devel qt5-qtsvg-devel muParser-devel libqalculate-devel qt5-qtcharts-devel qt5-qtwayland-devel -y
+    #git clone --recursive https://github.com/albertlauncher/albert.git
+    #mkdir albert-build
+    #cd albert-build
+    #cmake ../albert -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Debug
+    #make
+    #sudo make install
+  #Installing from rpm (a lot easier to uninstall and troubleshoot)
+  sudo rpm --import https://build.opensuse.org/projects/home:manuelschneid3r/public_key
+  sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_29/home:manuelschneid3r.repo
+  sudo dnf install albert -y
   #Installing albert RedFlower theme
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/AlbertTheme
   mkdir -p /home/geo/.local/share/albert/org.albert.frontend.widgetboxmodel/themes
