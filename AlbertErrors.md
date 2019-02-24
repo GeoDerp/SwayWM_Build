@@ -1,5 +1,5 @@
 # Error
-**Error posted here:** albertlauncher/albert#768
+**Error posted here:** [#768](https://github.com/albertlauncher/albert/issues/768)
 
 #### Source
 Compiled and https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_29/home:manuelschneid3r.repo (tried both)
