@@ -130,3 +130,33 @@ Note: I started with the rebo and it worked fine untill I installed _qt5-qtwayla
 ```[WARN:qt.qpa.plugin] Could not find the Qt platform plugin "wayland" in "" ``` error and got the Segmentation error. Now even with _qt5-qtwayland-devel_ uninstalled I get the same error :(
 
 Tried setting  QT_QPA_PLATFORM="" environment variable and still no luck.
+
+#### Behaviour when QT_QPA_PLATFORM="xcb with 
+```console
+$sudo bash -c sudo bash -c ' echo "export QT_QPA_PLATFORM="xcb"" > /etc/profile.d/albert.sh'
+&&source /etc/profile.d/albert.sh
+```
+ 
+```
+00:12:45 [INFO:default] Systems icon theme is: "hicolor"
+00:12:45 [WARN:default] Application has not been terminated graciously.
+00:12:45 [INFO:default] Loading extension "org.albert.extension.applications"
+00:12:45 [INFO:applications] Start indexing applications.
+00:12:45 [INFO:default] Loading extension "org.albert.extension.chromebookmarks"
+00:12:45 [INFO:default] Start indexing Chrome bookmarks.
+00:12:45 [INFO:default] Loading extension "org.albert.extension.system"
+00:12:46 [WARN:default] QFSFileEngine::open: No file name specified
+00:12:46 [WARN:default] Could not open Chrome bookmarks file ''.
+00:12:46 [INFO:default] Loading extension "org.albert.extension.terminal"
+00:12:46 [INFO:default] Loading extension "org.albert.extension.websearch"
+free(): invalid next size (fast)
+Aborted (core dumped)
+```
+[core dumped](https://drive.google.com/file/d/1xxn4oM1wyuO8sxPSV6zjXYgkyUNNqO7W/view?usp=sharing)
+
+**Gdb**
+`#0  main (argc=1, argv=0x7fffffffdfa8)
+    at /home/geo/Albert/albert/src/app/main.cpp:57
+57      in /home/geo/Albert/albert/src/app/main.cpp`
+
+
