@@ -219,7 +219,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 echo cleaning up
   ~/
-  sudo rm -r capitaine-cursors swayidle sway swaylock Albert Font-Awesome Waybar wlroots
+  sudo rm -r capitaine-cursors swayidle sway swaylock grim Albert Font-Awesome Waybar wlroots
 
 echo "finnished, Have fun, Hopfully everything works :)"
 echo "Now restarting"
