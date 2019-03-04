@@ -1,6 +1,5 @@
 # Fedora Sway Build
 
-***WARNING THIS IN BETA, some applications are broke and im currently troubleshooting. Sorry for the inconvenience***
 
 ***Rice Name:*** **Redflower**
 ![alt text](https://raw.githubusercontent.com/GeoDerp/Fedora-Sway-WM-Build-/master/Images/thumbnail2.png)
