@@ -14,7 +14,7 @@ The main goal for this was to crate a simple automation method for installing sw
 ## how to use install script
 
 Before you start the install make sure you have a clean install of fedora workstation (feel free to try other versions but I am not 100% sure it will work).
-And have git installed, if you don't put ```sudo dnf install git -y``` in the terminal.
+And have git installed, if you haven't, just put ```sudo dnf install git -y``` in the terminal before using command below.
 
 In Terminal type:
 ```console
