@@ -24,7 +24,7 @@ set $menu --no-startup-id albert show
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# For Non-christian Wallpaper change Wallpaper.jpg to Blank.jpg
 output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
 #
 # Example configuration:
