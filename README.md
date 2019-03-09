@@ -32,7 +32,7 @@ The GTK Theme is a hacked mix of of [materia-theme](https://github.com/nana-4/ma
 and [Vimix-gtk-theme](https://github.com/vinceliuice/vimix-gtk-themes) By [**@vinceliuice**](https://github.com/vinceliuice)
 
 ***Icons***:
-Icons is a modified version of [vimix-icon-theme](https://github.com/vinceliuice/vimix-icon-theme) by [**@vinceliuice**](https://github.com/vinceliuice) (This may not be the final choice)
+Icons is a modified version of [vimix-icon-theme](https://github.com/vinceliuice/vimix-icon-theme) by [**@vinceliuice**](https://github.com/vinceliuice) 
 
 ***Cursor***:
 Cursor is [Capitaine cursors](https://github.com/keeferrourke/capitaine-cursors) by [**@keeferrourke**](https://github.com/vinceliuice)
