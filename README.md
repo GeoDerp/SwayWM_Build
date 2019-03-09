@@ -24,7 +24,7 @@ cd "Fedora-Sway-WM-Build-"
 sudo chmod +x "FedoraSwayInstallScript"
 ./FedoraSwayInstallScript
 ```
-*(If you want the source builds and not the rpm's use BuildFedoraSwayInstallScript).*
+*(If you want the source builds and not the rpm's use ```BuildFedoraSwayInstallScript```).*
 
 
 ### GTK Theme
