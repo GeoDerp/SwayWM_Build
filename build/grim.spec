@@ -48,13 +48,13 @@ swaylock is a screenshot utility for slurp and sway.
 
 %files
 %{_bindir}/swaylock
-%{_datadir}/bash-completion/completions/swaylock
-%{_datadir}/fish/completions/swaylock.fish
-%{_datadir}/zsh/site-functions/_swaylock
+%{_datadir}/bash-completion/completions/grim
+%{_datadir}/fish/completions/grim.fish
+%{_datadir}/zsh/site-functions/_grim
 
 %{_mandir}/man1/swaylock.1.gz
 
-%config %{_sysconfdir}/pam.d/swaylock
+%config %{_sysconfdir}/pam.d/grim
 
 %license LICENSE
 %doc README.*
