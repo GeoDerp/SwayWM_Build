@@ -26,49 +26,12 @@ gnome-shell-extension-tool -e user-theme
 gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
 
 #Installing
-echo "wlroots (nessesery for sway to work with wayland)"
-  cd ~/
-  git clone https://github.com/swaywm/wlroots.git
-  cd wlroots
-  meson build
-  ninja -C build install
-echo "scdoc(nessesery for sway to work (sway's man page))"
-  sudo rpm -ivh https://copr-be.cloud.fedoraproject.org/results/shengis/scdoc/fedora-29-x86_64/00853655-scdoc/scdoc-1.8.1-1.fc29.x86_64.rpm
-echo "Sway WM"
-  cd ~/
-  git clone https://github.com/swaywm/sway
-  cd sway
-  meson build
-  ninja -C build install
-  sudo chmod a+s /usr/local/bin/sway
-echo "swaylock (sway native plugin)"
-  cd ~/
-  git clone https://github.com/swaywm/swaylock
-  cd swaylock
-  meson build
-  ninja -C build install
-  sudo chmod a+s /usr/local/bin/swaylock
-  #making shore sway has login authentication
-  sudo bash -c sudo bash -c ' echo "auth include login" > /etc/pam.d/swaylock'
-echo "swayidle (sway native plugin)"
-  cd ~/
-  git clone https://github.com/swaywm/swayidle.git
-  cd swayidle
-  meson build
-  ninja -C build install
-echo "grim (Grab images from a Wayland compositor)"
-  cd ~/
-  git clone https://github.com/emersion/grim.git
-  cd grim
-  meson build
-  ninja -C build
-  ninja -C build install
-echo "Install WayBar (for swaybar replacement) (unnessesery, could use swaybar witch comes with sway)"
-  cd ~/
-  git clone https://github.com/Alexays/Waybar
-  cd Waybar
-  meson build
-  ninja -C build install
+echo Installing wlroots,sway,swaylock,swayidle,grim and waybar from rpm
+  #yet to be added 
+echo Installing Albert Launcher
+  sudo rpm --import https://build.opensuse.org/projects/home:manuelschneid3r/public_key
+  sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_29/home:manuelschneid3r.repo
+  sudo dnf install albert -y
 echo "Installing [font awesome] for WayBar"
   cd ~/
   git clone https://github.com/FortAwesome/Font-Awesome.git
@@ -157,25 +120,6 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   mkdir ~/.config/waybar
   mv * ~/.config/waybar/
 #Albert (Aplication Launcher)
-  #Installing building from sorce
-    #sudo bash -c 'cat >> /etc/profile.d/albert.sh <<EOL
-    #export QT_QPA_PLATFORM="xcb"
-    #EOL'
-    #source /etc/profile.d/albert.sh
-    #cd ~/
-    #mkdir Albert
-    #cd Albert
-    #sudo dnf install python3-devel qt5-qtx11extras-devel qt5-qtsvg-devel muParser-devel libqalculate-devel qt5-qtcharts-devel qt5-qtwayland-devel -y
-    #git clone --recursive https://github.com/albertlauncher/albert.git
-    #mkdir albert-build
-    #cd albert-build
-    #cmake ../albert -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Debug
-    #make
-    #sudo make install
-  #Installing from rpm (a lot easier to uninstall and troubleshoot)
-  sudo rpm --import https://build.opensuse.org/projects/home:manuelschneid3r/public_key
-  sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_29/home:manuelschneid3r.repo
-  sudo dnf install albert -y
   #Installing albert RedFlower theme
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/AlbertTheme
   mkdir -p /home/geo/.local/share/albert/org.albert.frontend.widgetboxmodel/themes
@@ -216,10 +160,6 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
   sudo chmod a+x franz-5.0.0-beta.22-x86_64.AppImage
   ./franz-5.0.0-beta.22-x86_64.AppImage
   rm franz-5.0.0-beta.22-x86_64.AppImage
-
-echo cleaning up
-  ~/
-  sudo rm -r capitaine-cursors swayidle sway swaylock grim Albert Font-Awesome Waybar wlroots
 
 echo "finnished, Have fun, Hopfully everything works :)"
 echo "Now restarting"
