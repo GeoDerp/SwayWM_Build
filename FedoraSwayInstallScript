@@ -86,11 +86,9 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   chmod +x build.sh
   ./build.sh
   gsettings set org.gnome.desktop.interface cursor-theme 'la capitaine'
-
 #GDM (Login screen)
   #cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/GDM
   #comming soon (.....maby)
-
 #Grub theme (not tested and unnessesery)
   ##cd ~/
   ##github https://github.com/gustawho/grub2-theme-breeze.git
@@ -102,7 +100,6 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   #mkdir ~/.irssi
   #mv * ~/.irssi/
   #config comming soon (maby)
-
 #kitty (terminal)
   cd ~/"Fedora-Sway-WM-Build-"/dooooots/kitty
   mkdir -p ~/.config/kitty
