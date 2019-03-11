@@ -20,7 +20,9 @@ gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.c
 
 #Installing
 echo Installing wlroots,sway,swaylock,swayidle,grim and waybar from rpm
-#pls add here
+  sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
+  sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:GeoDerp:redflower/Fedora_29/home:GeoDerp:redflower.repo
+  sudo dnf install wlroots sway swaylock swayidle grim waybar -y
 echo Installing Albert Launcher
   sudo rpm --import https://build.opensuse.org/projects/home:manuelschneid3r/public_key
   sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_29/home:manuelschneid3r.repo
