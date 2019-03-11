@@ -49,7 +49,7 @@ echo "swaylock (sway native plugin)"
   ninja -C build install
   sudo chmod a+s /usr/local/bin/swaylock
   #making shore sway has login authentication
-  sudo bash -c sudo bash -c ' echo "auth include login" > /etc/pam.d/swaylock'
+  sudo bash -c ' echo "auth include login" > /etc/pam.d/swaylock'
 echo "swayidle (sway native plugin)"
   cd ~/
   git clone https://github.com/swaywm/swayidle.git
