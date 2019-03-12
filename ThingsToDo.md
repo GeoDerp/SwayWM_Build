@@ -1,6 +1,7 @@
 # List Of Things To Do
 Before I can call it finished
 
+- [ ] FIX OPEN SUSE [BUILD PACKAGES](https://build.opensuse.org/project/show/home:GeoDerp:redflower) 
 - [x] FIX ALBERT, [*Error.md*](https://github.com/GeoDerp/Fedora-Sway-WM-Build-/blob/master/AlbertErrors.md), [*Issue*](https://github.com/albertlauncher/albert/issues/768) 
 [**Update:** it kinda works, it's using x not wayland and has a tendency to not run on startup (that may be an sway issue) ]
 - [ ] Figure out bug with waybar, [*Error.md*](https://github.com/GeoDerp/Fedora-Sway-WM-Build-/blob/master/WaybarError.md), [*Issue*](https://github.com/Alexays/Waybar/issues/182) 
