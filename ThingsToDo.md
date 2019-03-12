@@ -19,5 +19,6 @@ Before I can call it finished
 *Might use something like (open build service)[https://openbuildservice.org/] to automate the process of pulling the latest version of the git repo + the spec file and auto compile into an rpm*
 - [x] Figure out issue with swaylock not acceptkng password [24/2/19](https://github.com/GeoDerp/Fedora-Sway-WM-Build-/commit/5db0a8b39b4cdc83d8a9ba77414aab04889958c1)
 - [ ] Publish on Reddit 
+- [ ] Add key bind in sway .config for wlstream
 
 ***If Anyone would like to help with any of these that would be gladly appreciated***
