@@ -24,8 +24,8 @@ cd "Fedora-Sway-WM-Build-"
 sudo chmod +x "FedoraSwayInstallScript"
 ./FedoraSwayInstallScript
 ```
-*(If you want the source builds and not the rpm's use ```BuildFedoraSwayInstallScript```).*
-
+*(If you want the source builds and not the rpm's use ```BuildFedoraSwayInstallScript```).*  
+**Rpm packages** = [openbuildservice](https://build.opensuse.org/project/show/home:GeoDerp:redflower) 
 
 ### GTK Theme
 ***Theme***:
