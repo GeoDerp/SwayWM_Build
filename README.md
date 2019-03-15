@@ -20,7 +20,7 @@ In Terminal type:
 ```console
 cd ~/
 git clone https://github.com/GeoDerp/Sway_WM_Build.git
-cd "Fedora-Sway-WM-Build-"
+cd "Sway-WM-Build-"
 sudo chmod +x "SwayInstallScript"
 ./SwayInstallScript
 ```
