@@ -1,5 +1,5 @@
 #!/bin/bash
-###Fedora Sway Build + red flower rice
+###Fedora/OpenSUSE Sway Build + Redflower rice
 
 echo Initial stuff
 sudo dnf update -y && sudo dnf system-upgrade -y --refresh
@@ -114,21 +114,21 @@ echo "Installing terminal of choice  (unnessesery)"
 #wallpaper images
 echo "wallpaper Images (there are two one Images, one christian, and one blank, on line 23 ish on ~/.config/sway/config there is a line with [output *bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch] change Wallpaper.jpg or Blank.jpg depending on what you prefer more)"
 sleep 10
-  cd ~/"Fedora-Sway-WM-Build-"/Images
+  cd ~/"SwayWM_Build"/Images
   mkdir ~/Pictures/Wallpapers/
   mv * ~/Pictures/Wallpapers/
   sudo cp ~/Pictures/Wallpapers/Blank.jpg /usr/share/backgrounds/Blank.jpg
 #GTK3 for GNOME
-  cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/theme/vimix-gtk-themes-master
+  cd ~/"SwayWM_Build"/dooooots/GTK3/theme/vimix-gtk-themes-master
   mkdir -p ~/.themes/
   chmod +x Install
   chmod +x parse-sass.sh
   ./Install -n VimixRedFlower -t ruby -o -f
-  cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/theme/VimixRedFlower
+  cd ~/"SwayWM_Build"/dooooots/GTK3/theme/VimixRedFlower
   mv * ~/.themes/VimixRedFlower-dark-ruby
   gsettings set org.gnome.desktop.interface gtk-theme VimixRedFlower-dark-ruby
 #icon
-  cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/Icon/vimix-icon-theme-master
+  cd ~/"SwayWM_Build"/dooooots/GTK3/Icon/vimix-icon-theme-master
   mkdir ~/.icons
   cp -r RedFlower-Paper-Vimix ~/.icons/
   cp -r Vimix ~/.icons/
@@ -146,7 +146,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   gsettings set org.gnome.desktop.interface cursor-theme 'la capitaine'
 
 #GDM (Login screen)
-  #cd ~/"Fedora-Sway-WM-Build-"/dooooots/GTK3/GDM
+  #cd ~/"SwayWM_Build"/dooooots/GTK3/GDM
   #comming soon (.....maby)
 
 #Grub theme (not tested and unnessesery)
@@ -155,31 +155,31 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   ##cd grub2-theme-breeze
   ##sudo ./install.sh"
 #irssi (for irc)
-  #cd ~/"Fedora-Sway-WM-Build-"/dooooots/irssi
+  #cd ~/"SwayWM_Build"/dooooots/irssi
   #dnf install irssi -y
   #mkdir ~/.irssi
   #mv * ~/.irssi/
   #config comming soon (maby)
 
 #kitty (terminal)
-  cd ~/"Fedora-Sway-WM-Build-"/dooooots/kitty
+  cd ~/"SwayWM_Build"/dooooots/kitty
   mkdir -p ~/.config/kitty
   mv * ~/.config/kitty/
 #Albert config (my chosen aplication launcher (Aplication and theme install later))
-  cd  ~/"Fedora-Sway-WM-Build-"/dooooots/Albert
+  cd  ~/"SwayWM_Build"/dooooots/Albert
   mkdir ~/.config/albert
   mv * ~/.config/albert/
 #sway (the wm)
-  cd ~/"Fedora-Sway-WM-Build-"/dooooots/sway
+  cd ~/"SwayWM_Build"/dooooots/sway
   mkdir ~/.config/sway
   mv * ~/.config/sway/
 #WayBar (the bar replacment for swaybar, wayland version of polybar for i3wm)
-  cd ~/"Fedora-Sway-WM-Build-"/dooooots/waybar
+  cd ~/"SwayWM_Build"/dooooots/waybar
   mkdir ~/.config/waybar
   mv * ~/.config/waybar/
 #Albert (Aplication Launcher)
   #Installing albert RedFlower theme
-  cd ~/"Fedora-Sway-WM-Build-"/dooooots/AlbertTheme
+  cd ~/"SwayWM_Build"/dooooots/AlbertTheme
   mkdir -p /home/geo/.local/share/albert/org.albert.frontend.widgetboxmodel/themes
   sudo mv * "/home/geo/.local/share/albert/org.albert.frontend.widgetboxmodel/themes/"
 
@@ -195,7 +195,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
   sudo sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
   sudo dnf install atom-beta -y
   mkdir ~/.atom
-  cd ~/"Fedora-Sway-WM-Build-"/dooooots/.atom
+  cd ~/"SwayWM_Build"/dooooots/.atom
   sudo mv * ~/.atom/
 #Spodify (Music Player)
   sudo flatpak install flathub com.spotify.Client -y
