@@ -20,11 +20,11 @@ In Terminal type:
 ```console
 cd ~/
 git clone https://github.com/GeoDerp/Sway_WM_Build.git
-cd "Sway-WM-Build-"
+cd "SwayWM_Build"
 sudo chmod +x "SwayInstallScript"
 ./SwayInstallScript
 ```
-*(If you want the source builds and not the rpm's use ```BuildFedoraSwayInstallScript```).*  
+*(If you want the source builds and not the rpm's use ```BuildSwayInstallScript``` , This May Not Work On OpenSuse [haven't tested]).*  
 **Rpm packages** = [openbuildservice](https://build.opensuse.org/project/show/home:GeoDerp:redflower) 
 
 ### GTK Theme
