@@ -1,18 +1,27 @@
 #!/bin/bash
 ###Fedora/OpenSUSE Sway Build + Redflower rice
+#finding OS
+. /etc/os-release
+if [$NAME = "Fedora"*]; then
+   dnf=ins
+if [$NAME = "OpenSUSE"*]; then
+   zypper=ins
+else
+  echo "can't find distro name"
+fi
 
 echo Initial stuff
-sudo dnf update -y && sudo dnf system-upgrade -y --refresh
+sudo $ins update -y && sudo $ins system-upgrade -y 
 
 ## Turning off unnessesery services
 ##(recommended for using fedora worstation on RaspberyPi )
-#sudo systemctl status sshd && sudo systemctl enable sshd && sudo systemctl start sshd && systemctl list-units --type service --all | grep running && sudo systemctl disable libvirtd.service && sudo systemctl disable avahi-daemon.service && sudo systemctl mask bluetooth.service && sudo systemctl disable cups.service  && sudo systemctl disable iscsi.service && sudo systemctl mask iscsid.service && sudo systemctl disable ModemManager.service && sudo systemctl disable multipathd.service && sudo systemctl disable mdmonitor.service && sudo systemctl disable iscsi-shutdown.service && sudo systemctl mask gssproxy.service && sudo systemctl disable sssd.service && sudo systemctl mask wpa_supplicant.service && sudo systemctl disable sssd-kcm.service && sudo systemctl disable lvm2-monitor.service && sudo systemctl disable NetworkManager-wait-online.service && sudo systemd-analyze blame && sudo systemd-analyze critical-chain && sudo nmcli connection modify Wired\ connection\ 1 ipv6.method ignore && sudo systemctl stop NetworkManager.service && sudo systemctl disable NetworkManager.service && sudo dnf install network-scripts -y && sudo systemctl enable network.service && sudo systemctl start network.service
+#sudo systemctl status sshd && sudo systemctl enable sshd && sudo systemctl start sshd && systemctl list-units --type service --all | grep running && sudo systemctl disable libvirtd.service && sudo systemctl disable avahi-daemon.service && sudo systemctl mask bluetooth.service && sudo systemctl disable cups.service  && sudo systemctl disable iscsi.service && sudo systemctl mask iscsid.service && sudo systemctl disable ModemManager.service && sudo systemctl disable multipathd.service && sudo systemctl disable mdmonitor.service && sudo systemctl disable iscsi-shutdown.service && sudo systemctl mask gssproxy.service && sudo systemctl disable sssd.service && sudo systemctl mask wpa_supplicant.service && sudo systemctl disable sssd-kcm.service && sudo systemctl disable lvm2-monitor.service && sudo systemctl disable NetworkManager-wait-online.service && sudo systemd-analyze blame && sudo systemd-analyze critical-chain && sudo nmcli connection modify Wired\ connection\ 1 ipv6.method ignore && sudo systemctl stop NetworkManager.service && sudo systemctl disable NetworkManager.service && sudo $ins install network-scripts -y && sudo systemctl enable network.service && sudo systemctl start network.service
 
 ##install Sway
   #Intsalling all dependencies
-  sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-  sudo dnf install ffmpeg ffmpeg-devel -y
-  sudo dnf install cmake git gcc brightnessctl make xcb-util-xrm-devel xcb-util-image-devel.x86_64 xcb-util-cursor-devel.x86_64 xcb-util-renderutil-devel.x86_64 xcb-util-keysyms-devel.x86_64 xcb-util-wm-devel libxcb-devel ctags ffmpeg-devel ctags-etags meson mesa-dri-drivers ninja-build wayland-devel wayland-protocols-devel mesa-libEGL-devel mesa-libGLES-devel mesa-dri-drivers libdrm-devel libgbm-devel libxkbcommon-devel libudev-devel pixman-devel libinput-devel libevdev-devel systemd-devel cairo-devel libpcap-devel jsoncpp libinput rpm-build gnome-tweak-tool xcb-util-wm-devel libcap-devel libsigc++ sassc glib2-devel gtk-murrine-engine gtk2-engines kmix pulseaudio-libs-devel libdbusmenu-gtk3-devel clang-devel.x86_64 fmt-devel gtkmm30-devel jsoncpp-devel libpulse.so.0 libnl3-devel libdbusmenu-gtk3 gcc-c++ clang json-c-devel pam-devel pango-devel pcre-devel gdk-pixbuf2-devel -y
+  sudo $ins install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+  sudo $ins install ffmpeg ffmpeg-devel -y
+  sudo $ins install cmake git gcc brightnessctl make xcb-util-xrm-devel xcb-util-image-devel.x86_64 xcb-util-cursor-devel.x86_64 xcb-util-renderutil-devel.x86_64 xcb-util-keysyms-devel.x86_64 xcb-util-wm-devel libxcb-devel ctags ffmpeg-devel ctags-etags meson mesa-dri-drivers ninja-build wayland-devel wayland-protocols-devel mesa-libEGL-devel mesa-libGLES-devel mesa-dri-drivers libdrm-devel libgbm-devel libxkbcommon-devel libudev-devel pixman-devel libinput-devel libevdev-devel systemd-devel cairo-devel libpcap-devel jsoncpp libinput rpm-build gnome-tweak-tool xcb-util-wm-devel libcap-devel libsigc++ sassc glib2-devel gtk-murrine-engine gtk2-engines kmix pulseaudio-libs-devel libdbusmenu-gtk3-devel clang-devel.x86_64 fmt-devel gtkmm30-devel jsoncpp-devel libpulse.so.0 libnl3-devel libdbusmenu-gtk3 gcc-c++ clang json-c-devel pam-devel pango-devel pcre-devel gdk-pixbuf2-devel -y
 
 #Making sure the filesystem knows where all the .pc's are
 sudo bash -c 'cat >> /etc/profile.d/wlroots.sh <<EOL
@@ -83,7 +92,7 @@ echo "Intsalling ALbert, Rofi alternative (Aplication Launcher)"
   cd ~/
   mkdir Albert
   cd Albert
-  sudo dnf install python3-devel qt5-qtx11extras-devel qt5-qtsvg-devel muParser-devel libqalculate-devel qt5-qtcharts-devel qt5-qtwayland-devel -y
+  sudo $ins install python3-devel qt5-qtx11extras-devel qt5-qtsvg-devel muParser-devel libqalculate-devel qt5-qtcharts-devel qt5-qtwayland-devel -y
   git clone --recursive https://github.com/albertlauncher/albert.git
   mkdir albert-build
   cd albert-build
@@ -107,8 +116,8 @@ echo "quite now if you want to do all the config yourself (ctl + C)"
 sleep 10
 
 echo "Installing terminal of choice  (unnessesery)"
-  sudo dnf copr enable oleastre/kitty-terminal -y
-  sudo dnf install kitty -y
+  sudo $ins copr enable oleastre/kitty-terminal -y
+  sudo $ins install kitty -y
 ##putting all configs and images into its right replacement
   ###(this is for ricing and you do not need it if you dont want yours to look like mine)
 #wallpaper images
@@ -138,7 +147,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   gtk-update-icon-cache RedFlower-Paper-Vimix
 #cursor (x11 not wayland, might find a wayland verient down the line)
   cd ~/
-  sudo dnf install inkscape xorg-x11-apps -y
+  sudo $ins install inkscape xorg-x11-apps -y
   git clone https://github.com/keeferrourke/capitaine-cursors.git
   cd capitaine-cursors
   chmod +x build.sh
@@ -156,7 +165,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   ##sudo ./install.sh"
 #irssi (for irc)
   #cd ~/"SwayWM_Build"/dooooots/irssi
-  #dnf install irssi -y
+  #$ins install irssi -y
   #mkdir ~/.irssi
   #mv * ~/.irssi/
   #config comming soon (maby)
@@ -188,30 +197,31 @@ echo "Installing Regular used applications (completely unnecessary)"
 echo "quite now if you want to do all my applications use (ctl + C)"
 sleep 15
 
+sudo $ins install flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 #Atom (Prefered IDE)
   cd ~/
   sudo rpm --import https://packagecloud.io/AtomEditor/atom/gpgkey
   sudo sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
-  sudo dnf install atom-beta -y
+  sudo $ins install atom-beta -y
   mkdir ~/.atom
   cd ~/"SwayWM_Build"/dooooots/.atom
   sudo mv * ~/.atom/
 #Spodify (Music Player)
   sudo flatpak install flathub com.spotify.Client -y
 #keepassxc (Password Manager)
-  sudo dnf install keepassxc -y
+  sudo $ins install keepassxc -y
 #LibreOffice (office)
-  sudo dnf groupinstall LibreOffice -y
+  sudo $ins groupinstall LibreOffice -y
 #security applications
-  #sudo dnf groupinstall security-lab -y
+  #sudo $ins groupinstall security-lab -y
   #intsall day-n-day apps (unnessesery)
 ##installing nano (Prefered Terminal Text Editor)
-  sudo dnf install nano -y
-##Google chrome (Prefered Web Browser)
-  sudo dnf install fedora-workstation-repositories -y
-  sudo dnf config-manager --set-enabled google-chrome
-  sudo dnf install google-chrome-beta -y
+  sudo $ins install nano -y
+##Google chrome (Prefered Web Browser, only works for Fedora)
+  sudo $ins install fedora-workstation-repositories -y
+  sudo $ins config-manager --set-enabled google-chrome
+  sudo $ins install google-chrome-beta -y
 ##franz (Multi Messaging Aplication)
   cd ~/
   sudo wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.22/franz-5.0.0-beta.22-x86_64.AppImage
