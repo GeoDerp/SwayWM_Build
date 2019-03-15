@@ -1,4 +1,4 @@
-# Fedora/OpenSuse Sway Build
+# Fedora/openSUSE Sway Build
 
 
 ***Rice Name:*** **Redflower**
@@ -13,18 +13,18 @@ The main goal for this was to crate a simple automation method for installing sw
 
 ## how to use install script
 
-Before you start the install make sure you have a clean install of fedora and openSUSE_Tumbleweed workstation (feel free to try other versions but I am not 100% sure it will work).
+Before you start the install make sure you have a clean install of [fedora workstation](https://getfedora.org/en/workstation/) and/or [openSUSE_Tumbleweed](https://software.opensuse.org/distributions/tumbleweed)  (feel free to try other versions but I am not 100% sure it will work).
 And have git installed, if you haven't, just put ```sudo dnf install git -y``` in the terminal before using command below. 
 
 In Terminal type:
 ```console
 cd ~/
-git clone https://github.com/GeoDerp/Sway_WM_Build.git
+git clone https://github.com/GeoDerp/SwayWM_Build.git
 cd "SwayWM_Build"
 sudo chmod +x "SwayInstallScript"
 ./SwayInstallScript
 ```
-*(If you want the source builds and not the rpm's use ```BuildSwayInstallScript``` , This May Not Work On OpenSuse [haven't tested]).*  
+*(If you want the source builds and not the rpm's use ```BuildSwayInstallScript``` , This May Not Work On openSUSE [haven't tested]).*  
 **Rpm packages** = [openbuildservice](https://build.opensuse.org/project/show/home:GeoDerp:redflower) 
 
 ### GTK Theme
