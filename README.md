@@ -19,10 +19,10 @@ And have git installed, if you haven't, just put ```sudo dnf install git -y``` i
 In Terminal type:
 ```console
 cd ~/
-git clone https://github.com/GeoDerp/Fedora-Sway-WM-Build-.git
+git clone https://github.com/GeoDerp/Sway_WM_Build.git
 cd "Fedora-Sway-WM-Build-"
-sudo chmod +x "FedoraSwayInstallScript"
-./FedoraSwayInstallScript
+sudo chmod +x "SwayInstallScript"
+./SwayInstallScript
 ```
 *(If you want the source builds and not the rpm's use ```BuildFedoraSwayInstallScript```).*  
 **Rpm packages** = [openbuildservice](https://build.opensuse.org/project/show/home:GeoDerp:redflower) 
