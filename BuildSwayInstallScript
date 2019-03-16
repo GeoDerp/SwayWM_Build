@@ -1,13 +1,13 @@
 #!/bin/bash
 ###Fedora/OpenSUSE Sway Build + Redflower rice
+
 #finding OS
 . /etc/os-release
-if [$NAME = "Fedora"*]; then
-   dnf=ins
-if [$NAME = "OpenSUSE"*]; then
-   zypper=ins
-else
-  echo "can't find distro name"
+if [[ $NAME = Fedora* ]]
+then ins=dnf
+elif  [[ $NAME = OpenSUSE* ]]
+then ins=zypper
+else echo "can't find distro name"
 fi
 
 echo Initial stuff
