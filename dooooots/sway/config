@@ -92,6 +92,9 @@ output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
     #Run Atom
     bindsym $mod+$alt+a exec atom-beta
 
+    #Run keepassxc
+    bindsym $mod+$alt+p exec keepassxc
+
 # Moving around:
 #
     # Move your focus around
