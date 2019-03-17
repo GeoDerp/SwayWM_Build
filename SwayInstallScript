@@ -21,7 +21,7 @@ read -n1 -p "Type [1,2,3 or 4]" Choice
 
 if [[ $Choice = 1 ]] || [[ $Choice = 2 ]] || [[ $Choice = 3 ]]
 then {
-echo "Stage 1"
+echo "Base packages (Stage 1)"
 echo "Initial stuff"
 sudo $ins update -y
 
@@ -54,7 +54,7 @@ fi
 
 if [[ $Choice = 2 ]] || [[ $Choice = 4 ]] || [[ $Choice = 3 ]]
 then {
-echo "Stage 2"
+echo "Ricing (Stage 2)"
 echo "Installing kitty (terminal)"
   sudo $ins copr enable oleastre/kitty-terminal -y
   sudo $ins install kitty -y
@@ -144,6 +144,7 @@ if [[ $Choice = 3 ]]
 then {
 echo "Installing app's (Stage 3)"
 echo "apps: Atom, Spodify, Keepassxc, LibreOffice, nano, Google Chrome, Franz"
+#Flatpak's
   sudo $ins install flatpak -y
   sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 #Atom (Prefered IDE)
