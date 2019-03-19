@@ -26,7 +26,7 @@ sudo chmod +x "SwayInstallScript"
 ```
 *(If you want the source builds and not the rpm's use ```BuildSwayInstallScript``` , This May Not Work On openSUSE [haven't tested]).*  
 
-#### Rpm packages:
+### Rpm packages:
 [**OpenBuildService**](https://build.opensuse.org/project/show/home:GeoDerp:redflower)   
 *Packages include: sway, wlroots, wlstream, swaylock, swayidle, waybar, grim, wayland*
 
