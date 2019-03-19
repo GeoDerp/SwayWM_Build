@@ -25,7 +25,10 @@ sudo chmod +x "SwayInstallScript"
 ./SwayInstallScript
 ```
 *(If you want the source builds and not the rpm's use ```BuildSwayInstallScript``` , This May Not Work On openSUSE [haven't tested]).*  
-**Rpm packages** = [openbuildservice](https://build.opensuse.org/project/show/home:GeoDerp:redflower) *(sway, wlroots, wlstream, swaylock, swayidle, waybar, grim, wayland)*
+
+#### Rpm packages:
+[openbuildservice](https://build.opensuse.org/project/show/home:GeoDerp:redflower)   
+*Packages include: sway, wlroots, wlstream, swaylock, swayidle, waybar, grim, wayland*
 
 ### GTK Theme
 ***Theme***:
