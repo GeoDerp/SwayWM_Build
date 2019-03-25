@@ -13,7 +13,7 @@ fi
 
 #Figuring update command 
 if [[ $NAME = Fedora* ]]
-then upd="sudo dnf upadte -y"
+then upd="sudo dnf update -y"
 elif  [[ $NAME = "openSUSE Leap" ]]
 then upd="sudo zypper up -y"
 elif  [[ $NAME = "openSUSE Tumbleweed" ]]
