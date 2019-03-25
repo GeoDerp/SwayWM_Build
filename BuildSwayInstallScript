@@ -11,6 +11,16 @@ then ins=zypper
 else echo "can't find distro name"
 fi
 
+#Figuring update command 
+if [[ $NAME = Fedora* ]]
+then upd="sudo dnf upadte -y"
+elif  [[ $NAME = "openSUSE Leap" ]]
+then upd="sudo zypper up -y"
+elif  [[ $NAME = "openSUSE Tumbleweed" ]]
+then upd="sudo zypper dup -y"
+else echo "can't find distro name"
+fi
+
 echo -e "\e[1mHello, and welcome to the Sway Wm Intsall script\e[0m"
 echo -e "\e[93m------------------------------------------------------------------------------------------------------------\e[39m"
 echo -e "Type: \e[4m1\e[0m: If you only want to only install the \e[94mBase packages\e[39m (no rice)"
@@ -25,6 +35,9 @@ then {
 echo "Base packages (Stage 1)"
 echo "Initial stuff"
 sudo $ins update -y
+
+echo "Updating"
+$upd 
 
 ## Turning off unnessesery services
 ##(recommended for using fedora worstation on RaspberyPi )
@@ -246,6 +259,9 @@ echo "Apps: Atom, Spodify, Keepassxc, LibreOffice, nano, Google Chrome, Franz"
   sudo chmod a+x franz-5.0.0-beta.22-x86_64.AppImage
   ./franz-5.0.0-beta.22-x86_64.AppImage
   rm franz-5.0.0-beta.22-x86_64.AppImage
+
+echo "Updating"
+$upd 
 
 echo cleaning up
   ~/
