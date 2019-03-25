@@ -7,6 +7,16 @@ if [[ $NAME = Fedora* ]]
 then ins=dnf
 elif  [[ $NAME = openSUSE* ]]
 then ins=zypper
+else echo "can't find distro name, defulting to Fedora" && ins=dnf
+fi
+
+#Figuring update command 
+if [[ $NAME = Fedora* ]]
+then upd="sudo dnf upadte -y"
+elif  [[ $NAME = "openSUSE Leap" ]]
+then upd="sudo zypper up -y"
+elif  [[ $NAME = "openSUSE Tumbleweed" ]]
+then upd="sudo zypper dup -y"
 else echo "can't find distro name"
 fi
 
@@ -24,6 +34,9 @@ then {
 echo "Base packages (Stage 1)"
 echo "Initial stuff"
 sudo $ins update -y
+
+#Update
+$upd
 
 #Initial stuff
 gnome-shell-extension-tool -e user-theme
@@ -176,6 +189,9 @@ echo "Apps: Atom, Spodify, Keepassxc, LibreOffice, nano, Google Chrome, Franz"
   sudo chmod a+x franz-5.0.0-beta.22-x86_64.AppImage
   ./franz-5.0.0-beta.22-x86_64.AppImage
   rm franz-5.0.0-beta.22-x86_64.AppImage
+
+#Update
+$upd
 
 echo "finished, Have fun, Hopefully everything works :D (let me know if it doesn't)"
 echo "Now restarting"
