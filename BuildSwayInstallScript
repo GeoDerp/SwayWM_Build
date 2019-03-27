@@ -110,21 +110,6 @@ echo "Installing WayBar (for swaybar replacement) (unnessesery, could use swayba
   cd Waybar
   meson build
   ninja -C build install
-echo "Intsalling Albert, Rofi alternative (Aplication Launcher)"
-  sudo bash -c 'cat >> /etc/profile.d/albert.sh <<EOL
-  export QT_QPA_PLATFORM="xcb"
-  EOL'
-  source /etc/profile.d/albert.sh
-  cd ~/
-  mkdir Albert
-  cd Albert
-  sudo $ins install python3-devel qt5-qtx11extras-devel qt5-qtsvg-devel muParser-devel libqalculate-devel qt5-qtcharts-devel qt5-qtwayland-devel -y
-  git clone --recursive https://github.com/albertlauncher/albert.git
-  mkdir albert-build
-  cd albert-build
-  cmake ../albert -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Debug
-  make
-  sudo make install
 echo "Installing [font awesome] for WayBar"
   cd ~/
   git clone https://github.com/FortAwesome/Font-Awesome.git
@@ -142,6 +127,21 @@ fi
 if [[ $Choice = 2 ]] || [[ $Choice = 4 ]] || [[ $Choice = 3 ]]
 then {
 echo "Ricing (Stage 2)"
+echo "Intsalling Albert, Rofi alternative (Aplication Launcher)"
+  sudo bash -c 'cat >> /etc/profile.d/albert.sh <<EOL
+  export QT_QPA_PLATFORM="xcb"
+  EOL'
+  source /etc/profile.d/albert.sh
+  cd ~/
+  mkdir Albert
+  cd Albert
+  sudo $ins install python3-devel qt5-qtx11extras-devel qt5-qtsvg-devel muParser-devel libqalculate-devel qt5-qtcharts-devel qt5-qtwayland-devel -y
+  git clone --recursive https://github.com/albertlauncher/albert.git
+  mkdir albert-build
+  cd albert-build
+  cmake ../albert -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Debug
+  make
+  sudo make install
 echo "Installing kitty (terminal)"
   sudo $ins copr enable oleastre/kitty-terminal -y
   sudo $ins install kitty -y
