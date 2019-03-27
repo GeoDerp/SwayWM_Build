@@ -43,14 +43,10 @@ gnome-shell-extension-tool -e user-theme
 gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
 
 #Installing
-echo "Installing wlroots,sway,swaylock,swayidle,grim and waybar from rpm"
+echo "Installing wlroots,sway,swaylock,swayidle,wlstream,grim and waybar from rpm"
   sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
   sudo $ins config-manager --add-repo https://download.opensuse.org/repositories/home:GeoDerp:redflower/Fedora_29/home:GeoDerp:redflower.repo
   sudo $ins install wlroots sway swaylock swayidle grim waybar wlstream -y
-echo "Installing Albert Launcher"
-  sudo rpm --import https://build.opensuse.org/projects/home:manuelschneid3r/public_key
-  sudo $ins config-manager --add-repo https://download.opensuse.org/repositories/home:manuelschneid3r/Fedora_29/home:manuelschneid3r.repo
-  sudo $ins install albert -y
 echo "Installing [font awesome] for WayBar"
   cd ~/
   git clone https://github.com/FortAwesome/Font-Awesome.git
@@ -82,6 +78,8 @@ echo -e "Wallpaper.jpg being the \e[96mChristian\e[39m one and \e[95mBlank.jpg\e
 echo -e "\e[38;5;166m--------------------------------------------------------------------------------------------------------------------\e[39"
 echo -e "Feel free to go to the \e[4m~/Pictures/Wallpapers\e[0m dir to see the images for yourself."
 sleep 15
+echo "Installing Albert Launcher"
+  sudo $ins install albert -y
 echo "Implementing Rice for: GTK3, Sway, Gnome Icons, x-cursor, kitty, Albert, Waybar"
   cd ~/SwayWM_Build/Images
   mkdir ~/Pictures/Wallpapers/
