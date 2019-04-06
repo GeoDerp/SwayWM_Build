@@ -188,11 +188,21 @@ output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
   assign [class="Gimp-2.10"] $work8
   assign [class="mail"] $work5
   assign [class="Steam"] $work10
-  assign [class="HexChat"] $work5
+  assign [class="Hexchat"] $work5
   assign [class="Wine"] $work10
   assign [class="SCAP Workbench"] $work6
   assign [class="gradio"] $work4
   assign [class="crx_nckgahadagoaajjgafhacjanaoiihapd"] $work5
+  assign [class="gnome-documents"] $work9
+  assign [class="gnome-boxes"] $work9
+  assign [class="PCSX2"] $work10
+  assign [class="Games"] $work10
+  assign [class="gnome-software"] $work1
+  assign [class="RetroArch"] $work10
+  assign [class="rhythmbox"] $work4
+  assign [class="podcasts"] $work4 
+  assign [class="pulseaudio"] $work4
+  assign [class="krita"] $work8
   assign [class="gnome-boxes"] $work9
   for_window [class="(?i)albert"] floating enable
 
