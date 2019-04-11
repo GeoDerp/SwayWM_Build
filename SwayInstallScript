@@ -43,10 +43,10 @@ gnome-shell-extension-tool -e user-theme
 gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
 
 #Installing
-echo "Installing wlroots,sway,swaylock,swayidle,wlstream,grim and waybar from rpm"
+echo "Installing wlroots,sway,swaylock,swayidle,grim and waybar from rpm"
   sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
   sudo $ins config-manager --add-repo https://download.opensuse.org/repositories/home:GeoDerp:redflower/Fedora_29/home:GeoDerp:redflower.repo
-  sudo $ins install wlroots sway swaylock swayidle grim waybar wlstream -y
+  sudo $ins install wlroots sway swaylock swayidle grim waybar -y
 echo "Installing [font awesome] for WayBar"
   cd ~/
   git clone https://github.com/FortAwesome/Font-Awesome.git
@@ -58,6 +58,15 @@ echo "Installing [font awesome] for WayBar"
   gsettings set org.gnome.desktop.interface monospace-font-name "Monospace Regular 11"
   gsettings set org.gnome.desktop.interface document-font-name 'Century Gothic Regular 10'
   gsettings set org.gnome.desktop.interface font-name 'Century Gothic Regular 11'
+#wlstream (Records and streams fro wayland)
+#  installing ffmpeg for encoding/decoding 
+#  sudo $ins install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+#  sudo $ins install ffmpeg ffmpeg-devel -y
+#  cd ~/
+#  git clone https://github.com/atomnuker/wlstream.git
+#  cd wlstream
+#  meson build
+# ninja -C build install
 }
 fi
 
