@@ -1,5 +1,5 @@
 # List Of Things To Do
-Before I can call it finished
+### Before I can call it finished:
 
 - [ ] FIX OPEN SUSE [BUILD PACKAGES](https://build.opensuse.org/project/show/home:GeoDerp:redflower) 
 - [x] FIX ALBERT, [*Error.md*](https://github.com/GeoDerp/Fedora-Sway-WM-Build-/blob/master/AlbertErrors.md), [*Issue*](https://github.com/albertlauncher/albert/issues/768) 
@@ -8,19 +8,19 @@ Before I can call it finished
 - [ ] Load workspace script
 - [ ] Figure out Waybar's overlay button problem
 - [ ] Upgrade Install script, until my OCD has been met
-- [ ] Upgrade Waybar with plugins and custom modules (like weather)
+- [ ] Upgrade Waybar with plugins and custom modules *(like weather)*
 - [x] Make sure all font awesome icons work in install
 - [ ] Learn how to make a GDM theme, and maybe even a Grub
 - [ ] Make irssi config
-- [ ] Make Atom theme, upgrade UI and add plugins 
-- [ ] Upgrade Terminal and rice 
+- [ ] Make Atom theme, upgrade UI and add plugins *(If anyone would love to make one for his rice, that would be very much appreshiated.)*
+- [ ] Upgrade Terminal then rice 
 - [ ] Add Vim theme 
-- [ ] Make thumbnail/gif for readme.md 
-- [x] Turn Sway,wlroots,waybar,swaylock,swayidle build into a automated rpm to allow easy install,update and uninstall (mainly for updates). 
+- [ ] Make a propper thumbnail/gif for readme.md *(Feel free to send me a image for this if you have made one)*
+- [x] Turn Sway,wlroots,waybar,swaylock,swayidle build into a automated rpm to allow easy install,update and uninstall *(mainly for updates).* 
 *Might use something like (open build service)[https://openbuildservice.org/] to automate the process of pulling the latest version of the git repo + the spec file and auto compile into an rpm*
 [**Update:** [BUILD PACKAGES](https://build.opensuse.org/project/show/home:GeoDerp:redflower) ]
 - [x] Figure out issue with swaylock not acceptkng password [24/2/19](https://github.com/GeoDerp/Fedora-Sway-WM-Build-/commit/5db0a8b39b4cdc83d8a9ba77414aab04889958c1)
-- [ ] Publish on Reddit 
+- [ ] Publish on Reddit (**Update:** I have desided that I wont personally do this, but if any of you really like this rice feel free to post it on subreddits like [*nix](https://www.reddit.com/r/unixporn/) )
 - [ ] Add key bind in sway .config for wlstream
 - [ ] check out oomox and maybe implement it 
 
