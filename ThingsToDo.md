@@ -24,5 +24,6 @@
 - [ ] get wlstream working on OBS 
 - [ ] Add key bind in sway .config for wlstream
 - [ ] check out oomox and maybe implement it 
+- [ ] Implement teamsilver 
 
 ***If Anyone would like to help with any of these that would be gladly appreciated***
