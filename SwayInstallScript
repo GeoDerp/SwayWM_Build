@@ -50,14 +50,15 @@ gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.c
 
 #Installing
 echo "Installing ffmpeg (For sway)"
-  if [[ $NAME = Fedora* ]]
-  then dnf $ sudo dnf install \
-  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-  https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm && sudo dnf -y install ffmpeg-devel -y
+if [[ $NAME = Fedora* ]]
+  then 
+  sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y 
+  sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+  sudo dnf install ffmpeg-devel -y 
   elif  [[ $NAME = openSUSE* ]]
   then zypper ffmpeg install -y
   else echo "can't find distro name"
-  fi
+fi
 echo "Installing wlroots,sway,swaylock,swayidle,grim and waybar from rpm"
   sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
   sudo $ins config-manager --add-repo https://download.opensuse.org/repositories/home:GeoDerp:redflower/Fedora_29/home:GeoDerp:redflower.repo
