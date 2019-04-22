@@ -59,10 +59,10 @@ if [[ $NAME = Fedora* ]]
   then zypper ffmpeg install -y
   else echo "can't find distro name"
 fi
-echo "Installing wlroots,sway,swaylock,swayidle,grim and waybar from rpm"
+echo "Installing wlroots,sway,swaylock,swayidle,albert,grim and waybar from rpm"
   sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
   sudo $ins config-manager --add-repo https://download.opensuse.org/repositories/home:GeoDerp:redflower/Fedora_29/home:GeoDerp:redflower.repo
-  sudo $ins install wlroots sway swaylock swayidle grim waybar -y
+  sudo $ins install wlroots sway swaylock swayidle albert grim waybar -y
 echo "Installing [font awesome] for WayBar"
   cd ~/
   git clone https://github.com/FortAwesome/Font-Awesome.git
