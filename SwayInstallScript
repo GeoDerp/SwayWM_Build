@@ -20,6 +20,8 @@ then upd="sudo zypper dup -y"
 else echo "can't find distro name"
 fi
 
+echo ""
+echo ""
 echo -e "\e[1mHello, and welcome to the Sway Wm Intsall script\e[0m"
 echo -e "\e[93m------------------------------------------------------------------------------------------------------------\e[39m"
 echo -e "Type: \e[4m1\e[0m: If you only want to only install the \e[94mBase packages\e[39m (no rice)"
@@ -28,10 +30,14 @@ echo -e "Type: \e[4m3\e[0m, If you want \e[94mBase Packages\e[39m + \e[91mRice\e
 echo -e "Type: \e[4m4\e[0m, If you want only the \e[91mRice\e[39m (Would need base packages installed in some way)"
 echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
 read -n1 -p "Type [1,2,3 or 4]" Choice
+echo -e "\e[1mRunning Choice\e[0m: \e[5m$Choice\e[0;39m"
 
 if [[ $Choice = 1 ]] || [[ $Choice = 2 ]] || [[ $Choice = 3 ]]
 then {
-echo "Base packages (Stage 1)"
+echo ""
+echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
+echo -e "\e[1mBase packages:\e[0m \e[94m(Stage 1)\e[39m"
+echo ""
 echo "Initial stuff"
 sudo $ins update -y
 
@@ -72,7 +78,10 @@ fi
 
 if [[ $Choice = 2 ]] || [[ $Choice = 4 ]] || [[ $Choice = 3 ]]
 then {
-echo "Ricing (Stage 2)"
+echo ""
+echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
+echo -e "\e[1mRicing:\e[0m \e[91m(Stage 2)\e[39m"
+echo ""
 echo "Installing kitty (terminal)"
   sudo $ins copr enable oleastre/kitty-terminal -y
   sudo $ins install kitty -y
@@ -164,7 +173,10 @@ fi
 
 if [[ $Choice = 3 ]]
 then {
-echo "Installing app's (Stage 3)"
+echo ""
+echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
+echo -e "\e[1mInstalling app's:\e[0m \e[92m(Stage 3)\e[39m"
+echo ""
 echo "Apps: Atom, Spodify, Keepassxc, LibreOffice, nano, Google Chrome, Franz"
 #Flatpak's
   sudo $ins install flatpak -y
