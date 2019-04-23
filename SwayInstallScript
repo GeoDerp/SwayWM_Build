@@ -14,13 +14,13 @@ fi
 
 #configuring update command 
 if [[ $NAME = Fedora* ]]
-then upd="sudo dnf update -y" && os=$NAME+$VERSION_ID
+then upd="sudo dnf update -y" && os="$NAME"_"$VERSION_ID"
 elif [[ ! -z "$OSTREE_VERSION" ]] #For Silverteam 
-then upd='rpm-ostree upgrade -y' && os=$NAME+$VERSION_ID
+then upd='rpm-ostree upgrade -y' && os="$NAME"_"$VERSION_ID"
 elif  [[ $NAME = "openSUSE Leap" ]]
-then upd="sudo zypper up -y" && os=$NAME+$VERSION_ID
+then upd="sudo zypper up -y" && os="$NAME"_"$VERSION_ID"
 elif  [[ $NAME = "openSUSE Tumbleweed" ]]
-then upd="sudo zypper dup -y" && os=$NAME+$VERSION_ID
+then upd="sudo zypper dup -y" && os=$NAME
 else echo "can't find distro name"
 fi
 
