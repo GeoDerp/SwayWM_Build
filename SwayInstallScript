@@ -12,11 +12,11 @@ fi
 
 #configuring update command 
 if [[ $NAME = Fedora* ]]
-then upd="sudo dnf update -y"
+then upd="sudo dnf update -y" && os=$NAME+$VERSION_ID
 elif  [[ $NAME = "openSUSE Leap" ]]
-then upd="sudo zypper up -y"
+then upd="sudo zypper up -y" && os=$NAME+$VERSION_ID
 elif  [[ $NAME = "openSUSE Tumbleweed" ]]
-then upd="sudo zypper dup -y"
+then upd="sudo zypper dup -y" && os=$NAME+$VERSION_ID
 else echo "can't find distro name"
 fi
 
@@ -61,7 +61,7 @@ if [[ $NAME = Fedora* ]]
 fi
 echo "Installing wlroots,sway,swaylock,swayidle,albert,grim and waybar from rpm"
   sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
-  sudo $ins config-manager --add-repo https://download.opensuse.org/repositories/home:GeoDerp:redflower/Fedora_29/home:GeoDerp:redflower.repo
+  sudo $ins config-manager --add-repo "https://download.opensuse.org/repositories/home:GeoDerp:redflower/"$os"/home:GeoDerp:redflower.repo"
   sudo $ins install wlroots sway swaylock swayidle albert grim waybar -y
 echo "Installing [font awesome] for WayBar"
   cd ~/
