@@ -7,12 +7,16 @@ if [[ $NAME = Fedora* ]]
 then ins=dnf
 elif  [[ $NAME = openSUSE* ]]
 then ins=zypper
+elif [[ ! -z "$OSTREE_VERSION" ]] #For SilverBlue (SilverBlue may not work on ricing stage, haven't tested)
+then ins=rpm-ostree
 else echo "can't find distro name, defulting to Fedora" && ins=dnf
 fi
 
 #configuring update command 
 if [[ $NAME = Fedora* ]]
 then upd="sudo dnf update -y" && os=$NAME+$VERSION_ID
+elif [[ ! -z "$OSTREE_VERSION" ]] #For Silverteam 
+then upd='rpm-ostree upgrade -y' && os=$NAME+$VERSION_ID
 elif  [[ $NAME = "openSUSE Leap" ]]
 then upd="sudo zypper up -y" && os=$NAME+$VERSION_ID
 elif  [[ $NAME = "openSUSE Tumbleweed" ]]
@@ -50,14 +54,11 @@ gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.c
 
 #Installing
 echo "Installing ffmpeg (For sway)"
-if [[ $NAME = Fedora* ]]
+if [[ $NAME = Fedora* ]] || [[ ! -z "$OSTREE_VERSION" ]]
   then 
   sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y 
   sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
   sudo dnf install ffmpeg-devel -y 
-  elif  [[ $NAME = openSUSE* ]]
-  then zypper ffmpeg install -y
-  else echo "can't find distro name"
 fi
 echo "Installing wlroots,sway,swaylock,swayidle,albert,grim and waybar from rpm"
   sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
