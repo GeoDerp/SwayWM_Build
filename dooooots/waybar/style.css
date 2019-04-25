@@ -12,6 +12,19 @@ window#waybar {
     color: white;
 }
 
+window#waybar.hidded {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background: transparent;
+}
+window#waybar.solo {
+    background: #FFFFFF;
+}
+*/
+
 #workspaces button {
     padding: 0 5px;
     background: transparent;
@@ -29,7 +42,7 @@ window#waybar {
     border-bottom: 3px solid white;
 }
 
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
+#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
     padding: 0 10px;
     margin: 0 4px;
 }
@@ -55,7 +68,7 @@ window#waybar {
     }
 }
 
-#battery.warning:not(.charging) {
+#battery.critical:not(.charging) {
     background: #75854f;
     color: white;
     animation-name: blink;
@@ -65,12 +78,20 @@ window#waybar {
     animation-direction : alternate;
 }
 
+label:focus {
+    background-color: #000000;
+}
+
 #cpu {
     background: #75854f;
     color: white;
 }
 
 #memory {
+    background: #75854f;
+}
+
+#backlight {
     background: #75854f;
 }
 
@@ -92,6 +113,28 @@ window#waybar {
     color: white;
 }
 
+#custom-media {
+    background: #75854f;
+    color: white;
+}
+
+.custom-spotify {
+    background: #75854f;
+}
+
+.custom-vlc {
+    background: #75854f;
+}
+
+#temperature {
+    background: #75854f;
+}
+
+#temperature.critical {
+    background: #dd7c7e;
+}
+
+
 #custom-spotify {
     background: #75854f;
     color: white;
@@ -104,4 +147,30 @@ window#waybar {
 
 #tray {
     background-color: #75854f;
+}
+
+#idle_inhibitor {
+    background-color: #75854f;
+}
+
+#idle_inhibitor.activated {
+    background-color: #75854f;
+    color: white;
+}
+
+#mpd {
+    background: #75854f;
+    color: white;
+}
+
+#mpd.disconnected {
+    background: #dd7c7e;
+}
+
+#mpd.stopped {
+    background: #dd7c7e;
+}
+
+#mpd.paused {
+    background: #e8d988;
 }
