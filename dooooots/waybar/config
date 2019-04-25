@@ -68,11 +68,11 @@
         "format-alt": "{:%d-%m-%y}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}% ",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% "
     },
     "temperature": {
         // "thermal-zone": 2,
