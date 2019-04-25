@@ -11,7 +11,7 @@ then ins=zypper
 else echo "can't find distro name, defulting to Fedora" && ins=dnf
 fi
 
-#configuring update command 
+#configuring Update + OS veribles 
 if [[ $NAME = Fedora* ]]
 then upd="sudo dnf update -y"
 elif  [[ $NAME = "openSUSE Leap" ]]
@@ -98,7 +98,7 @@ echo "swaylock (sway native plugin)"
   meson build
   ninja -C build install
   sudo chmod a+s /usr/local/bin/swaylock
-  #making shore sway has login authentication
+  #making sure sway has login authentication
   sudo bash -c ' echo "auth include login" > /etc/pam.d/swaylock'
 echo "swayidle (sway native plugin)"
   cd ~/
