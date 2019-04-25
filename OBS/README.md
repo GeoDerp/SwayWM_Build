@@ -39,6 +39,7 @@ echo "Installing wlroots,sway,swaylock,swayidle,albert,grim and waybar from rpm"
   sudo $ins install wlroots sway swaylock swayidle albert grim waybar -y
   sudo $ins install fmt-devel -y
   #making sure swaylock has login authentication
+  sudo bash -c ' echo "auth include login" > /etc/pam.d/swaylock'
 
 
  ```
