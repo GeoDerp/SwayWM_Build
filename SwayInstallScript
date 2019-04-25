@@ -58,11 +58,15 @@ if [[ $NAME = Fedora* ]] || [[ ! -z "$OSTREE_VERSION" ]]
   then 
   sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y 
   sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+  dnf clean all
+  dnf deplist
   sudo dnf install ffmpeg-devel -y 
 fi
 echo "Installing wlroots,sway,swaylock,swayidle,albert,grim and waybar from rpm"
   sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
   sudo $ins config-manager --add-repo "https://download.opensuse.org/repositories/home:/GeoDerp:/redflower/"$os"/home:GeoDerp:redflower.repo"
+  $ins clean all
+  $ins deplist
   sudo $ins install wlroots sway swaylock swayidle albert grim waybar -y
   sudo $ins install fmt-devel -y
   #making sure swaylock has login authentication
