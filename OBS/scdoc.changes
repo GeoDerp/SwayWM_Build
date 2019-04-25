@@ -1,0 +1,16 @@
+-------------------------------------------------------------------
+Mon Mar  4 21:11:22 UTC 2019 - michael wheatley <wheatley.michael@protonmail.com>
+
+scdoc 1.9.4
+
+Drew DeVault (1):
+      Fix SOURCE_DATE_EPOCH test w/busybox date
+
+Jan Beich (1):
+      Drop install -D flag after acb0f64a7b73
+
+Michael Weiss (1):
+      Fix the "Ignores underscores in underlined words" test
+
+emersion (1):
+      Add a pkg-config template
