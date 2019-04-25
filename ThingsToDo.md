@@ -26,5 +26,6 @@
 - [ ] check out oomox and maybe implement it 
 - [x] Implement teamsilver (should work, haven't tested)
 - [ ] Find all the dependencies names verients from fedora for opensuse and implement an if opensuse install for [BuildSwayInstallScript Line:69]( https://github.com/GeoDerp/SwayWM_Build/blob/8636e9792867fc92c0ad39fa12368cb2b81edab7/BuildSwayInstallScript#L69)
+- [ ] check albert, not starting on boot problem 
 
 ***If Anyone would like to help with any of these that would be gladly appreciated***
