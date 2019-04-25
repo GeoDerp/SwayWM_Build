@@ -16,12 +16,12 @@ if [[ $NAME = Fedora* ]]
 then ins=dnf
 elif  [[ $NAME = openSUSE* ]]
 then ins=zypper
-elif [[ ! -z "$OSTREE_VERSION" ]] #For SilverBlue (SilverBlue may not work on ricing stage, haven't tested)
+elif [[ ! -z "$OSTREE_VERSION" ]] #For SilverBlue (SilverBlue may not work on riceing stage, haven't tested)
 then ins=rpm-ostree
-else echo "can't find distro name, defulting to Fedora" && ins=dnf
+else echo "can't find distro name, defaulting to Fedora" && ins=dnf
 fi
 
-#configuring update + os verible  
+#configuring os variable  
 if [[ $NAME = Fedora* ]]
 then os="$NAME"_"$VERSION_ID"
 elif [[ ! -z "$OSTREE_VERSION" ]] #For Silverteam 
