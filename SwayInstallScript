@@ -12,7 +12,7 @@ then ins=rpm-ostree
 else echo "can't find distro name, defulting to Fedora" && ins=dnf
 fi
 
-#configuring update command 
+#configuring Update + OS veribles  
 if [[ $NAME = Fedora* ]]
 then upd="sudo dnf update -y" && os="$NAME"_"$VERSION_ID"
 elif [[ ! -z "$OSTREE_VERSION" ]] #For Silverteam 
@@ -65,7 +65,7 @@ echo "Installing wlroots,sway,swaylock,swayidle,albert,grim and waybar from rpm"
   sudo $ins config-manager --add-repo "https://download.opensuse.org/repositories/home:/GeoDerp:/redflower/"$os"/home:GeoDerp:redflower.repo"
   sudo $ins install wlroots sway swaylock swayidle albert grim waybar -y
   sudo $ins install fmt-devel -y
-  #making shore swaylock has login authentication
+  #making sure swaylock has login authentication
   sudo bash -c ' echo "auth include login" > /etc/pam.d/swaylock'
 echo "Installing [font awesome] for WayBar"
   cd ~/
