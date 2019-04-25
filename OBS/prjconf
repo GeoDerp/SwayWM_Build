@@ -1,0 +1,57 @@
+%if 0%{?fedora_version}
+Substitute: libxml2-tools libxml2
+Substitute: libxslt-tools libxslt
+Substitute: ninja meson
+Substitute: libmp3lame-devel lame-libs 
+Substitute:	libgsm-devel gsm-devel
+Substitute:	libpixman-1-0-devel pixman-devel
+Substitute:	glibc-devel-static glibc-static
+%endif
+
+#From home:manuelschneid3r 
+%if 0%{?is_opensuse}
+Substitute: qt5-qtbase-devel libqt5-qtbase-devel
+Substitute: qt5-qtcharts-devel libQt5Charts5-devel
+Substitute: qt5-qtdeclarative-devel libqt5-qtdeclarative-devel
+Substitute: qt5-qtx11extras-devel libqt5-qtx11extras-devel
+Substitute: qt5-qtsvg-devel libqt5-qtsvg-devel
+#  Substitute: muParser libmuparser2_2_5
+Substitute: muParser-devel muparser-devel
+#  %if 0%{?sle_version} == "tumbleweed"  # openSUSE tumbleweed
+#  %endif
+#  %if 0%{?sle_version} == 120300  # openSUSE Leap 42.3
+#	Substitute: gcc-c++ gcc5-c++
+#  %endif
+#  %if 0%{?sle_version} == 120200  # openSUSE Leap 42.2
+#	Substitute: gcc-c++ gcc5-c++
+#    %ifarch i586
+#      Substitute: muParser-devel muparser-devel-32bit
+#    %endif
+#  %endif
+%endif
+
+#%if 0%{?mageia}
+#  Substitute: qt5-qtbase-devel qtbase5-common-devel
+#  Substitute: qt5-qtdeclarative-devel libqt5qml-devel
+#  Substitute: qt5-qtx11extras-devel libqt5x11extras-devel
+#  Substitute: qt5-qtsvg-devel libqt5svg-devel
+#  %ifarch x86_64
+#    Substitute: muParser-devel lib64muparser-devel
+#  %else
+#    Substitute: muParser-devel libmuparser-devel
+#  %endif
+#  Prefer: libproxy-pacrunner 
+#%endif
+
+#%if 0%{?centos_version}
+#  Substitute: python3-devel python34-devel
+#  Substitute: muParser-devel muparser-devel
+#%endif
+
+%if 0%{?arch_linux}
+  Prefer: virtualbox-host-modules-arch
+  Prefer: iptables
+%endif
+Prefer: Mesa-libGL1
+Macros:
+%with_wayland 1
