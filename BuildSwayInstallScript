@@ -149,9 +149,7 @@ echo -e "\e[93m-----------------------------------------------------------------
 echo -e "\e[1mRicing:\e[0m \e[91m(Stage 2)\e[39m"
 echo ""
 echo "Intsalling Albert, Rofi alternative (Aplication Launcher)"
-  sudo bash -c 'cat >> /etc/profile.d/albert.sh <<EOL
-  export QT_QPA_PLATFORM="xcb"
-  EOL'
+  sudo bash -c ' echo export QT_QPA_PLATFORM="xcb" >> /etc/profile.d/albert.sh'
   source /etc/profile.d/albert.sh
   cd ~/
   mkdir Albert
