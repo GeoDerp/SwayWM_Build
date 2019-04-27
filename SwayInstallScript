@@ -59,16 +59,18 @@ if [[ $NAME = Fedora* ]] || [[ ! -z "$OSTREE_VERSION" ]]
   sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y 
   sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
   dnf clean all
-  dnf deplist
+  dnf repolist
   sudo dnf install ffmpeg-devel -y 
 fi
 echo "Installing wlroots,sway,swaylock,swayidle,albert,grim and waybar from rpm"
   sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
   sudo $ins config-manager --add-repo "https://download.opensuse.org/repositories/home:/GeoDerp:/redflower/"$os"/home:GeoDerp:redflower.repo"
   $ins clean all
-  $ins deplist
-  sudo $ins install wlroots sway swaylock swayidle albert grim waybar -y
-  sudo $ins install fmt-devel -y
+  $ins repolist
+  sudo $ins install wlroots-devel celt fmt-devel sway swaylock swayidle albert grim waybar -y
+ #doing commands again (sometimes is buggy) , if still no intsall after finish run script manually (copy and past into terminal), from start up to the end of stage 1
+  sudo $ins config-manager --add-repo "https://download.opensuse.org/repositories/home:/GeoDerp:/redflower/"$os"/home:GeoDerp:redflower.repo"
+  sudo $ins install wlroots-devel celt fmt-devel sway swaylock swayidle albert grim waybar -y
   #making sure swaylock has login authentication
   sudo bash -c ' echo "auth include login" > /etc/pam.d/swaylock'
 echo "Installing [font awesome] for WayBar"
