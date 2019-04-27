@@ -74,7 +74,7 @@ echo "Installing wlroots,sway,swaylock,swayidle,albert,grim and waybar from rpm"
   #making sure swaylock has login authentication
   sudo bash -c ' echo "auth include login" > /etc/pam.d/swaylock'
   # since albert only works in xwayland for the time being we have to tell it to run in xwayland and not wayland 
-  sudo nano /etc/profile.d/albert.sh 
+  sudo bash -c ' echo export QT_QPA_PLATFORM="xcb" >> /etc/profile.d/albert.sh'
   source /etc/profile.d/albert.sh
 echo "Installing [font awesome] for WayBar"
   cd ~/
