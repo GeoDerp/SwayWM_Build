@@ -280,11 +280,7 @@ echo "Apps: Atom, Spodify, Keepassxc, LibreOffice, nano, Google Chrome, Franz"
   sudo $ins config-manager --set-enabled google-chrome
   sudo $ins install google-chrome-beta -y
 ##franz (Multi Messaging Aplication)
-  cd ~/
-  sudo wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.22/franz-5.0.0-beta.22-x86_64.AppImage
-  sudo chmod a+x franz-5.0.0-beta.22-x86_64.AppImage
-  ./franz-5.0.0-beta.22-x86_64.AppImage
-  rm franz-5.0.0-beta.22-x86_64.AppImage
+  flatpak install flathub com.meetfranz.Franz
 
 echo "Updating"
 $upd 
