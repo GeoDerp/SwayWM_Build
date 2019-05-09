@@ -86,15 +86,14 @@ echo "Installing [font awesome] for WayBar"
   gsettings set org.gnome.desktop.interface monospace-font-name "Monospace Regular 11"
   gsettings set org.gnome.desktop.interface document-font-name 'Century Gothic Regular 10'
   gsettings set org.gnome.desktop.interface font-name 'Century Gothic Regular 11'
-#wlstream (Records and streams fro wayland)
+#wf-recorder (Records and streams for wayland)
 #  installing ffmpeg for encoding/decoding 
 #  sudo $ins install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 #  sudo $ins install ffmpeg ffmpeg-devel -y
 #  cd ~/
-#  git clone https://github.com/atomnuker/wlstream.git
-#  cd wlstream
-#  meson build
-# ninja -C build install
+# git clone https://github.com/ammen99/wf-recorder && cd wf-recorder
+#  meson build --prefix=/usr --buildtype=release
+#  ninja -C build
 }
 fi
 
