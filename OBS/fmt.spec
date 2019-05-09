@@ -24,7 +24,7 @@ Summary:        A formatting library for C++
 License:        BSD-2-Clause
 Group:          Development/Libraries/C and C++
 URL:            http://fmtlib.net/
-Source0:        https://github.com/fmtlib/fmt/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 Source1:        baselibs.conf
 Patch0:         0001-install-pkg-config-file-into-libdir.patch
 BuildRequires:  cmake

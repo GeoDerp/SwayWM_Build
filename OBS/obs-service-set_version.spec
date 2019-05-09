@@ -40,7 +40,7 @@ BuildRequires:  python3-flake8
 Recommends:     python3-packaging
 Requires:       python3-base
 %else
-Recommends:     python-packaging
+Recommends:     python3-packaging
 %endif
 %endif
 Requires:       sed
@@ -57,13 +57,17 @@ a given version or to the existing files.
 %setup -q
 
 %build
-%if 0%{?suse_version} > 1315
-sed -i -e "1 s,#!/usr/bin/python$,#!/usr/bin/python3," set_version
-%endif
+#%if 0%{?suse_version} > 1315
+#sed -i -e "1 s,#!/usr/bin/python$,#!/usr/bin/python3," set_version
+#%endif
 
-%if 0%{?is_Fedora_Rawhide} 
-sed -i -e "1 s,!/usr/bin/python$,!/usr/bin/python3," set_version
-%endif
+#%if 0%{?is_Fedora_Rawhide} 
+#sed -i -e "1 s,#!/usr/bin/python$,#!/usr/bin/python3," set_version
+#%endif
+
+#%if 0%{?is_Fedora_30} 
+#sed -i -e ""1 s,#!/usr/bin/python$,#!/usr/bin/python3," set_version
+#%endif
 
 %if %{with obs_scm_testsuite}
 %check

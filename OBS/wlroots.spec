@@ -42,7 +42,6 @@ BuildRequires:  meson >= 0.48.0
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(egl)
 BuildRequires:  pkgconfig(gbm) >= 17.1.0
-BuildRequires:  pkgconfig(glesv2)
 BuildRequires:  pkgconfig(libdrm) >= 2.4.95
 BuildRequires:  pkgconfig(libinput) >= 1.7.0
 BuildRequires:  pkgconfig(libudev)
@@ -63,6 +62,7 @@ BuildRequires:  pkgconfig(libsystemd)
 %if %{with elogind}
 BuildRequires:  pkgconfig(libelogind)
 %endif
+BuildRequires:  pkgconfig(glesv2)
 %if %{with x11_backend} || %{with xwayland}
 BuildRequires:  pkgconfig(x11-xcb)
 BuildRequires:  pkgconfig(xcb)
@@ -83,16 +83,16 @@ Pluggable, composable modules for building a Wayland compositor.
 %package devel
 Summary:        Modular Wayland compositor library
 Group:          Development/Libraries/C and C++
-Requires:       libwlroots2 = %{version}
+Requires:       libwlroots3 = %{version}
 
 %description devel
 Pluggable, composable modules for building a Wayland compositor.
 
-%package -n libwlroots2
+%package -n libwlroots3
 Summary:        Modular Wayland compositor library
 Group:          System/Libraries
 
-%description -n libwlroots2
+%description -n libwlroots3
 Pluggable, composable modules for building a Wayland compositor.
 
 %prep
@@ -130,8 +130,8 @@ export CFLAGS="%{optflags} -I/usr/include/wayland -Wno-redundant-decls"
 %install
 %meson_install
 
-%post   -n libwlroots2 -p /sbin/ldconfig
-%postun -n libwlroots2 -p /sbin/ldconfig
+%post   -n libwlroots3 -p /sbin/ldconfig
+%postun -n libwlroots3 -p /sbin/ldconfig
 
 %files devel
 %license LICENSE
@@ -140,7 +140,7 @@ export CFLAGS="%{optflags} -I/usr/include/wayland -Wno-redundant-decls"
 %{_libdir}/pkgconfig/wlroots.pc
 %{_libdir}/libwlroots.so
 
-%files -n libwlroots2
+%files -n libwlroots3
 %{_libdir}/libwlroots.so.*
 
 %changelog

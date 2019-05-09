@@ -27,7 +27,6 @@ License:            MIT
 Group:              System/GUI/Other
 Url:                https://github.com/swaywm/sway
 Source0:            %{name}-%{version}.tar.xz
-##Patch0:             0001-Fix-size_t-temporary-underflow-in-log_loaded_themes.patch
 BuildRequires:      git
 BuildRequires:      meson >= 0.48.0
 BuildRequires:      scdoc >= 1.9.4
@@ -50,7 +49,7 @@ BuildRequires:      pkgconfig(wayland-cursor)
 BuildRequires:      pkgconfig(wayland-egl)
 BuildRequires:      pkgconfig(wayland-protocols) >= 1.14
 BuildRequires:      pkgconfig(wayland-server)
-BuildRequires:      pkgconfig(wlroots)
+BuildRequires:      wlroots-devel
 BuildRequires:      pkgconfig(xkbcommon)
 %if %{with xwayland}
 BuildRequires:      pkgconfig(xcb)
@@ -63,7 +62,7 @@ BuildRequires:      pkgconfig(libelogind) >= 239
 %endif
 
 Requires:           ImageMagick
-#Requires:           ffmpeg
+#Requires:          ffmpeg
 %if 0%{?suse_version}
 Recommends:         xorg-x11-server-wayland
 %endif

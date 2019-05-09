@@ -24,11 +24,7 @@
 %endif
 %endif
 %if 0%{?fedora_version} || 0%{?rhel_version} || 0%{?centos_version}
-%if 0%{?fedora_version} >= 27 || 0%{?rhel_version} >= 800 || 0%{?centos_version} >= 800
 %define locale_package glibc-langpack-en
-%else
-%define locale_package glibc-common
-%endif
 %endif
 
 %bcond_without obs_scm_testsuite
@@ -112,10 +108,17 @@ Summary:        Creates a tar archive from local directory
 Group:          Development/Tools/Building
 Requires:       obs-service-obs_scm-common = %version-%release
 Provides:       obs-service-tar_scm:/usr/lib/obs/service/tar.service
+<<<<<<< ./obs-service-tar_scm/obs-service-tar_scm.spec.mine
+#%if (0%{?fedora_version} && 0%{?fedora_version} < 26) || 0%{?centos} == 6 || 0%{?centos} == 7
+#BuildRequires:  %{use_python}-argparse
+#Requires:       %{use_python}-argparse
+#%endif
+=======
 %if (0%{?fedora_version} && 0%{?fedora_version} < 26) || 0%{?centos} == 6 || 0%{?centos} == 7
 BuildRequires:  python-argparse
 Requires:       python-argparse
 %endif
+>>>>>>> ./obs-service-tar_scm/obs-service-tar_scm.spec.r4d8ecde9869bdcdd47ccb04b7af8dd45
 
 %description -n obs-service-tar
 Creates a tar archive from local directory

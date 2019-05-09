@@ -23,8 +23,9 @@ Release:        0
 Summary:        Wayland protocols that adds functionality not available in the core protocol
 License:        MIT
 Group:          Development/Libraries/C and C++
-Url:            https://wayland.freedesktop.org/
-Source:         https://wayland.freedesktop.org/releases/%{name}-%{version}.tar.xz
+Url:            https://github.com/wayland-project/wayland-protocols
+Source0:		%{name}-%{version}.tar.xz
+Source1:        https://wayland.freedesktop.org/releases/%{name}-%{version}.tar.xz
 Source2:        https://wayland.freedesktop.org/releases/%{name}-%{version}.tar.xz.sig
 Source3:        %{name}.keyring
 BuildRequires:  pkgconfig
@@ -48,7 +49,7 @@ available in the Wayland core protocol. Such protocols either adds
 completely new functionality, or extends the functionality of some other
 protocol either in Wayland core, or some other protocol in
 wayland-protocols.
-
+  
 %prep
 %autosetup
 

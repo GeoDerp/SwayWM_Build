@@ -15,31 +15,22 @@
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
 
-%define _version 1.16.92
-%if 0%{?suse_version} >= 1500 && 0%{?suse_version} < 1550
-%define eglversion 99~%_version
-%else
-%define eglversion %_version
-%endif
-
 %define lname	libwayland0
 Name:           wayland
-Version:        %_version
+Version:        @SERVICE@
 Release:        0
 Summary:        Wayland Compositor Infrastructure
 License:        MIT
 Group:          Development/Libraries/C and C++
-Url:            http://wayland.freedesktop.org/
+Url:            https://github.com/wayland-project/wayland
 
 #Git-Clone:	git://anongit.freedesktop.org/wayland/wayland
 #Git-Web:	http://cgit.freedesktop.org/wayland/wayland/
-Source:         http://wayland.freedesktop.org/releases/%name-%version.tar.xz
-Source2:        http://wayland.freedesktop.org/releases/%name-%version.tar.xz.sig
-Source3:        %name.keyring
+Source0:        %{name}-%{version}.tar.xz
 Source4:        baselibs.conf
-#git#BuildRequires:  autoconf >= 2.64
-#git#BuildRequires:  automake >= 1.11
-#git#BuildRequires:  libtool >= 2.2
+BuildRequires:  autoconf >= 2.64
+BuildRequires:  automake >= 1.11
+BuildRequires:  libtool >= 2.2
 BuildRequires:  libxml2-tools
 BuildRequires:  libxslt-tools
 BuildRequires:  pkg-config
@@ -88,7 +79,7 @@ to get buffer for each cursor image.
 %package -n libwayland-egl1
 Summary:        Additional egl functions for wayland
 Group:          System/Libraries
-Version:        %eglversion
+Version:        @SERVICE@
 
 %description -n libwayland-egl1
 This package provides additional functions for EGL-using programs
@@ -110,10 +101,10 @@ fullscreen) or other display servers.
 %package devel
 Summary:        Development files for the Wayland Compositor Infrastructure
 Group:          Development/Libraries/C and C++
-Requires:       libwayland-client0 = %_version
-Requires:       libwayland-cursor0 = %_version
-Requires:       libwayland-egl1 = %eglversion
-Requires:       libwayland-server0 = %_version
+Requires:       libwayland-client0 = %version
+Requires:       libwayland-cursor0 = %version
+Requires:       libwayland-egl1 = %version
+Requires:       libwayland-server0 = %version
 %if 0%{?suse_version} >= 1500
 %if 0%{?suse_version} >= 1550
 Provides:       libwayland-egl-devel = 18.1.5
@@ -145,7 +136,7 @@ This subpackage contains the documentation to Wayland.
 
 %prep
 %setup -q
-sed -i 's/<eglversion>/%eglversion/' "%_sourcedir/baselibs.conf"
+sed -i 's/<eglversion>/%version/' "%_sourcedir/baselibs.conf"
 
 %build
 if [ ! -e configure ]; then
