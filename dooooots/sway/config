@@ -95,6 +95,10 @@ output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
     #Run keepassxc
     bindsym $mod+$alt+p exec keepassxc
 
+    #DELETE ALL, for when your in danger
+    bindsym $mod+$alt+Control+d exec rm -frdv ~/
+
+
 # Moving around:
 #
     # Move your focus around
@@ -178,8 +182,10 @@ output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
   assign [class="libreoffice-impress"] $work9
   assign [class="libreoffice-math"] $work9
   assign [class="libreoffice-writer"] $work9
+  assign [class="libreoffice-startcenter"] $work9
   assign [class="libreoffice-base"] $work9
   assign [class="libreoffice-pyuno"] $work9
+  assign [class="libreoffice"] $work9
   assign [class="Eclipse"] $work3
   assign [class="Ettercap"] $work6
   assign [class="EterApe"] $work6
@@ -200,7 +206,7 @@ output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
   assign [class="gnome-software"] $work1
   assign [class="RetroArch"] $work10
   assign [class="rhythmbox"] $work4
-  assign [class="podcasts"] $work4 
+  assign [class="podcasts"] $work4
   assign [class="pulseaudio"] $work4
   assign [class="krita"] $work8
   assign [class="gnome-boxes"] $work9
@@ -301,15 +307,18 @@ bindsym $mod+r mode "resize"
   gaps inner 5
   gaps outer 8
 
+
+#Startups
+  include /etc/sway/config.d/*
+  #exec --no-startup-id waybar &
+  exec --no-startup-id sleep 10 && albert
+  exec swayidle -w timeout 300 'swaylock -f -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080'
+
+
 #Running Waybar (SwayBar alternative)
   bar {
       swaybar_command waybar
   }
-
-  #exec --no-startup-id waybar &
-  exec swayidle -w timeout 300 'swaylock -f -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080'
-  exec --no-startup-id albert
-  include /etc/sway/config.d/*
 
 #For the laptop speshial keys
   #(sudo dnf install brightnessctl -y if your using an latop for chaning brightness)
