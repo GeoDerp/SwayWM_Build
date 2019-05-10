@@ -10,7 +10,7 @@ elif  [[ $NAME = openSUSE* ]]
 then ins=zypper
 elif [[ ! -z "$OSTREE_VERSION" ]] #For SilverBlue (SilverBlue may not work on riceing stage, haven't tested)
 then ins=rpm-ostree
-else echo "can't find distro name, defaulting to Fedora" && ins=dnf
+else echo "can't find distro name, defaulting to Fedora" && ins=zypper
 fi
 
 #configuring Update + OS veribles  
@@ -22,7 +22,7 @@ elif  [[ $NAME = "openSUSE Leap" ]]
 then upd="sudo zypper up -y" && os="$NAME"_"$VERSION_ID"
 elif  [[ $NAME = "openSUSE Tumbleweed" ]]
 then upd="sudo zypper dup -y" && os=$NAME
-else echo "can't find distro name"
+else echo "can't find distro name, assuming openSUSE" && upd="sudo zypper dup -y" && os=$NAME
 fi
 
 echo ""
@@ -56,14 +56,14 @@ $upd
 ##install Sway
 echo "Intsalling all dependencies"
   #ffmpeg
-  if [[ $NAME = Fedora* ]]
+  if [[ $NAME = Fedora* ]] || [[ ! -z "$OSTREE_VERSION" ]]
     then 
     sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y 
     sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
     sudo dnf install ffmpeg-devel -y 
     elif  [[ $NAME = openSUSE* ]]
     then zypper ffmpeg install -y
-    else sudo $ins install ffmpeg-devel -y
+    else echo "Can't find distro name, assuming has ffmpeg-devel dependencie" && sudo $ins install ffmpeg-devel -y
   fi
   #everything else 
   sudo $ins install cmake git gcc brightnessctl make xcb-util-xrm-devel xcb-util-image-devel.x86_64 xcb-util-cursor-devel.x86_64 xcb-util-renderutil-devel.x86_64 xcb-util-keysyms-devel.x86_64 xcb-util-wm-devel libxcb-devel ctags ffmpeg-devel ctags-etags meson mesa-dri-drivers ninja-build wayland-devel wayland-protocols-devel mesa-libEGL-devel mesa-libGLES-devel mesa-dri-drivers libdrm-devel libgbm-devel libxkbcommon-devel libudev-devel pixman-devel libinput-devel libevdev-devel systemd-devel cairo-devel libpcap-devel jsoncpp libinput rpm-build gnome-tweak-tool xcb-util-wm-devel libcap-devel libsigc++ sassc glib2-devel gtk-murrine-engine gtk2-engines kmix pulseaudio-libs-devel libdbusmenu-gtk3-devel clang-devel.x86_64 fmt-devel gtkmm30-devel jsoncpp-devel libpulse.so.0 libnl3-devel libdbusmenu-gtk3 gcc-c++ clang json-c-devel pam-devel pango-devel pcre-devel gdk-pixbuf2-devel -y
