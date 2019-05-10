@@ -9,7 +9,7 @@ elif  [[ $NAME = openSUSE* ]]
 then ins=zypper
 elif [[ ! -z "$OSTREE_VERSION" ]] #For SilverBlue (SilverBlue may not work on riceing stage, haven't tested)
 then ins=rpm-ostree
-else echo "can't find distro name, defaulting to Fedora" && ins=dnf
+else echo "can't find distro name, defaulting to Fedora" && ins=zypper
 fi
 
 #configuring Update + OS veribles  
@@ -21,7 +21,7 @@ elif  [[ $NAME = "openSUSE Leap" ]]
 then upd="sudo zypper up -y" && os="$NAME"_"$VERSION_ID"
 elif  [[ $NAME = "openSUSE Tumbleweed" ]]
 then upd="sudo zypper dup -y" && os=$NAME
-else echo "can't find distro name"
+else echo "can't find distro name, assuming openSUSE" && upd="sudo zypper dup -y" && os=$NAME
 fi
 
 echo ""
@@ -61,7 +61,7 @@ if [[ $NAME = Fedora* ]] || [[ ! -z "$OSTREE_VERSION" ]]
   dnf clean all
   dnf repolist
   sudo dnf install ffmpeg-devel -y 
-  else sudo $ins install ffmpeg-devel -y
+  else echo "Can't find distro name, assuming has ffmpeg-devel dependencie" && sudo $ins install ffmpeg-devel -y
 fi
 echo "Installing wlroots,sway,swaylock,swayidle,albert,grim and waybar from rpm"
   sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
