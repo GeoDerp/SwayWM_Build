@@ -61,6 +61,7 @@ if [[ $NAME = Fedora* ]] || [[ ! -z "$OSTREE_VERSION" ]]
   dnf clean all
   dnf repolist
   sudo dnf install ffmpeg-devel -y 
+  else sudo $ins install ffmpeg-devel -y
 fi
 echo "Installing wlroots,sway,swaylock,swayidle,albert,grim and waybar from rpm"
   sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
