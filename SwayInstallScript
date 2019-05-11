@@ -149,6 +149,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   gsettings set org.gnome.desktop.interface icon-theme RedFlower-Paper-Vimix
   gtk-update-icon-cache RedFlower-Paper-Vimix
 #cursor (x11 not wayland, might find a wayland verient down the line)
+  echo "this may come up with warnings"
   cd ~/
   sudo $ins install inkscape xorg-x11-apps -y
   git clone https://github.com/keeferrourke/capitaine-cursors.git
@@ -178,12 +179,6 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   cd  ~/SwayWM_Build/dooooots/Albert
   mkdir ~/.config/albert
   mv * ~/.config/albert/
-#sway (the wm)
-  echo "installing packages for special keys"
-  sudo $ins install brightnessctl pulseaudio -y
-  cd ~/SwayWM_Build/dooooots/sway
-  mkdir ~/.config/sway
-  mv * ~/.config/sway/
 #WayBar (the bar replacment for swaybar, wayland version of polybar for i3wm)
   cd ~/SwayWM_Build/dooooots/waybar
   mkdir ~/.config/waybar
@@ -193,6 +188,12 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   cd ~/SwayWM_Build/dooooots/AlbertTheme
   mkdir -p /home/geo/.local/share/albert/org.albert.frontend.widgetboxmodel/themes
   sudo mv * "/home/geo/.local/share/albert/org.albert.frontend.widgetboxmodel/themes/"
+#sway (the wm)
+  echo "installing packages for special keys"
+  sudo $ins install brightnessctl pulseaudio -y
+  cd ~/SwayWM_Build/dooooots/sway
+  mkdir ~/.config/sway
+  mv * ~/.config/sway/  
 echo "Finnished rice :D"
 }
 else exit
