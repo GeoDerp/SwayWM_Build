@@ -35,6 +35,8 @@ echo -e "Type: \e[4m3\e[0m, If you want \e[94mBase Packages\e[39m + \e[91mRice\e
 echo -e "Type: \e[4m4\e[0m, If you want only the \e[91mRice\e[39m (Would need base packages installed in some way)"
 echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
 read -n1 -p "Type [1,2,3 or 4]" Choice
+echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
+echo ""
 echo -e "\e[1mRunning Choice\e[0m: \e[5m$Choice\e[0;39m"
 
 if [[ $Choice = 1 ]] || [[ $Choice = 2 ]] || [[ $Choice = 3 ]]
