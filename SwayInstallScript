@@ -179,6 +179,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   cd  ~/SwayWM_Build/dooooots/Albert
   mkdir ~/.config/albert
   mv * ~/.config/albert/
+## WARNING, it may crash around about here, I have no idea why but it dose. If it dose run th rest of these commands by hand. You may need to change the $int variable to your os rpm.
 #WayBar (the bar replacment for swaybar, wayland version of polybar for i3wm)
   cd ~/SwayWM_Build/dooooots/waybar
   mkdir ~/.config/waybar
