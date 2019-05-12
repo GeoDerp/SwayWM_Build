@@ -38,8 +38,11 @@ echo "Installing wlroots,sway,swaylock,swayidle,albert,grim and waybar from rpm"
   sudo $ins config-manager --add-repo "https://download.opensuse.org/repositories/home:/GeoDerp:/redflower/"$os"/home:GeoDerp:redflower.repo"
   sudo $ins install wlroots sway swaylock swaybg swayidle albert grim waybar -y
   sudo $ins install fmt-devel -y
-  #making sure swaylock has login authentication
   sudo bash -c ' echo "auth include login" > /etc/pam.d/swaylock'
-
+  # since albert only works in xwayland for the time being we have to tell it to run in xwayland and not wayland 
+  sudo bash -c ' echo export QT_QPA_PLATFORM="xcb" >> /etc/profile.d/albert.sh'
+  #when we start up sway we will try to run albert in x11 and all the other QT programs in wayland
+  sudo bash -c ' echo export QT_QPA_PLATFORM="wayland" >> /etc/profile.d/qtwayland.sh'
+  source /etc/profile.d/albert.sh
 
  ```
