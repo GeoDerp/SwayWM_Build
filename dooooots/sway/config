@@ -314,7 +314,8 @@ bindsym $mod+r mode "resize"
 #Startups
   include /etc/sway/config.d/*
   #exec --no-startup-id waybar &
-  exec --no-startup-id sleep 10 && albert
+  exec sleep 10 && source /etc/profile.d/albert.sh && albert
+  exec source /etc/profile.d/qtwayland.sh 
   exec swayidle -w timeout 300 'swaylock -f -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080'
 
 
