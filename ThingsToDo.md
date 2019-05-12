@@ -29,4 +29,4 @@
 - [x] check albert, not starting on boot problem 
 - [ ] make and add Hexchat rice?!?!
 
-***If Anyone would like to help with any of these that would be gladly appreciated***
+***If Anyone would like to help with any of these, or have an idea on what to add to this list, feel free to let me know ,that would be gladly appreciated :)***
