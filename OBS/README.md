@@ -36,7 +36,7 @@ fi
 echo "Installing wlroots,sway,swaylock,swayidle,albert,grim and waybar from rpm"
   sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
   sudo $ins config-manager --add-repo "https://download.opensuse.org/repositories/home:/GeoDerp:/redflower/"$os"/home:GeoDerp:redflower.repo"
-  sudo $ins install wlroots sway swaylock swayidle albert grim waybar -y
+  sudo $ins install wlroots sway swaylock swaybg swayidle albert grim waybar -y
   sudo $ins install fmt-devel -y
   #making sure swaylock has login authentication
   sudo bash -c ' echo "auth include login" > /etc/pam.d/swaylock'
