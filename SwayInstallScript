@@ -65,15 +65,15 @@ if [[ $NAME = Fedora* ]] || [[ ! -z "$OSTREE_VERSION" ]]
   sudo dnf install ffmpeg-devel -y 
   else echo "Can't find distro name, assuming has ffmpeg-devel dependencie" && sudo $ins install ffmpeg-devel -y
 fi
-echo "Installing wlroots,sway,swaylock,swayidle,albert,grim and waybar from rpm"
+echo "Installing wlroots,sway,swaylock,swayidle,albert,swaybg,grim and waybar from rpm"
   sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
   sudo $ins config-manager --add-repo "https://download.opensuse.org/repositories/home:/GeoDerp:/redflower/"$os"/home:GeoDerp:redflower.repo"
   $ins clean all
   $ins repolist
-  sudo $ins install --enablerepo=home_GeoDerp_redflower wlroots-devel celt fmt-devel sway swaylock swayidle albert grim waybar -y
+  sudo $ins install --enablerepo=home_GeoDerp_redflower wlroots-devel celt fmt-devel sway swaylock swayidle albert grim waybar swaybg -y
  #doing commands again (sometimes is buggy) , if still no intsall after finish run script manually (copy and past into terminal), from start up to the end of stage 1
   sudo $ins config-manager --add-repo "https://download.opensuse.org/repositories/home:/GeoDerp:/redflower/"$os"/home:GeoDerp:redflower.repo"
-  sudo $ins install wlroots-devel celt fmt-devel sway swaylock swayidle albert grim waybar -y
+  sudo $ins install wlroots-devel celt fmt-devel sway swaylock swayidle albert grim waybar swaybg -y
   #making sure swaylock has login authentication
   sudo bash -c ' echo "auth include login" > /etc/pam.d/swaylock'
   # since albert only works in xwayland for the time being we have to tell it to run in xwayland and not wayland 
