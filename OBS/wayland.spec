@@ -15,7 +15,22 @@
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
 
+
+
+%if 0%{?fedora_version}
+%define lname	libwayland
+%define client libwayland-client
+%define cursor libwayland-cursor
+%define server libwayland-server
+%define egl libwayland-egl
+%else 
 %define lname	libwayland0
+%define client libwayland-client0
+%define cursor libwayland-cursor0
+%define server libwayland-server0
+%define egl libwayland-egl1
+%endif
+
 Name:           wayland
 Version:        @SERVICE@
 Release:        0
@@ -54,11 +69,11 @@ evdev input devices, an X application, or a wayland client itself.
 The clients can be traditional applications, X servers (rootless or
 fullscreen) or other display servers.
 
-%package -n libwayland-client0
+%package -n %{client}
 Summary:        Wayland core client library
 Group:          System/Libraries
 
-%description -n libwayland-client0
+%description -n %{client}
 Wayland is a protocol for a compositor to talk to its clients as well
 as a C library implementation of that protocol. The compositor can be
 a standalone display server running on Linux kernel modesetting and
@@ -66,31 +81,31 @@ evdev input devices, an X application, or a wayland client itself.
 The clients can be traditional applications, X servers (rootless or
 fullscreen) or other display servers.
 
-%package -n libwayland-cursor0
+%package -n %{cursor}
 Summary:        Wayland cursor library
 Group:          System/Libraries
 
-%description -n libwayland-cursor0
+%description -n %{cursor}
 The purpose of this library is to be the equivalent of libXcursor in
 the X world. This library is compatible with X cursor themes and
 loads them directly into an shm pool making it easy for the clients
 to get buffer for each cursor image.
 
-%package -n libwayland-egl1
+%package -n %{egl}
 Summary:        Additional egl functions for wayland
 Group:          System/Libraries
 Version:        @SERVICE@
 
-%description -n libwayland-egl1
+%description -n %{egl}
 This package provides additional functions for EGL-using programs
 that run within the Wayland framework. This allows for applications
 that need not run full-screen and cooperate with a compositor.
 
-%package -n libwayland-server0
+%package -n %{server}
 Summary:        Wayland core server library
 Group:          System/Libraries
 
-%description -n libwayland-server0
+%description -n %{server}
 Wayland is a protocol for a compositor to talk to its clients as well
 as a C library implementation of that protocol. The compositor can be
 a standalone display server running on Linux kernel modesetting and
@@ -101,17 +116,17 @@ fullscreen) or other display servers.
 %package devel
 Summary:        Development files for the Wayland Compositor Infrastructure
 Group:          Development/Libraries/C and C++
-Requires:       libwayland-client0 = %version
-Requires:       libwayland-cursor0 = %version
-Requires:       libwayland-egl1 = %version
-Requires:       libwayland-server0 = %version
+Requires:       %{client} = %version
+Requires:       %{cursor} = %version
+Requires:       %{egl} = %version
+Requires:       %{server} = %version
 %if 0%{?suse_version} >= 1500
 %if 0%{?suse_version} >= 1550
-Provides:       libwayland-egl-devel = 18.1.5
-Obsoletes:      libwayland-egl-devel < 18.1.5 
+Provides:       %{egl}-devel = 18.1.5
+Obsoletes:      %{egl}-devel < 18.1.5 
 %else
-Provides:       libwayland-egl-devel = 18.0.2
-Obsoletes:      libwayland-egl-devel < 18.0.2
+Provides:       %{egl}-devel = 18.0.2
+Obsoletes:      %{egl}-devel < 18.0.2
 %endif
 %endif
 
@@ -139,6 +154,7 @@ This subpackage contains the documentation to Wayland.
 sed -i 's/<eglversion>/%version/' "%_sourcedir/baselibs.conf"
 
 %build
+echo hashudhauauisdhasiuh %WthVersionNo
 if [ ! -e configure ]; then
 	autoreconf -fi
 fi
@@ -165,29 +181,29 @@ if ! make check V=1; then
 fi
 %endif
 
-%post   -n libwayland-client0 -p /sbin/ldconfig
-%postun -n libwayland-client0 -p /sbin/ldconfig
-%post   -n libwayland-cursor0 -p /sbin/ldconfig
-%postun -n libwayland-cursor0 -p /sbin/ldconfig
-%post   -n libwayland-egl1 -p /sbin/ldconfig
-%postun -n libwayland-egl1 -p /sbin/ldconfig
-%post   -n libwayland-server0 -p /sbin/ldconfig
-%postun -n libwayland-server0 -p /sbin/ldconfig
+%post   -n %{client} -p /sbin/ldconfig
+%postun -n %{client} -p /sbin/ldconfig
+%post   -n %{cursor} -p /sbin/ldconfig
+%postun -n %{cursor} -p /sbin/ldconfig
+%post   -n %{egl} -p /sbin/ldconfig
+%postun -n %{egl} -p /sbin/ldconfig
+%post   -n %{server} -p /sbin/ldconfig
+%postun -n %{server} -p /sbin/ldconfig
 
-%files -n libwayland-client0
+%files -n %{client}
 %defattr(-,root,root)
 %_libdir/libwayland-client.so.0*
 %doc COPYING
 
-%files -n libwayland-cursor0
+%files -n %{cursor}
 %defattr(-,root,root)
 %_libdir/libwayland-cursor.so.0*
 
-%files -n libwayland-egl1
+%files -n %{egl}
 %defattr(-,root,root)
 %_libdir/libwayland-egl.so.1*
 
-%files -n libwayland-server0
+%files -n %{server}
 %defattr(-,root,root)
 %_libdir/libwayland-server.so.0*
 
