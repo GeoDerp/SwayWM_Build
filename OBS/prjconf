@@ -6,7 +6,11 @@ Substitute: libmp3lame-devel lame-libs
 Substitute:	libgsm-devel gsm-devel
 Substitute:	libpixman-1-0-devel pixman-devel
 Substitute:	glibc-devel-static glibc-static
+Substitute: libwayland-server0 libwayland-server
+Substitute: libwayland-client0 libwayland-client
+Substitute: libwayland-cursor0 libwayland-cursor 
 %endif
+
 
 #From home:manuelschneid3r 
 %if 0%{?is_opensuse}
