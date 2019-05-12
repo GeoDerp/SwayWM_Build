@@ -68,7 +68,7 @@ echo "Intsalling all dependencies"
     else echo "Can't find distro name, assuming has ffmpeg-devel dependencie" && sudo $ins install ffmpeg-devel -y
   fi
   #everything else 
-  sudo $ins install cmake git gcc brightnessctl make xcb-util-xrm-devel xcb-util-image-devel.x86_64 xcb-util-cursor-devel.x86_64 xcb-util-renderutil-devel.x86_64 xcb-util-keysyms-devel.x86_64 xcb-util-wm-devel libxcb-devel ctags ffmpeg-devel ctags-etags meson mesa-dri-drivers ninja-build wayland-devel wayland-protocols-devel mesa-libEGL-devel mesa-libGLES-devel mesa-dri-drivers libdrm-devel libgbm-devel libxkbcommon-devel libudev-devel pixman-devel libinput-devel libevdev-devel systemd-devel cairo-devel libpcap-devel jsoncpp libinput rpm-build gnome-tweak-tool xcb-util-wm-devel libcap-devel libsigc++ sassc glib2-devel gtk-murrine-engine gtk2-engines kmix pulseaudio-libs-devel libdbusmenu-gtk3-devel clang-devel.x86_64 fmt-devel gtkmm30-devel jsoncpp-devel libpulse.so.0 libnl3-devel libdbusmenu-gtk3 gcc-c++ clang json-c-devel pam-devel pango-devel pcre-devel gdk-pixbuf2-devel -y
+  sudo $ins install cmake gdk-pixbuf2 git gcc brightnessctl make xcb-util-xrm-devel xcb-util-image-devel.x86_64 xcb-util-cursor-devel.x86_64 xcb-util-renderutil-devel.x86_64 xcb-util-keysyms-devel.x86_64 xcb-util-wm-devel libxcb-devel ctags ffmpeg-devel ctags-etags meson mesa-dri-drivers ninja-build wayland-devel wayland-protocols-devel mesa-libEGL-devel mesa-libGLES-devel mesa-dri-drivers libdrm-devel libgbm-devel libxkbcommon-devel libudev-devel pixman-devel libinput-devel libevdev-devel systemd-devel cairo-devel libpcap-devel jsoncpp libinput rpm-build gnome-tweak-tool xcb-util-wm-devel libcap-devel libsigc++ sassc glib2-devel gtk-murrine-engine gtk2-engines kmix pulseaudio-libs-devel libdbusmenu-gtk3-devel clang-devel.x86_64 fmt-devel gtkmm30-devel jsoncpp-devel libpulse.so.0 libnl3-devel libdbusmenu-gtk3 gcc-c++ clang json-c-devel pam-devel pango-devel pcre-devel gdk-pixbuf2-devel -y
 
 #Making sure the filesystem knows where all the .pc's are
 sudo bash -c 'cat >> /etc/profile.d/wlroots.sh <<EOL
@@ -157,6 +157,7 @@ echo -e "\e[1mRicing:\e[0m \e[91m(Stage 2)\e[39m"
 echo ""
 echo "Intsalling Albert, Rofi alternative (Aplication Launcher)"
   sudo bash -c ' echo export QT_QPA_PLATFORM="xcb" >> /etc/profile.d/albert.sh'
+  sudo bash -c ' echo export QT_QPA_PLATFORM="wayland" >> /etc/profile.d/qtwayland.sh'
   source /etc/profile.d/albert.sh
   cd ~/
   mkdir Albert
@@ -206,13 +207,14 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   gsettings set org.gnome.desktop.interface icon-theme RedFlower-Paper-Vimix
   gtk-update-icon-cache RedFlower-Paper-Vimix
 #cursor (x11 not wayland, might find a wayland verient down the line)
-  cd ~/
-  sudo $ins install inkscape xorg-x11-apps -y
-  git clone https://github.com/keeferrourke/capitaine-cursors.git
-  cd capitaine-cursors
-  chmod +x build.sh
-  ./build.sh
-  gsettings set org.gnome.desktop.interface cursor-theme 'la capitaine'
+# (I do think it works, but not as well as i will like, probilly will update in the future)
+#  cd ~/
+#  sudo $ins install inkscape xorg-x11-apps -y
+#  git clone https://github.com/keeferrourke/capitaine-cursors.git
+#  cd capitaine-cursors
+#  chmod +x build.sh
+#  ./build.sh
+#  gsettings set org.gnome.desktop.interface cursor-theme 'la capitaine'
 #GDM (Login screen)
   #cd ~/"SwayWM_Build"/dooooots/GTK3/GDM
   #comming soon (.....maby)
@@ -294,7 +296,7 @@ $upd
 
 echo cleaning up
   ~/
-  sudo rm -r capitaine-cursors swayidle sway swaylock grim Albert Font-Awesome Waybar wlroots wlstream
+  sudo rm -r capitaine-cursors swayidle sway swaylock swaybg grim Albert Font-Awesome Waybar wlroots wlstream
 
   echo "finished, Have fun, Hopefully everything works :D (let me know if it doesn't)"
   echo "Now restarting"
