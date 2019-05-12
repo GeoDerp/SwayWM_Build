@@ -149,14 +149,14 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   gsettings set org.gnome.desktop.interface icon-theme RedFlower-Paper-Vimix
   gtk-update-icon-cache RedFlower-Paper-Vimix
 #cursor (x11 not wayland, might find a wayland verient down the line)
-  echo "this may come up with warnings"
-  cd ~/
-  sudo $ins install inkscape xorg-x11-apps -y
-  git clone https://github.com/keeferrourke/capitaine-cursors.git
-  cd capitaine-cursors
-  chmod +x build.sh
-  ./build.sh
-  gsettings set org.gnome.desktop.interface cursor-theme 'la capitaine'
+#  echo "this may come up with warnings, I think it dose work but i'm not 100% confident, will probably upgrade to a different cursor down the track"
+#  cd ~/
+#  sudo $ins install inkscape xorg-x11-apps -y
+#  git clone https://github.com/keeferrourke/capitaine-cursors.git
+#  cd capitaine-cursors
+#  chmod +x build.sh
+#  ./build.sh
+#  gsettings set org.gnome.desktop.interface cursor-theme 'la capitaine'
 #GDM (Login screen)
   #cd ~/SwayWM_Build/dooooots/GTK3/GDM
   #comming soon (.....maby)
