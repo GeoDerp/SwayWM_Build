@@ -112,6 +112,13 @@ echo "swayidle (sway native plugin)"
   cd swayidle
   meson build
   ninja -C build install
+echo "swaybg (background setter)"  
+  cd ~/
+  git clone https://github.com/swaywm/swaybg.git
+  cd swaybg
+  meson build
+  ninja -C build
+  sudo ninja -C build install
 echo "grim (Grab images from a Wayland compositor)"
   cd ~/
   git clone https://github.com/emersion/grim.git
