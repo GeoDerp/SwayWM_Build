@@ -12,11 +12,12 @@ If you like to edit the image you can pull the image strait from github or downl
 
 
 ### Blank Wallpaper
-If you have installed the rice and have realised that you have the Christian variant as your sway wallpaper (and don't like it), **have no fear**, there is a **blank** version you can change to. 
+If you have installed the rice and have realised that you have the **Christian variant** as your sway wallpaper (and don't like it), **have no fear**, there is a **blank** version you can change to. 
 
 To do so, you just have to edit line 28 on the ~/.config/sway/config file using your favourite text editor:   
-  from : ```output * bg ~/Pictures/Wallpapers/Wallpaper.jpg``` stretch  
-  to: ```output * bg ~/Pictures/Wallpapers/Blank.jpg``` stretch  
+  from : ```output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch ```   
+  to: ```output * bg ~/Pictures/Wallpapers/Blank.jpg stretch  ``` 
+  or to: ```output * bg ~/Pictures/Wallpapers/blur.png stretch ```  
 Then do ```alt+shift+r``` to refresh sway and you done :)  
 
 
