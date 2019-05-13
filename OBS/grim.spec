@@ -31,6 +31,7 @@ BuildRequires:  pkgconfig(cairo)
 BuildRequires:  pkgconfig(libjpeg)
 BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(wayland-protocols) >= 1.14
+Requires:       xdg-user-dirs
 
 %description
 This tool can grab images from a Wayland compositor.
