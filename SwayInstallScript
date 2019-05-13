@@ -87,7 +87,8 @@ echo "Installing [font awesome] for WayBar"
   mkdir ~/.fonts
   mv ~/Font-Awesome/webfonts/*.ttf ~/.fonts/
   sudo rm -r ~/Font-Awesome # clean up 
-  sudo wget "https://github.com/ox-it/hidden-museum/raw/master/fonts/Century%20Gothic.ttf" ~/.fonts/
+  cd ~/.fonts
+  wget "https://github.com/ox-it/hidden-museum/raw/master/fonts/Century%20Gothic.ttf" ~/.fonts/
   gsettings set org.gnome.desktop.interface monospace-font-name "Monospace Regular 11"
   gsettings set org.gnome.desktop.interface document-font-name 'Century Gothic Regular 10'
   gsettings set org.gnome.desktop.interface font-name 'Century Gothic Regular 11'
