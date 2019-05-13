@@ -24,7 +24,7 @@ set $menu --no-startup-id albert show
 
 ### Output configuration
 #
-# For Non-christian Wallpaper change Wallpaper.jpg to Blank.jpg
+# For Non-christian Wallpaper change Wallpaper.jpg to Blank.jpg or blur.png
 output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
 #
 # Example configuration (my configuration):
