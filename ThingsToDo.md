@@ -20,7 +20,7 @@
 *Might use something like (open build service)[https://openbuildservice.org/] to automate the process of pulling the latest version of the git repo + the spec file and auto compile into an rpm*
 [**Update:** [BUILD PACKAGES](https://build.opensuse.org/project/show/home:GeoDerp:redflower) ]
 - [x] Figure out issue with swaylock not acceptkng password [24/2/19](https://github.com/GeoDerp/Fedora-Sway-WM-Build-/commit/5db0a8b39b4cdc83d8a9ba77414aab04889958c1)
-- [ ] Publish on Reddit (**Update:** I have desided that I wont personally do this, but if any of you really like this rice feel free to post it on subreddits like [*nix](https://www.reddit.com/r/unixporn/) )
+- [x] Publish on Reddit [The post](https://www.reddit.com/r/unixporn/comments/bo4va6/sway_fedora_30_redflower/)
 - [ ] get wlstream working on OBS 
   - [ ] Add key bind in sway .config for wlstream
 - [ ] check out oomox and maybe implement it 
