@@ -28,7 +28,7 @@ sudo chmod +x "SwayInstallScript"
 
 ### Rpm packages:
 [**OpenBuildService**](https://build.opensuse.org/project/show/home:GeoDerp:redflower)   
-*Packages include: sway, wlroots, wlstream, swaylock, swaybg, swayidle, waybar, grim, wayland*
+*Packages include: sway, wlroots, swaylock, swaybg, swayidle, swaybg, waybar, grim, wayland*
 
 ### GTK Theme
 ***Theme***:
