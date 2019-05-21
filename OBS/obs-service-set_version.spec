@@ -1,7 +1,7 @@
 #
 # spec file for package obs-service-set_version
 #
-# Copyright (c) 2018 SUSE LINUX GmbH, Nuernberg, Germany.
+# Copyright (c) 2019 SUSE LINUX GmbH, Nuernberg, Germany.
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -16,12 +16,14 @@
 #
 
 
-%if 0%{?suse_version} > 1315
 %bcond_without obs_scm_testsuite
-%else
-%bcond_with obs_scm_testsuite
-%endif
 %define service set_version
+
+%if 0%{?suse_version} > 1315  || 0%{?fedora_version} 
+%define use_python python3
+%else
+%define use_python python
+%endif
 
 Name:           obs-service-%{service}
 Version:        0.5.11
@@ -31,21 +33,24 @@ License:        GPL-2.0-or-later
 Group:          Development/Tools/Building
 Url:            https://github.com/openSUSE/obs-service-%{service}
 Source:         %{name}-%{version}.tar.gz
-%if %{with obs_scm_testsuite}
-BuildRequires:  python3-ddt
-BuildRequires:  python3-flake8
-%endif
-%if 0%{?suse_version}
-%if 0%{?suse_version} > 1315
-Recommends:     python3-packaging
-Requires:       python3-base
-%else
-Recommends:     python3-packaging
-%endif
-%endif
-Requires:       sed
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
+
+%if %{with obs_scm_testsuite}
+BuildRequires:  %{use_python}-ddt
+BuildRequires:  %{use_python}-flake8
+BuildRequires:  %{use_python}-packaging
+%endif
+
+%if 0%{?suse_version}
+%if 0%{?suse_version} > 1315
+Requires:       python3-base
+%else
+Requires:       python
+%endif
+Recommends:     %{use_python}-packaging
+%endif
+
 
 %description
 This is a source service for openSUSE Build Service.
@@ -57,21 +62,11 @@ a given version or to the existing files.
 %setup -q
 
 %build
-#%if 0%{?suse_version} > 1315
-#sed -i -e "1 s,#!/usr/bin/python$,#!/usr/bin/python3," set_version
-#%endif
-
-#%if 0%{?is_Fedora_Rawhide} 
-#sed -i -e "1 s,#!/usr/bin/python$,#!/usr/bin/python3," set_version
-#%endif
-
-#%if 0%{?is_Fedora_30} 
-#sed -i -e ""1 s,#!/usr/bin/python$,#!/usr/bin/python3," set_version
-#%endif
+sed -i -e "1 s,#!/usr/bin/python$,#!/usr/bin/%{use_python}," set_version
 
 %if %{with obs_scm_testsuite}
 %check
-make test PYTHON=python3
+make test PYTHON=%{use_python}
 %endif
 
 %install
