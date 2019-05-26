@@ -98,7 +98,7 @@ output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
     bindsym $mod+$alt+p exec keepassxc
 
     #DELETE ALL, for when your in danger
-    bindsym $mod+$alt+Control+d exec rm -frdv ~/
+    bindsym $mod+$alt+Control+Delete exec rm -frdv ~/
 
 
 # Moving around:
