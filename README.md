@@ -1,7 +1,7 @@
 # Fedora/openSUSE Sway Build
 
 
-***Rice Name:*** **Redflower**
+***Default Rice Name:*** **Redflower**
 ![alt text](https://raw.githubusercontent.com/GeoDerp/Fedora-Sway-WM-Build-/master/Images/thumbnail3.png)
 
 Introducing my Fedora Workstation Sway WM Build with custom rice for WayBar, irssi, kitty, Albert, sway and GTK3.
