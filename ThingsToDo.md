@@ -27,5 +27,6 @@
 - [x] Find all the dependencies names verients from fedora for opensuse and implement an if opensuse install for [BuildSwayInstallScript Line:69]( https://github.com/GeoDerp/SwayWM_Build/blob/8636e9792867fc92c0ad39fa12368cb2b81edab7/BuildSwayInstallScript#L69)
 - [x] check albert, not starting on boot problem 
 - [ ] make and add Hexchat rice?!?!
+- [ ] BRINK BACK [wpgtk](https://github.com/deviantfero/wpgtk), for easy theme changing. Dont know how I will use it to change the GTK theme but should be able to customise everything else
 
 ***If Anyone would like to help with any of these, or have an idea on what to add to this list, feel free to let me know ,that would be gladly appreciated :)***
