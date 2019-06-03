@@ -28,5 +28,6 @@
 - [x] check albert, not starting on boot problem 
 - [ ] make and add Hexchat rice?!?!
 - [ ] BRINK BACK [wpgtk](https://github.com/deviantfero/wpgtk), for easy theme changing. Dont know how I will use it to change the GTK theme but should be able to customise everything else
+- [ ] Finish implementing fish and on-my-fish
 
 ***If Anyone would like to help with any of these, or have an idea on what to add to this list, feel free to let me know ,that would be gladly appreciated :)***
