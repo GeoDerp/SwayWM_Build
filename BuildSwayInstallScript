@@ -175,9 +175,10 @@ echo "Intsalling Albert, Rofi alternative (Aplication Launcher)"
   cmake ../albert -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Debug
   make
   sudo make install
-echo "Installing kitty (terminal)"
-  sudo $ins copr enable oleastre/kitty-terminal -y
+echo "Installing kitty (terminal with fish and oh-my-fish)"
   sudo $ins install kitty -y
+  sudo $ins install fish -y
+  curl -L https://get.oh-my.fish | fish
 #wallpaper images
 echo ""
 echo ""
