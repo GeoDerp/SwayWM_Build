@@ -54,7 +54,7 @@ output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
 # Basics:
 #
     # start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec $term -e fish 
 
     # kill focused window
     bindsym $mod+$alt+q kill
