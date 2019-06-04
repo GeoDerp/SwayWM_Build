@@ -9,6 +9,7 @@ font Driod Sans Regular 9
 # Logo key. Use Mod1 for Alt.
 set $mod Mod1
 set $alt shift
+set $alt2 Control
 
 # Home row direction keys, like vim
 set $left h
@@ -97,8 +98,11 @@ output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
     #Run keepassxc
     bindsym $mod+$alt+p exec keepassxc
 
+    #Run keepassxc
+    bindsym $mod+$alt2+f exec franz
+
     #DELETE ALL, for when your in danger
-    bindsym $mod+$alt+Control+Delete exec rm -frdv ~/
+    bindsym $mod+$alt+$alt2+Delete exec rm -frdv ~/
 
 
 # Moving around:
