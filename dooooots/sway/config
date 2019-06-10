@@ -216,6 +216,8 @@ output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
   assign [class="pulseaudio"] $work4
   assign [class="krita"] $work8
   assign [class="gnome-boxes"] $work9
+  assign [class="Lollypop"] $work4
+  assign [class="lollypop"] $work4  
   for_window [class="(?i)albert"] floating enable
 
 #
