@@ -111,6 +111,9 @@ echo ""
 echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
 echo -e "\e[1mRicing:\e[0m \e[91m(Stage 2)\e[39m"
 echo ""
+echo "Installing wpgtk (Wallpaper & Theme changer)"
+  sudo $ins install python3 feh -y
+  sudo pip3 install wpgtk
 echo "Installing kitty (terminal with fish and oh-my-fish)"
   sudo $ins install kitty -y
   sudo $ins install fish -y
@@ -177,6 +180,10 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   #mkdir ~/.irssi
   #mv * ~/.irssi/
   #config comming soon (maby)
+#wpg (Wallapaper theme changer)
+  cd ~/SwayWM_Build/dooooots/wpg
+  mkdir -p ~/.config/wpg
+  mv * ~/.config/wpg/
 #kitty (terminal)
   cd ~/SwayWM_Build/dooooots/kitty
   mkdir -p ~/.config/kitty
