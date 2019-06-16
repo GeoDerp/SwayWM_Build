@@ -163,7 +163,10 @@ echo -e "\e[1mRicing:\e[0m \e[91m(Stage 2)\e[39m"
 echo ""
 echo "Installing wpgtk (Wallpaper & Theme changer)"
   sudo $ins install python3 xsettingsd  feh -y
-  sudo pip3 install wpgtk
+  cd ~/
+  git clone https://github.com/deviantfero/wpgtk
+  cd wpgtk
+  sudo pip install .
 echo "Intsalling Albert, Rofi alternative (Aplication Launcher)"
   sudo bash -c ' echo export QT_QPA_PLATFORM="xcb" >> /etc/profile.d/albert.sh'
   sudo bash -c ' echo export QT_QPA_PLATFORM="wayland" >> /etc/profile.d/qtwayland.sh'
@@ -310,7 +313,7 @@ $upd
 
 echo cleaning up
   ~/
-  sudo rm -r capitaine-cursors swayidle sway swaylock wf-recorder swaybg grim Albert Font-Awesome Waybar wlroots 
+  sudo rm -r capitaine-cursors swayidle sway swaylock wf-recorder swaybg grim Albert Font-Awesome Waybar wlroots wpgtk
 
   echo "finished, Have fun, Hopefully everything works :D (let me know if it doesn't)"
   echo "Now restarting"
