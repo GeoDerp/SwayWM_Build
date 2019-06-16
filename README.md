@@ -48,7 +48,7 @@ Select the (load unpacked) button, find the (~/.themes/VimixRedFlower/Chrome The
 -->
 
 ### Easy Theme changing !!
-With the implementation of [wpgtk](https://github.com/deviantfero/wpgtk) by  [**@kdeviantfero**](https://github.com/deviantfero) you can use the command ``` wpg ``` to run the gui to change the wallpaper. wpgtk will then extract a colour scheme from the chosen image and change the systems theme colour (*Beside GTK unfortunately*).
+With the implementation of [wpgtk](https://github.com/deviantfero/wpgtk) by  [**@kdeviantfero**](https://github.com/deviantfero) all you have to do is change the wallpaper directory in the sway config and reset sway (ctrl+shift+r).
 
 ### Thank you to:
 
