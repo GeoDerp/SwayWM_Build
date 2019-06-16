@@ -161,6 +161,9 @@ echo ""
 echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
 echo -e "\e[1mRicing:\e[0m \e[91m(Stage 2)\e[39m"
 echo ""
+echo "Installing wpgtk (Wallpaper & Theme changer)"
+  sudo $ins install python3 feh -y
+  sudo pip3 install wpgtk
 echo "Intsalling Albert, Rofi alternative (Aplication Launcher)"
   sudo bash -c ' echo export QT_QPA_PLATFORM="xcb" >> /etc/profile.d/albert.sh'
   sudo bash -c ' echo export QT_QPA_PLATFORM="wayland" >> /etc/profile.d/qtwayland.sh'
@@ -258,6 +261,10 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   mkdir -p /home/geo/.local/share/albert/org.albert.frontend.widgetboxmodel/themes
   sudo mv * "/home/geo/.local/share/albert/org.albert.frontend.widgetboxmodel/themes/"
   echo "Finnished rice :D"
+ #wpg (Wallapaper theme changer)
+  cd ~/SwayWM_Build/dooooots/wpg
+  mkdir -p ~/.config/wpg
+  mv * ~/.config/wpg/  
   }
   else exit
   fi
