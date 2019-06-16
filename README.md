@@ -46,10 +46,10 @@ To use the Chrome theme;
 Open Chrome, put (chrome://extensions) in the url bar then click developer mode.
 Select the (load unpacked) button, find the (~/.themes/VimixRedFlower/Chrome Theme) directory and click open.
 -->
-<!--
+
 ### Easy Theme changing !!
 With the implementation of [wpgtk](https://github.com/deviantfero/wpgtk) by  [**@kdeviantfero**](https://github.com/deviantfero) you can use the command ``` wpg ``` to run the gui to change the wallpaper. wpgtk will then extract a colour scheme from the chosen image and change the systems theme colour (*Beside GTK unfortunately*).
--->
+
 ### Thank you to:
 
 * **[Alexays](https://github.com/Alexays) For helping me Debug WayBar**
