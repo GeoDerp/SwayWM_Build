@@ -10,9 +10,6 @@ font Driod Sans Regular 9
 set $mod Mod1
 set $alt shift
 
-#WALLPAPER: fir here to cahnge wallpaper
-set $wall /home/geo/Pictures/Wallpapers/Wallpaper.jpg
-
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -28,9 +25,7 @@ set $menu --no-startup-id albert show
 ### Output configuration
 #
 # For Non-christian Wallpaper change Wallpaper.jpg to Blank.jpg
-# output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
-#exec wpg -s /home/geo/Pictures/-5.jpg
-exec wpg -s $wall
+output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
 #
 # Example configuration (my configuration):
 #
@@ -44,12 +39,12 @@ output DVI-D-1 resolution 2560x1440 position 0,0
 #
 # Example configuration:
 #
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {{
 #       dwt enabled
 #       tap enabled
 #       natural_scroll enabled
 #       middle_emulation enabled
-#   }
+#   }}
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -78,7 +73,7 @@ output DVI-D-1 resolution 2560x1440 position 0,0
     floating_modifier $mod normal
 
     # reload the configuration file
-    bindsym $mod+$alt+r exec sway reload && wpg -s $wall
+    bindsym $mod+$alt+r reload
 
     # exit sway (logs you out of your wayland session)
     bindsym Mod4+$alt+l exit
@@ -105,8 +100,6 @@ output DVI-D-1 resolution 2560x1440 position 0,0
     #DELETE ALL, for when your in danger
     bindsym $mod+$alt+Control+d exec rm -frdv ~/
 
-    #Change Wallpaper to random saved wallpaper/colorscheme (To save an wallpaper, either use *wpg -a (dir to img)* or *wpg* to open up the GUI)
-    bindsym $mod+$alt+w exec wpg -m
 
 # Moving around:
 #
@@ -267,7 +260,7 @@ output DVI-D-1 resolution 2560x1440 position 0,0
 #
 # Resizing containers:
 #
-mode "resize" {
+mode "resize" {{
     # left will shrink the containers width
     # right will grow the containers width
     # up will shrink the containers height
@@ -286,25 +279,25 @@ mode "resize" {
     # return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
-}
+}}
 bindsym $mod+r mode "resize"
 
 #Window Colours
 
   #red
-  set $bg-color           #7d2d35
+  set $bg-color           {active}
   #other options #ae1324 #a33c3e #902b2d
   #green
-  #set $bg-color            #62723a
-  set $inactive-bg-color   #561f25
+  #set $bg-color            {}
+  set $inactive-bg-color   {inactive}
   #4c1315
   #other options #682123
-  set $text-color          #ffeaec
+  set $text-color          {color15}
   #other options #ffbfc8 #ffb2bd
-  set $inactive-text-color #ffeaec
+  set $inactive-text-color {color15}
   #other options #c47f81 #ba868d #e29a9c
-  set $urgent-bg-color     #ae1324
-  set $indicator-color     #4c1315
+  set $urgent-bg-color     {color2}
+  set $indicator-color     {color10}
   #other option #445c02
 
   # window config
@@ -322,23 +315,22 @@ bindsym $mod+r mode "resize"
 #Startups
   include /etc/sway/config.d/*
   #exec --no-startup-id waybar &
-  exec killall albert
   exec sleep 10 && source /etc/profile.d/albert.sh && albert
   exec source /etc/profile.d/qtwayland.sh
   exec swayidle -w timeout 300 'swaylock -f -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080'
 
 
 #Running Waybar (SwayBar alternative)
-  bar {
+  bar {{
       swaybar_command waybar
-  }
+  }}
 
 #For the laptop speshial keys
   #(sudo dnf install brightnessctl -y if your using an latop for chaning brightness)
   #(sudo dnf flameshot -y for the ability to screenshot, you would also need to mkdir )
-  bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
-  bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
-  bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+  bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{{print $3}}') +5%
+  bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{{print $3}}') -5%
+  bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{{print $3}}') toggle
   bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
   bindsym XF86MonBrightnessUp exec brightnessctl set +5%
   bindsym print exec grim $(xdg-user-dir PICTURES)/$(date +'%Y-%m-%d-%H%M%S_grim.png')

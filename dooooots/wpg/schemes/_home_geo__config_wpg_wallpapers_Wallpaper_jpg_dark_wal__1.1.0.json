@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/geo/.config/wpg/wallpapers/Wallpaper.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0E0719",
+        "foreground": "#ffeaec",
+        "cursor": "#ffeaec"
+    },
+    "colors": {
+        "color0": "#0E0719",
+        "color1": "#631719",
+        "color2": "#ae1324",
+        "color3": "#595828",
+        "color4": "#75854f",
+        "color5": "#b54a4c",
+        "color6": "#9D3943",
+        "color7": "#ffffff",
+        "color8": "#808079",
+        "color9": "#5F232E",
+        "color10": "#4c1315",
+        "color11": "#822324",
+        "color12": "#75854f",
+        "color13": "#62555A",
+        "color14": "#9D3943",
+        "color15": "#ffeaec"
+    }
+}

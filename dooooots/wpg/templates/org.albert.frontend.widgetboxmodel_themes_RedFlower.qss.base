@@ -1,0 +1,86 @@
+/*
+ *author: John Whately <https://github.com/GeoDerp>
+ *Using Manuel Schneider's "Spotlight Dark" config as a reference <https://github.com/ManuelSchneid3r>
+ *
+ */
+
+* {{
+    border: none;
+    color : {color15};
+    background-color: {color11};
+}}
+
+#frame {{
+    padding: 6px 0px;
+    border-radius: 8px;
+    background-color: {color11};
+    min-width:640px;
+    max-width:640px;
+}}
+
+#inputLine {{
+    padding: 0px 6px;
+    font-size: 36px "Century Gothic";
+    selection-color: {color10};
+    selection-background-color: {color11};
+    background-color: transparent;
+}}
+
+#settingsButton {{
+    margin: 6px 6px 0px 0px;
+    color: {color7};
+    background-color: transparent;
+    padding: 2px;
+    min-width:14px;
+    min-height:14px;
+    max-width:14px;
+    max-height:14px;
+}}
+
+/********** ListViews ************/
+
+QListView {{
+    background: {color2};
+    selection-color: {color7};
+}}
+
+QListView::item:selected {{
+    background: {color5};
+}}
+
+QListView QScrollBar:vertical  {{
+    width: 3px;
+    background: transparent;
+}}
+
+QListView QScrollBar::handle:vertical  {{
+    background: {color1};
+    border-radius: 1px;
+    min-height: 24px;
+}}
+
+QListView QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical,
+QListView QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical,
+QListView QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {{
+    border: 0px;
+    width: 0px;
+    height: 0px;
+    background: transparent;
+}}
+
+/********** resultsList **********/
+
+QListView#resultsList {{
+    icon-size: 40px;
+    font-size: 24px;
+}}
+
+QListView#resultsList::item{{
+    padding: 8px 0px 0px 0px;
+}}
+
+/********** actionList **********/
+
+QListView#actionList {{
+    font-size: 20px;
+}}

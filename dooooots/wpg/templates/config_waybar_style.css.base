@@ -1,0 +1,177 @@
+* {{
+    border: none;
+    border-radius: 0;
+    font-family: FontAwesome5Free, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}}
+
+window#waybar {{
+    background: rgba(43, 48, 59, 0.5);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    color: white;
+}}
+
+window#waybar.hidded {{
+    opacity: 0.2;
+}}
+
+/*
+window#waybar.empty {{
+    background: transparent;
+}}
+window#waybar.solo {{
+    background: #FFFFFF;
+}}
+*/
+
+#workspaces button {{
+    padding: 0 5px;
+    background: transparent;
+    color: white;
+    border-bottom: 3px solid transparent;
+}}
+
+#workspaces button.focused {{
+    background: {active};
+    border-bottom: 3px solid white;
+}}
+
+#mode {{
+    background: {active};
+    border-bottom: 3px solid white;
+}}
+
+#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {{
+    padding: 0 10px;
+    margin: 0 4px;
+}}
+
+#clock {{
+    background-color: {active};
+}}
+
+#battery {{
+    background-color: {active};
+    color: white;
+}}
+
+#battery.charging {{
+    color: white;
+    background-color: {active};
+}}
+
+@keyframes blink {{
+    to {{
+        background-color: {active};
+        color: white;
+    }}
+}}
+
+#battery.critical:not(.charging) {{
+    background: {active};
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction : alternate;
+}}
+
+label:focus {{
+    background-color: #000000;
+}}
+
+#cpu {{
+    background: {active};
+    color: white;
+}}
+
+#memory {{
+    background: {active};
+}}
+
+#backlight {{
+    background: {active};
+}}
+
+#network {{
+    background: {active};
+}}
+
+#network.disconnected {{
+    background: {color2};
+}}
+
+#pulseaudio {{
+    background: {active};
+    color: white;
+}}
+
+#pulseaudio.muted {{
+    background: {active};
+    color: white;
+}}
+
+#custom-media {{
+    background: {active};
+    color: white;
+}}
+
+.custom-spotify {{
+    background: {active};
+}}
+
+.custom-vlc {{
+    background: {active};
+}}
+
+#temperature {{
+    background: {active};
+}}
+
+#temperature.critical {{
+    background: {color2};
+}}
+
+
+#custom-spotify {{
+    background: {active};
+    color: white;
+}}
+
+#custom-weather{{
+    background: {active};
+    color: white;
+}}
+
+#tray {{
+    background-color: {active};
+}}
+
+#idle_inhibitor {{
+    background-color: {active};
+}}
+
+#idle_inhibitor.activated {{
+    background-color: {active};
+    color: white;
+}}
+
+#mpd {{
+    background: {active};
+    color: white;
+}}
+
+#mpd.disconnected {{
+    background: {color2};
+}}
+
+#mpd.stopped {{
+    background: {color2};
+}}
+
+#mpd.paused {{
+    background: #e8d988;
+}}
+ 
