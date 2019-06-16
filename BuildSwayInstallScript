@@ -261,8 +261,8 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
 #Albert (Aplication Launcher)
   #Installing albert RedFlower theme
   cd ~/"SwayWM_Build"/dooooots/AlbertTheme
-  mkdir -p /home/geo/.local/share/albert/org.albert.frontend.widgetboxmodel/themes
-  sudo mv * "/home/geo/.local/share/albert/org.albert.frontend.widgetboxmodel/themes/"
+  mkdir -p ~/.local/share/albert/org.albert.frontend.widgetboxmodel/themes
+  sudo mv * "~/.local/share/albert/org.albert.frontend.widgetboxmodel/themes/"
   echo "Finnished rice :D"
  #wpg (Wallapaper theme changer)
   cd ~/SwayWM_Build/dooooots/wpg
