@@ -184,6 +184,10 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   cd ~/SwayWM_Build/dooooots/wpg
   mkdir -p ~/.config/wpg
   mv * ~/.config/wpg/
+  # RE linking base files (if this dosn't work let me know and try manually)
+  wpg --link ~/.config/wpg/templates/org.albert.frontend.widgetboxmodel_themes_RedFlower.qss.base ~/.local/share/albert/org.albert.frontend.widgetboxmodel/themes/RedFlower.qss
+  wpg --link ~/.config/wpg/templates/config_waybar_style.css.base ~/.config/waybar/style.css
+  wpg --link ~/.config/wpg/templates/config_sway_config.base ~/.config/sway/config
 #kitty (terminal)
   cd ~/SwayWM_Build/dooooots/kitty
   mkdir -p ~/.config/kitty
