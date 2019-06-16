@@ -162,7 +162,7 @@ echo -e "\e[93m-----------------------------------------------------------------
 echo -e "\e[1mRicing:\e[0m \e[91m(Stage 2)\e[39m"
 echo ""
 echo "Installing wpgtk (Wallpaper & Theme changer)"
-  sudo $ins install python3 feh -y
+  sudo $ins install python3 xsettingsd  feh -y
   sudo pip3 install wpgtk
 echo "Intsalling Albert, Rofi alternative (Aplication Launcher)"
   sudo bash -c ' echo export QT_QPA_PLATFORM="xcb" >> /etc/profile.d/albert.sh'
