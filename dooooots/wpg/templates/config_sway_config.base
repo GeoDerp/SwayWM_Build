@@ -11,7 +11,7 @@ set $mod Mod1
 set $alt shift
 
 #WALLPAPER: fir here to cahnge wallpaper
-set $wall /home/geo/Pictures/image-asset.jpeg
+set $wall /home/geo/Pictures/Wallpapers/Wallpaper.jpg
 
 # Home row direction keys, like vim
 set $left h
@@ -28,9 +28,11 @@ set $menu --no-startup-id albert show
 ### Output configuration
 #
 # For Non-christian Wallpaper change Wallpaper.jpg to Blank.jpg
-# output * bg ~/Pictures/Wallpapers/Wallpaper.jpg stretch
-#exec wpg -s /home/geo/Pictures/-5.jpg
 exec wpg -s $wall
+
+# This is only needed if your wanting specific requirements for your wallpaper EX: stretch, fill, fit, center, tile
+output * bg $wall stretch
+
 #
 # Example configuration (my configuration):
 #
