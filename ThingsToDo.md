@@ -3,7 +3,7 @@
 
 - [x] FIX OPEN SUSE [BUILD PACKAGES](https://build.opensuse.org/project/show/home:GeoDerp:redflower) 
 - [x] FIX ALBERT, [*Error.md*](https://github.com/GeoDerp/Fedora-Sway-WM-Build-/blob/master/AlbertErrors.md), [*Issue*](https://github.com/albertlauncher/albert/issues/768) 
-[**Update:** it kinda works, it's using x not wayland and has a tendency to not run on startup (that may be an sway issue) ]
+[**Update:** it kinda works, it's using x not Wayland and has a tendency to not run on startup (that may be a sway issue)]
 - [x] Figure out bug with waybar, [*Error.md*](https://github.com/GeoDerp/Fedora-Sway-WM-Build-/blob/master/WaybarError.md), [*Issue*](https://github.com/Alexays/Waybar/issues/182) (Fixed here: [Fix](https://github.com/Alexays/Waybar/issues/182#issuecomment-486518315))
 - [ ] Load workspace script
 - [ ] Figure out Waybar's overlay button problem
@@ -11,11 +11,11 @@
 - [ ] Upgrade Waybar with plugins and custom modules *(like weather)*
 - [x] Make sure all font awesome icons work in install
 - [ ] Learn how to make a GDM theme, and maybe even a Grub
-- [ ] Make Atom theme, upgrade UI and add plugins *(If anyone would love to make one for his rice, that would be very much appreshiated.)*
+- [ ] Make Atom theme, upgrade UI and add plugins *(If anyone would love to make one for his rice, that would be very much appreciated.)*
 - [ ] Upgrade Terminal then rice 
 - [ ] Add Vim theme 
-- [x] Make a propper thumbnail/gif for readme.md *(Feel free to send me a image for this if you have made one)*
-- [x] Turn Sway,wlroots,waybar,swaylock,swayidle build into a automated rpm to allow easy install,update and uninstall *(mainly for updates).* 
+- [x] Make a proper thumbnail/gif for readme.md *(Feel free to send me an image for this if you have made one)*
+- [x] Turn Sway, wlroots,waybar, swaylock,swayidle build into an automated rpm to allow easy install, update and uninstall *(mainly for updates).* 
 *Might use something like (open build service)[https://openbuildservice.org/] to automate the process of pulling the latest version of the git repo + the spec file and auto compile into an rpm*
 [**Update:** [BUILD PACKAGES](https://build.opensuse.org/project/show/home:GeoDerp:redflower) ]
 - [x] Figure out issue with swaylock not acceptkng password [24/2/19](https://github.com/GeoDerp/Fedora-Sway-WM-Build-/commit/5db0a8b39b4cdc83d8a9ba77414aab04889958c1)
@@ -25,9 +25,11 @@
 - [ ] check out oomox and maybe implement it 
 - [x] Implement teamsilver (should work, haven't tested)
 - [x] Find all the dependencies names verients from fedora for opensuse and implement an if opensuse install for [BuildSwayInstallScript Line:69]( https://github.com/GeoDerp/SwayWM_Build/blob/8636e9792867fc92c0ad39fa12368cb2b81edab7/BuildSwayInstallScript#L69)
-- [x] check albert, not starting on boot problem 
+- [x] check Albert, not starting on boot problem 
 - [ ] make and add Hexchat rice?!?!
-- [ ] BRINK BACK [wpgtk](https://github.com/deviantfero/wpgtk), for easy theme changing. Dont know how I will use it to change the GTK theme but should be able to customise everything else
-- [ ] Finish implementing fish and on-my-fish
+- [x] BRINK BACK [wpgtk](https://github.com/deviantfero/wpgtk), for easy theme changing. Don't know how I will use it to change the GTK theme but should be able to customise everything else
+- [ ] Finish implementing fish, Terminology and Tackle Box 
+- [ ] implement wpgtk.vim
+- [ ] After making a dedicated Atom theme, implement wpgtk so it will auto change with the colour scheme (if possible)
 
-***If Anyone would like to help with any of these, or have an idea on what to add to this list, feel free to let me know ,that would be gladly appreciated :)***
+***If Anyone would like to help with any of these, or have an idea on what to add to this list, feel free to let me know, that would be gladly appreciated :grin:***
