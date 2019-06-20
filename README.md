@@ -58,6 +58,7 @@ Select the (load unpacked) button, find the (~/.themes/VimixRedFlower/Chrome The
 * **[Alexays](https://github.com/Alexays) For helping me Debug WayBar**
 * **[c-edw](https://github.com/c-edw) For Showing me a docker file to use as an reference**   
 * **[simotek](https://github.com/simotek) For Spending the time and debugging my code, for teaching me and helping maintain OBS**
+* **[**@kdeviantfero**](https://github.com/deviantfero) For helping me out with wpgtk**
 
 Sorry in advance for all the grammar and spelling mistakes.
 
