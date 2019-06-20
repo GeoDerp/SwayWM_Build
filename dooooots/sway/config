@@ -85,7 +85,7 @@ output DVI-D-1 resolution 2560x1440 position 0,0
 
     # exit sway (logs you out of your wayland session)
     bindsym Mod4+$alt+l exit
-    
+
     #Geo's normal lock
     bindsym Mod4+l exec swaylock -u -i $lock --scaling fill
     #bindsym Mod4+l exec swaylock -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080 dosnt work at the moment
@@ -294,12 +294,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #Window Colours
-  set $bg-color            #7d2d35		
-  set $inactive-bg-color   #561f25	
-  set $text-color          #ffeaec		
-  set $inactive-text-color #ffeaec		
-  set $urgent-bg-color     #ae1324	
-  set $indicator-color     #4c1315	
+  set $bg-color            #7d2d35
+  set $inactive-bg-color   #561f25
+  set $text-color          #ffeaec
+  set $inactive-text-color #ffeaec
+  set $urgent-bg-color     #ae1324
+  set $indicator-color     #4c1315
 
   # window config
   #                       border              background         text                 indicator        child_border
@@ -328,7 +328,6 @@ bindsym $mod+r mode "resize"
 
 #For the laptop speshial keys
   #(sudo dnf install brightnessctl -y if your using an latop for chaning brightness)
-  #(sudo dnf flameshot -y for the ability to screenshot, you would also need to mkdir )
   bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
   bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
   bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
