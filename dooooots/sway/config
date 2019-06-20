@@ -327,10 +327,10 @@ bindsym $mod+r mode "resize"
   }
 
 #For the laptop speshial keys
-  #(sudo dnf install brightnessctl -y if your using an latop for chaning brightness)
-  bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
-  bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
-  bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+  #(sudo dnf install brightnessctl -y if your using an laptop for chaning brightness)
+  bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{{print $3}}') +5%
+  bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{{print $3}}') -5%
+  bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{{print $3}}') toggle
   bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
   bindsym XF86MonBrightnessUp exec brightnessctl set +5%
   bindsym print exec grim $(xdg-user-dir PICTURES)/$(date +'%Y-%m-%d-%H%M%S_grim.png')
