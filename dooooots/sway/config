@@ -10,8 +10,9 @@ font Driod Sans Regular 9
 set $mod Mod1
 set $alt shift
 
-#WALLPAPER: fir here to cahnge wallpaper
-set $wall /home/geo/Pictures/Wallpapers/Wallpaper.jpg
+#WALLPAPER: for here to change wallpaper
+set $wall ~/Pictures/Wallpapers/Wallpaper.jpg
+set $lock ~/Pictures/Wallpapers/LoggedOut.jpg
 
 # Home row direction keys, like vim
 set $left h
@@ -84,9 +85,9 @@ output DVI-D-1 resolution 2560x1440 position 0,0
 
     # exit sway (logs you out of your wayland session)
     bindsym Mod4+$alt+l exit
-
+    
     #Geo's normal lock
-    bindsym Mod4+l exec swaylock -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill
+    bindsym Mod4+l exec swaylock -u -i $lock --scaling fill
     #bindsym Mod4+l exec swaylock -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080 dosnt work at the moment
 
 #
@@ -221,6 +222,7 @@ output DVI-D-1 resolution 2560x1440 position 0,0
   assign [class="pulseaudio"] $work4
   assign [class="krita"] $work8
   assign [class="gnome-boxes"] $work9
+  assign [class="terminology"] $work1
   for_window [class="(?i)albert"] floating enable
 
 #
@@ -292,22 +294,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #Window Colours
-
-  #red
-  set $bg-color           #7d2d35
-  #other options #ae1324 #a33c3e #902b2d
-  #green
-  #set $bg-color            #62723a
-  set $inactive-bg-color   #561f25
-  #4c1315
-  #other options #682123
-  set $text-color          #ffeaec
-  #other options #ffbfc8 #ffb2bd
-  set $inactive-text-color #ffeaec
-  #other options #c47f81 #ba868d #e29a9c
-  set $urgent-bg-color     #ae1324
-  set $indicator-color     #4c1315
-  #other option #445c02
+  set $bg-color            #7d2d35		
+  set $inactive-bg-color   #561f25	
+  set $text-color          #ffeaec		
+  set $inactive-text-color #ffeaec		
+  set $urgent-bg-color     #ae1324	
+  set $indicator-color     #4c1315	
 
   # window config
   #                       border              background         text                 indicator        child_border
@@ -327,8 +319,7 @@ bindsym $mod+r mode "resize"
   exec killall albert
   exec sleep 10 && source /etc/profile.d/albert.sh && albert
   exec source /etc/profile.d/qtwayland.sh
-  exec swayidle -w timeout 300 'swaylock -f -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -u -i ~/Pictures/Wallpapers/LoggedOut.jpg --scaling fill -c 0000080'
-
+  exec swayidle -w timeout 300 'swaylock -f -u -i $lock --scaling fill -c 0000080' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -u -i $lock --scaling fill -c 0000080'
 
 #Running Waybar (SwayBar alternative)
   bar {
