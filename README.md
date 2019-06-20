@@ -48,7 +48,10 @@ Select the (load unpacked) button, find the (~/.themes/VimixRedFlower/Chrome The
 -->
 
 ### Easy Theme changing !!
-With the implementation of [wpgtk](https://github.com/deviantfero/wpgtk) by  [**@kdeviantfero**](https://github.com/deviantfero) all you have to do is change the wallpaper directory in the sway config and reset sway (ctrl+shift+r).
+ - With the implementation of [wpgtk](https://github.com/deviantfero/wpgtk) by  [**@kdeviantfero**](https://github.com/deviantfero), all you have to do is change the wallpaper directory, $wall, in the sway config *(~/.config/sway)* and reset sway with *(ctrl+shift+r)*. The wallpaper will change, as well as all the theme colours from a generated colour pallet using the image as a reference.
+ - Alternatively you can import multiple images into the wpgtk database using the [**wpg**](https://github.com/deviantfero/wpgtk/wiki) command *(cli with ``wpg -a`` or gui ``wpg``)* and press *(ctrl+shift+w)* when ever you want to change to another wallpaper/theme.  
+ 
+ For more info, check out [**@kdeviantfero's**](https://github.com/deviantfero) youtube introductory video's: [playlist](https://www.youtube.com/watch?v=P3D0jtG6G2s&list=PL1wdmeKDuvmQ7Op-KTJQCAtAa75b9TlL3) 
 
 ### Thank you to:
 
