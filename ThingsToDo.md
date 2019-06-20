@@ -25,7 +25,7 @@
 - [x] Find all the dependencies names verients from fedora for opensuse and implement an if opensuse install for [BuildSwayInstallScript Line:69]( https://github.com/GeoDerp/SwayWM_Build/blob/8636e9792867fc92c0ad39fa12368cb2b81edab7/BuildSwayInstallScript#L69)
 - [x] check Albert, not starting on boot problem 
 - [ ] make and add Hexchat rice?!?! mabie with wpgtk?
-- [x] BRINK BACK [wpgtk](https://github.com/deviantfero/wpgtk), for easy theme changing. Don't know how I will use it to change the GTK theme but should be able to customise everything else
+- [x] BRING BACK [WPGTK](https://github.com/deviantfero/wpgtk), for easy theme changing. Don't know how I will use it to change the GTK theme but should be able to customise everything else
 - [ ] Finish implementing fish, Terminology and Tackle Box 
 - [x] implement wpgtk.vim
 - [ ] After making a dedicated Atom theme, implement wpgtk so it will auto change with the colour scheme (if possible)
