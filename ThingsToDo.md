@@ -29,5 +29,6 @@
 - [ ] Finish implementing fish, Terminology and Tackle Box 
 - [x] implement wpgtk.vim
 - [ ] After making a dedicated Atom theme, implement wpgtk so it will auto change with the colour scheme (if possible)
+- [ ] Make a Systemd Timer for wpgtk theme rotation every 10min or so (```sleep 10m && wpg -m```), and implement as an option for users.   
 
 ***If Anyone would like to help with any of these, or have an idea on what to add to this list, feel free to let me know, that would be gladly appreciated :grin:***
