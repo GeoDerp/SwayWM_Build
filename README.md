@@ -60,6 +60,7 @@ Select the (load unpacked) button, find the (~/.themes/VimixRedFlower/Chrome The
 * **[simotek](https://github.com/simotek) For Spending the time and debugging my code, for teaching me and helping maintain OBS**
 * **[**@kdeviantfero**](https://github.com/deviantfero) For helping me out with wpgtk**
 
-Sorry in advance for all the grammar and spelling mistakes.
+  
+*Sorry in advance for all the grammar and spelling mistakes.*
 
 *sincerely*, [**GeoDerp**](https://github.com/GeoDerp)
