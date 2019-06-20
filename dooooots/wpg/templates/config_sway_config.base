@@ -294,22 +294,12 @@ mode "resize" {{
 bindsym $mod+r mode "resize"
 
 #Window Colours
-
-  #red
   set $bg-color           {active}
-  #other options #ae1324 #a33c3e #902b2d
-  #green
-  #set $bg-color            #62723a
   set $inactive-bg-color   {inactive}
-  #4c1315
-  #other options #682123
   set $text-color          {color15}
-  #other options #ffbfc8 #ffb2bd
   set $inactive-text-color {color15}
-  #other options #c47f81 #ba868d #e29a9c
   set $urgent-bg-color     {color2}
   set $indicator-color     {color10}
-  #other option #445c02
 
   # window config
   #                       border              background         text                 indicator        child_border
