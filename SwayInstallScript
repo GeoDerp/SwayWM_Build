@@ -188,6 +188,13 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   wpg --link ~/.config/wpg/templates/org.albert.frontend.widgetboxmodel_themes_RedFlower.qss.base ~/.local/share/albert/org.albert.frontend.widgetboxmodel/themes/RedFlower.qss
   wpg --link ~/.config/wpg/templates/config_waybar_style.css.base ~/.config/waybar/style.css
   wpg --link ~/.config/wpg/templates/config_sway_config.base ~/.config/sway/config
+# Vim (CLI text Editor)
+  $ins install vim
+  cd ~/   
+  mkdir ~/.vim
+  cd ~/.vim
+  git clone https://github.com/deviantfero/wpgtk.vim.git .
+  echo ":colorscheme wpgtkAlt" >> ~/.vimrc
 #kitty (terminal)
   cd ~/SwayWM_Build/dooooots/kitty
   mkdir -p ~/.config/kitty
