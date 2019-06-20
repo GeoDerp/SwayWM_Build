@@ -1,10 +1,14 @@
 # Fedora/openSUSE Sway Build
+<a href="https://build.opensuse.org/project/show/home:GeoDerp:redflower"><img src="https://img.shields.io/badge/RPM's-OBS-brightgreen.svg?style=for-the-badge&logo=opensuse"></a>
+<a href="https://github.com/GeoDerp/SwayWM_Build/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-red.svg?style=for-the-badge&logo=appveyor"></a>
+<a href="https://getfedora.org/"><img src="https://img.shields.io/badge/Supports-Fedora-blue.svg?style=for-the-badge&logo=fedora"></a>
+<a href="https://www.opensuse.org/"><img src="https://img.shields.io/badge/Supports-openSUSE-brightgreen.svg?style=for-the-badge&logo=opensuse"></a>
 
 
 ***Default :rice_ball: Name:*** **Redflower**
 ![alt text](https://raw.githubusercontent.com/GeoDerp/Fedora-Sway-WM-Build-/master/Images/thumbnail3.png)
 
-Introducing my Fedora Workstation Sway WM Build with custom rice for WayBar, irssi, kitty, Albert, sway and GTK3.
+Introducing my Fedora Workstation Sway WM Build with custom rice for WayBar, kitty, Albert, Sway and GTK3.
 Feel free to use the install script to install all the dependencies and the rice, or you can do it by hand.    
 
 ## Why I made this?
