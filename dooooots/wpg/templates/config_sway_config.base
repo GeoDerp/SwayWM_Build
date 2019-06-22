@@ -112,8 +112,8 @@ output DVI-D-1 resolution 2560x1440 position 0,0
     bindsym $mod+$alt+w exec wpg -m
 
     #If you want it to record on a set output add -o "output name"
-    bindsym $mod+Control+r exec kitty wf-recorder
-
+    bindsym $mod+Control+r exec kitty wf-recorder -f $(xdg-user-dir VIDEOS)/$(date +'%Y-%m-%d-%H%M%S_wf-recorder.mp4')
+    
 # Moving around:
 #
     # Move your focus around
