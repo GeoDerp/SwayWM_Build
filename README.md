@@ -14,6 +14,8 @@ Feel free to use the install script to install all the dependencies and the rice
 ## Why I made this?
 The main goal for this was to crate a simple automation method for installing sway on Fedora.
  While I was installing Sway for myself I found it to be quite challenging to get it running for Fedora 29, so I decided to create this script and make it public, so if any one else is having issues they can look to this for help.
+ 
+Of course after some work I found myself wanting to do more to this project and that's where everything else comes in play. I know this may look like a big hunk of mess, but I'll try to do my best to explain everything, and how it all works and why you should use it.
 
 ## how to use install script
 
@@ -45,12 +47,6 @@ Icons is a modified version of [vimix-icon-theme](https://github.com/vinceliuice
 ***Cursor***:
 Cursor is [Capitaine cursors](https://github.com/keeferrourke/capitaine-cursors) by [**@keeferrourke**](https://github.com/vinceliuice)
 
-<!--
-To use the Chrome theme;
-Open Chrome, put (chrome://extensions) in the url bar then click developer mode.
-Select the (load unpacked) button, find the (~/.themes/VimixRedFlower/Chrome Theme) directory and click open.
--->
-
 ### Easy Theme changing !!
  - With the implementation of [wpgtk](https://github.com/deviantfero/wpgtk) by  [**@kdeviantfero**](https://github.com/deviantfero), all you have to do is change the wallpaper directory, $wall, in the sway config *(~/.config/sway)* and reset sway with *(ctrl+shift+r)*. The wallpaper will change, as well as all the theme colours from a generated colour pallet using the image as a reference.
  - Alternatively you can import multiple images into the wpgtk database using the [**wpg**](https://github.com/deviantfero/wpgtk/wiki) command *(cli with ``wpg -a`` or gui ``wpg``)* and press *(ctrl+shift+w)* when ever you want to change to another wallpaper/theme.  
@@ -65,6 +61,6 @@ Select the (load unpacked) button, find the (~/.themes/VimixRedFlower/Chrome The
 * **[**@kdeviantfero**](https://github.com/deviantfero) For helping me out with wpgtk**
 
   
-*Sorry in advance for all the grammar and spelling mistakes.*
+*Sorry in advance for all my grammar and spelling mistakes.*
 
 *sincerely*, [**GeoDerp**](https://github.com/GeoDerp)
