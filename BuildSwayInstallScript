@@ -135,6 +135,7 @@ echo "wf-recorder (Records and streams for wayland)"
   git clone https://github.com/ammen99/wf-recorder && cd wf-recorder
   meson build --prefix=/usr --buildtype=release
   ninja -C build
+  sudo ninja -C build install
 echo "Installing WayBar (for swaybar replacement) (unnessesery, could use swaybar witch comes with sway)"
   cd ~/
   git clone https://github.com/Alexays/Waybar
