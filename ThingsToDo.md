@@ -19,7 +19,7 @@
 - [x] Figure out issue with swaylock not acceptkng password [24/2/19](https://github.com/GeoDerp/Fedora-Sway-WM-Build-/commit/5db0a8b39b4cdc83d8a9ba77414aab04889958c1)
 - [x] Publish on Reddit [The post](https://www.reddit.com/r/unixporn/comments/bo4va6/sway_fedora_30_redflower/)
 - [x] get wf-recorder  working on OBS (**Wont Get working due to ffmpeg**, if you want to download it uncomment from install script)
-  - [x] Add key bind in sway .config for wf-recorder 
+  - [ ] Add key bind in sway .config for wf-recorder 
 - [ ] check out oomox and maybe implement it 
 - [x] Implement teamsilver (should work, haven't tested)
 - [x] Find all the dependencies names verients from fedora for opensuse and implement an if opensuse install for [BuildSwayInstallScript Line:69]( https://github.com/GeoDerp/SwayWM_Build/blob/8636e9792867fc92c0ad39fa12368cb2b81edab7/BuildSwayInstallScript#L69)
