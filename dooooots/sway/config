@@ -111,6 +111,9 @@ output DVI-D-1 resolution 2560x1440 position 0,0
     #Change Wallpaper to random saved wallpaper/colorscheme (To save an wallpaper, either use *wpg -a (dir to img)* or *wpg* to open up the GUI)
     bindsym $mod+$alt+w exec wpg -m
 
+    #If you want it to record on a set output add -o "output name"
+    bindsym $mod+Control+r exec kitty wf-recorder
+
 # Moving around:
 #
     # Move your focus around
