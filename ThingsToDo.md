@@ -30,5 +30,7 @@
 - [x] implement wpgtk.vim
 - [ ] After making a dedicated Atom theme, implement wpgtk so it will auto change with the colour scheme (if possible)
 - [ ] Make a Systemd Timer for wpgtk theme rotation every 10min or so (```sleep 10m && wpg -m```), and implement as an option for users.   
+- [ ] Implement a capibility to auto pull images from a well known source using veribles for preference. For when when the wallpaper gets called to change using wpgtk*(with ALT+SHIFT+W)* 
+- [ ] Find the time to create a well documented wiki on how everything works and how you can change things to better suit your wont/needs.
 
 ***If Anyone would like to help with any of these, or have an idea on what to add to this list, feel free to let me know, that would be gladly appreciated :grin:***
