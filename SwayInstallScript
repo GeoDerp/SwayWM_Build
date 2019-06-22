@@ -102,6 +102,7 @@ echo "Installing [font awesome] for WayBar"
 #  git clone https://github.com/ammen99/wf-recorder && cd wf-recorder
 #  meson build --prefix=/usr --buildtype=release
 #  ninja -C build
+#  sudo ninja -C build install
 }
 fi
 
