@@ -48,6 +48,8 @@ Icons is a modified version of [vimix-icon-theme](https://github.com/vinceliuice
 Cursor is [Capitaine cursors](https://github.com/keeferrourke/capitaine-cursors) by [**@keeferrourke**](https://github.com/vinceliuice)
 
 ### Easy Theme changing !!
+![alt text](https://raw.githubusercontent.com/GeoDerp/Fedora-Sway-WM-Build-/master/Images/WPGTK-Implementation-Example.gif)
+
  - With the implementation of [wpgtk](https://github.com/deviantfero/wpgtk) by  [**@kdeviantfero**](https://github.com/deviantfero), all you have to do is change the wallpaper directory, $wall, in the sway config *(~/.config/sway)* and reset sway with *(ctrl+shift+r)*. The wallpaper will change, as well as all the theme colours from a generated colour pallet using the image as a reference.
  - Alternatively you can import multiple images into the wpgtk database using the [**wpg**](https://github.com/deviantfero/wpgtk/wiki) command *(cli with ``wpg -a`` or gui ``wpg``)* and press *(ctrl+shift+w)* when ever you want to change to another wallpaper/theme.  
  
