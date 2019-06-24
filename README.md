@@ -43,10 +43,10 @@ and [Vimix-gtk-theme](https://github.com/vinceliuice/vimix-gtk-themes) By [**@vi
 
 ***Icons***:
 Icons is a modified version of [vimix-icon-theme](https://github.com/vinceliuice/vimix-icon-theme) by [**@vinceliuice**](https://github.com/vinceliuice)
-
+<!--
 ***Cursor***:
 Cursor is [Capitaine cursors](https://github.com/keeferrourke/capitaine-cursors) by [**@keeferrourke**](https://github.com/vinceliuice)
-
+-->
 ### Easy Theme changing !!
 ![alt text](https://raw.githubusercontent.com/GeoDerp/SwayWM_Build/master/Images/wpgtk-Implementation-Example.gif)
 
