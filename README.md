@@ -1,4 +1,4 @@
-**Jojoj# Fedora/openSUSE Sway Build
+# Fedora/openSUSE Sway Build
 <a href="https://build.opensuse.org/project/show/home:GeoDerp:redflower"><img src="https://img.shields.io/badge/RPM's-OBS-brightgreen.svg?style=for-the-badge&logo=opensuse"></a>
 <a href="https://github.com/GeoDerp/SwayWM_Build/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-red.svg?style=for-the-badge&logo="></a>
 <a href="https://getfedora.org/"><img src="https://img.shields.io/badge/Supports-Fedora-blue.svg?style=for-the-badge&logo=fedora"></a>
