@@ -34,9 +34,28 @@ echo -e "Type: \e[4m3\e[0m, If you want \e[94mBase Packages\e[39m + \e[91mRice\e
 echo -e "Type: \e[4m4\e[0m, If you want only the \e[91mRice\e[39m (Would need base packages installed in some way)"
 echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
 read -n1 -p "Type [1,2,3 or 4]" Choice
+echo ""
 echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
 echo ""
 echo -e "\e[1mRunning Choice\e[0m: \e[5m$Choice\e[0;39m"
+echo ""
+if [[ $Choice = 2 ]] || [[ $Choice = 3 ]]  || [[ $Choice = 4 ]]
+then {
+  echo ""
+  echo -e "\e[93m------------------------------------------------------------------------------------------------------------\e[39m"
+  echo ""
+  echo -e "Do you Want to install \e[1mwpgtk\e[0m (Theme/coloursheme changer)"
+  echo ""
+  echo -e "\e[4m1\e[0m:\e[1mYes\e[0m \e[4m2\e[0m:\e[1mNo\e[0m"
+  echo ""
+  echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
+  read -n1 -p "Type [1 or 2]" WChoice
+  echo ""
+  echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
+  echo ""
+  echo -e "\e[1mRunning Choice\e[0m: \e[5m$WChoice\e[0;39m"
+}
+fi
 
 if [[ $Choice = 1 ]] || [[ $Choice = 2 ]] || [[ $Choice = 3 ]]
 then {
@@ -55,17 +74,18 @@ gnome-shell-extension-tool -e user-theme
 gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
 
 #Installing
-echo "Installing ffmpeg (For sway)"
+echo "Installing \e[1mffmpeg\e[0m (For sway)"
 if [[ $NAME = Fedora* ]] || [[ ! -z "$OSTREE_VERSION" ]]
-  then 
+  then  {
   sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y 
   sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
   dnf clean all
   dnf repolist
   sudo dnf install ffmpeg-devel -y 
   else echo "Can't find distro name, assuming has ffmpeg-devel dependencie" && sudo $ins install ffmpeg-devel -y
-fi
-echo "Installing wlroots,sway,swaylock,swayidle,albert,swaybg,grim,wayland-devel and waybar from rpm"
+  }  
+  fi
+echo -e "Installing \e[1mwlroots,sway,swaylock,swayidle,albert,swaybg,grim,wayland-devel and waybar\e[0m from rpm"
   sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
   sudo $ins config-manager --add-repo "https://download.opensuse.org/repositories/home:/GeoDerp:/redflower/"$os"/home:GeoDerp:redflower.repo"
   $ins clean all
@@ -82,7 +102,7 @@ echo "Installing wlroots,sway,swaylock,swayidle,albert,swaybg,grim,wayland-devel
   #when we start up sway we will try to run albert in x11 and all the other QT programs in wayland
   sudo bash -c ' echo export QT_QPA_PLATFORM="wayland" >> /etc/profile.d/qtwayland.sh'
   source /etc/profile.d/albert.sh
-echo "Installing [font awesome] for WayBar"
+echo -e "Installing \e[1mfont awesome\e[0m for \e[1mWayBar\e[0m"
   cd ~/
   git clone https://github.com/FortAwesome/Font-Awesome.git
   mkdir ~/.fonts
@@ -112,10 +132,14 @@ echo ""
 echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
 echo -e "\e[1mRicing:\e[0m \e[91m(Stage 2)\e[39m"
 echo ""
-echo "Installing wpgtk (Wallpaper & Theme changer)"
+  if [[ $WChoice = 1 ]] 
+  then {
+echo -e "Installing \e[1mwpgtk\e[0m (Wallpaper & Theme changer)"
   sudo $ins install python3 xsettingsd feh -y
   sudo pip3 install wpgtk
-echo "Installing kitty (terminal with fish and oh-my-fish)"
+  }
+  fi
+echo -e "Installing \e[1mkitty\e[0m (terminal with fish and oh-my-fish)"
   sudo $ins install kitty -y
   sudo $ins install fish -y
   curl -L https://get.oh-my.fish | fish
@@ -133,7 +157,7 @@ echo -e "\e[38;5;166m-----------------------------------------------------------
 echo -e "Feel free to go to the \e[4m~/Pictures/Wallpapers\e[0m dir to see the images for yourself."
 echo ""
 sleep 15
-echo "Installing Albert Launcher"
+echo -e "Installing \e[1mAlbert\e[0m Launcher"
   sudo $ins install albert -y
 echo "Implementing Rice for: GTK3, Sway, Gnome Icons, x-cursor, kitty, Albert, Waybar"
   cd ~/SwayWM_Build/Images
@@ -181,6 +205,8 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   #mkdir ~/.irssi
   #mv * ~/.irssi/
   #config comming soon (maby)
+  if [[ $WChoice = 1 ]] 
+  then {
 #wpg (Wallapaper theme changer)
   cd ~/SwayWM_Build/dooooots/wpg
   mkdir -p ~/.config/wpg
@@ -196,6 +222,8 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   cd ~/.vim
   git clone https://github.com/deviantfero/wpgtk.vim.git .
   echo ":colorscheme wpgtkAlt" >> ~/.vimrc
+  }
+  fi
 #kitty (terminal)
   cd ~/SwayWM_Build/dooooots/kitty
   mkdir -p ~/.config/kitty
