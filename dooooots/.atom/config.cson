@@ -1,0 +1,14 @@
+"*":
+  core:
+    autoHideMenuBar: true
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "wpgtk-theme-syntax"
+    ]
+  editor:
+    fontSize: 12
+  "exception-reporting":
+    userId: ""
+  welcome:
+    showOnStartup: false
