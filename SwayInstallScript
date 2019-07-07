@@ -12,10 +12,10 @@ then ins=rpm-ostree
 else echo "can't find distro name, defaulting to Fedora" && ins=zypper
 fi
 
-#configuring Update + OS veribles  
+#configuring Update + OS veribles
 if [[ $NAME = Fedora* ]]
 then upd="sudo dnf update -y" && os="$NAME"_"$VERSION_ID"
-elif [[ ! -z "$OSTREE_VERSION" ]] #For Silverteam 
+elif [[ ! -z "$OSTREE_VERSION" ]] #For Silverteam
 then upd='rpm-ostree upgrade -y' && os="$NAME"_"$VERSION_ID"
 elif  [[ $NAME = "openSUSE Leap" ]]
 then upd="sudo zypper up -y" && os="$NAME"_"$VERSION_ID"
@@ -77,13 +77,13 @@ gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.c
 echo "Installing \e[1mffmpeg\e[0m (For sway)"
 if [[ $NAME = Fedora* ]] || [[ ! -z "$OSTREE_VERSION" ]]
   then  {
-  sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y 
+  sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
   sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
   dnf clean all
   dnf repolist
-  sudo dnf install ffmpeg-devel -y 
+  sudo dnf install ffmpeg-devel -y
   else echo "Can't find distro name, assuming has ffmpeg-devel dependencie" && sudo $ins install ffmpeg-devel -y
-  }  
+  }
   fi
 echo -e "Installing \e[1mwlroots,sway,swaylock,swayidle,albert,swaybg,grim,wayland-devel and waybar\e[0m from rpm"
   sudo rpm --import https://build.opensuse.org/projects/home:GeoDerp:redflower/public_key
@@ -97,7 +97,7 @@ echo -e "Installing \e[1mwlroots,sway,swaylock,swayidle,albert,swaybg,grim,wayla
   sudo $ins install wlroots-devel celt fmt-devel sway swaylock swayidle albert grim waybar swaybg -y
   #making sure swaylock has login authentication
   sudo bash -c ' echo "auth include login" > /etc/pam.d/swaylock'
-  # since albert only works in xwayland for the time being we have to tell it to run in xwayland and not wayland 
+  # since albert only works in xwayland for the time being we have to tell it to run in xwayland and not wayland
   sudo bash -c ' echo export QT_QPA_PLATFORM="xcb" >> /etc/profile.d/albert.sh'
   #when we start up sway we will try to run albert in x11 and all the other QT programs in wayland
   sudo bash -c ' echo export QT_QPA_PLATFORM="wayland" >> /etc/profile.d/qtwayland.sh'
@@ -107,15 +107,15 @@ echo -e "Installing \e[1mfont awesome\e[0m for \e[1mWayBar\e[0m"
   git clone https://github.com/FortAwesome/Font-Awesome.git
   mkdir ~/.fonts
   mv ~/Font-Awesome/webfonts/*.ttf ~/.fonts/
-  sudo rm -r ~/Font-Awesome # clean up 
+  sudo rm -r ~/Font-Awesome # clean up
   cd ~/.fonts
   wget "https://github.com/ox-it/hidden-museum/raw/master/fonts/Century%20Gothic.ttf" ~/.fonts/
   gsettings set org.gnome.desktop.interface monospace-font-name "Monospace Regular 11"
   gsettings set org.gnome.desktop.interface document-font-name 'Century Gothic Regular 10'
   gsettings set org.gnome.desktop.interface font-name 'Century Gothic Regular 11'
-#wf-recorder (Records and streams for wayland) WARNING this is a SOURCE BUILD NOT AN RPM 
-#  sudo $ins install cmake wayland-devel libpulse-devel pulseaudio-libs-devel -y --skip-broken    
-#  installing ffmpeg for encoding/decoding 
+#wf-recorder (Records and streams for wayland) WARNING this is a SOURCE BUILD NOT AN RPM
+#  sudo $ins install cmake wayland-devel libpulse-devel pulseaudio-libs-devel -y --skip-broken
+#  installing ffmpeg for encoding/decoding
 #  sudo $ins install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 #  sudo $ins install ffmpeg ffmpeg-devel x264-devel -y
 #  cd ~/
@@ -132,7 +132,7 @@ echo ""
 echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
 echo -e "\e[1mRicing:\e[0m \e[91m(Stage 2)\e[39m"
 echo ""
-  if [[ $WChoice = 1 ]] 
+  if [[ $WChoice = 1 ]]
   then {
 echo -e "Installing \e[1mwpgtk\e[0m (Wallpaper & Theme changer)"
   sudo $ins install python3 xsettingsd feh -y
@@ -205,7 +205,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   #mkdir ~/.irssi
   #mv * ~/.irssi/
   #config comming soon (maby)
-  if [[ $WChoice = 1 ]] 
+  if [[ $WChoice = 1 ]]
   then {
 #wpg (Wallapaper theme changer)
   cd ~/SwayWM_Build/dooooots/wpg
@@ -217,7 +217,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   wpg --link ~/.config/wpg/templates/config_sway_config.base ~/.config/sway/config
 # Vim (CLI text Editor)
   $ins install vim
-  cd ~/   
+  cd ~/
   mkdir ~/.vim
   cd ~/.vim
   git clone https://github.com/deviantfero/wpgtk.vim.git .
@@ -247,7 +247,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   sudo $ins install brightnessctl pulseaudio -y
   cd ~/SwayWM_Build/dooooots/sway
   mkdir ~/.config/sway
-  mv * ~/.config/sway/  
+  mv * ~/.config/sway/
 echo "Finnished rice :D"
 }
 else exit
@@ -271,6 +271,9 @@ echo "Apps: Atom, Spodify, Keepassxc, LibreOffice, nano, Google Chrome, Franz"
   mkdir ~/.atom
   cd ~/SwayWM_Build/dooooots/.atom
   sudo mv * ~/.atom/
+  # Atom Wpgtk Theme Symlink 
+  wpg --link ~/.config/wpg/templates/wpgtk-theme-syntax_styles_colors.less.base ~/.atom/packages/wpgtk-theme-syntax/styles/colors.less
+  wpg --link ~/.config/wpg/templates/wpgtk-one-dark-ui_styles_ui-variables-custom.less.base ~/.atom/packages/wpgtk-one-dark-ui/styles/ui-variables-custom.less
 #Spodify (Music Player)
   sudo flatpak install flathub com.spotify.Client -y
 #keepassxc (Password Manager)
@@ -287,7 +290,7 @@ echo "Apps: Atom, Spodify, Keepassxc, LibreOffice, nano, Google Chrome, Franz"
   sudo $ins config-manager --set-enabled google-chrome
   sudo $ins install google-chrome-beta -y
 ##franz (Multi Messaging Aplication)
-  flatpak install flathub com.meetfranz.Franz -y 
+  flatpak install flathub com.meetfranz.Franz -y
 
 echo "Updating"
 $upd

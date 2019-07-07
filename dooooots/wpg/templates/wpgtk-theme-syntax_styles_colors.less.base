@@ -1,0 +1,15 @@
+// These colors are specific to the theme. Do not use in a package!
+
+@very-light-gray: {color15};
+@light-gray: {color7};
+@gray: {color8};
+@dark-gray: {active};
+@very-dark-gray: {color0};
+
+@cyan: {color14};
+@blue: {color6};
+@purple: {color2};
+@green: {color3};
+@red: {color5};
+@orange: {color13};
+@light-orange: {color4};

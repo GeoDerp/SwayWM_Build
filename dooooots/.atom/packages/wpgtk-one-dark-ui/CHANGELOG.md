@@ -1,0 +1,2 @@
+- Added wpgtk Support https://github.com/GeoDerp/SwayWM_Build
+- See https://github.com/atom/one-dark-ui/releases

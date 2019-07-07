@@ -1,0 +1,15 @@
+{
+  "name": "wpgtk-theme-syntax",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "Atom syntax theme for wpgtk",
+  "keywords": [
+    "syntax",
+    "theme"
+  ],
+  "repository": "https://github.com/GeoDerp/SwayWM_Build",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

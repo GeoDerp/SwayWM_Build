@@ -13,10 +13,10 @@ then ins=rpm-ostree
 else echo "can't find distro name, defaulting to Fedora" && ins=zypper
 fi
 
-#configuring Update + OS veribles  
+#configuring Update + OS veribles
 if [[ $NAME = Fedora* ]]
 then upd="sudo dnf update -y" && os="$NAME"_"$VERSION_ID"
-elif [[ ! -z "$OSTREE_VERSION" ]] #For Silverteam 
+elif [[ ! -z "$OSTREE_VERSION" ]] #For Silverteam
 then upd='rpm-ostree upgrade -y' && os="$NAME"_"$VERSION_ID"
 elif  [[ $NAME = "openSUSE Leap" ]]
 then upd="sudo zypper up -y" && os="$NAME"_"$VERSION_ID"
@@ -79,15 +79,15 @@ echo "Intsalling all dependencies"
   #ffmpeg
   if [[ $NAME = Fedora* ]] || [[ ! -z "$OSTREE_VERSION" ]]
     then {
-    sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y 
+    sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
     sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-    sudo dnf install ffmpeg-devel -y 
+    sudo dnf install ffmpeg-devel -y
     elif  [[ $NAME = openSUSE* ]]
     then zypper ffmpeg install -y
     else echo "Can't find distro name, assuming has ffmpeg-devel dependencie" && sudo $ins install ffmpeg-devel -y
-    }  
+    }
   fi
-  #everything else 
+  #everything else
   sudo $ins install cmake gdk-pixbuf2 git gcc brightnessctl make xcb-util-xrm-devel xcb-util-image-devel.x86_64 xcb-util-cursor-devel.x86_64 xcb-util-renderutil-devel.x86_64 xcb-util-keysyms-devel.x86_64 xcb-util-wm-devel libxcb-devel ctags ffmpeg-devel ctags-etags meson mesa-dri-drivers ninja-build wayland-devel wayland-protocols-devel mesa-libEGL-devel mesa-libGLES-devel mesa-dri-drivers libdrm-devel libgbm-devel libxkbcommon-devel libudev-devel pixman-devel libinput-devel libevdev-devel systemd-devel cairo-devel libpcap-devel jsoncpp libinput rpm-build gnome-tweak-tool xcb-util-wm-devel libcap-devel libsigc++ sassc glib2-devel gtk-murrine-engine gtk2-engines kmix pulseaudio-libs-devel libdbusmenu-gtk3-devel clang-devel.x86_64 fmt-devel gtkmm30-devel jsoncpp-devel libpulse.so.0 libnl3-devel libdbusmenu-gtk3 gcc-c++ clang json-c-devel pam-devel pango-devel pcre-devel gdk-pixbuf2-devel -y
 
 #Making sure the filesystem knows where all the .pc's are
@@ -132,7 +132,7 @@ echo -e "\e[1mswayidle\e[0m  (sway native plugin)"
   cd swayidle
   meson build
   ninja -C build install
-echo -e "\e[1mswaybg\e[0m  (background setter)"  
+echo -e "\e[1mswaybg\e[0m  (background setter)"
   cd ~/
   git clone https://github.com/swaywm/swaybg.git
   cd swaybg
@@ -146,9 +146,9 @@ echo -e "\e[1mgrim\e[0m  (Grab images from a Wayland compositor)"
   meson build
   ninja -C build
   ninja -C build install
-echo -e "\e[1mwf-recorder\e[0m  (Records and streams for wayland)" 
-  sudo $ins install cmake wayland-devel libpulse-devel pulseaudio-libs-devel -y --skip-broken    
-  installing ffmpeg for encoding/decoding 
+echo -e "\e[1mwf-recorder\e[0m  (Records and streams for wayland)"
+  sudo $ins install cmake wayland-devel libpulse-devel pulseaudio-libs-devel -y --skip-broken
+  installing ffmpeg for encoding/decoding
   sudo $ins install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
   sudo $ins install ffmpeg ffmpeg-devel x264-devel -y
   cd ~/
@@ -167,7 +167,7 @@ echo -e "\e[1mfont awesome\e[0m  for \e[1mWayBar\e[0m "
   git clone https://github.com/FortAwesome/Font-Awesome.git
   mkdir ~/.fonts
   mv ~/Font-Awesome/webfonts/*.ttf ~/.fonts/
-  sudo rm -r ~/Font-Awesome # clean up 
+  sudo rm -r ~/Font-Awesome # clean up
   cd ~/.fonts
   sudo wget "https://github.com/ox-it/hidden-museum/raw/master/fonts/Century%20Gothic.ttf" ~/.fonts/
   gsettings set org.gnome.desktop.interface monospace-font-name "Monospace Regular 11"
@@ -182,7 +182,7 @@ echo ""
 echo -e "\e[93m-------------------------------------------------------------------------------------------------------------\e[39m"
 echo -e "\e[1mRicing:\e[0m \e[91m(Stage 2)\e[39m"
 echo ""
-  if [[ $WChoice = 1 ]] 
+  if [[ $WChoice = 1 ]]
   then {
 echo -e "\e[1mwpgtk\e[0m (Wallpaper & Theme changer)"
   sudo $ins install python3 xsettingsd  feh -y
@@ -267,7 +267,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   #mkdir ~/.irssi
   #mv * ~/.irssi/
   #config comming soon (maby)
-  if [[ $WChoice = 1 ]] 
+  if [[ $WChoice = 1 ]]
   then {
  #wpgtk (Wallapaper theme changer)
   cd ~/SwayWM_Build/dooooots/wpg
@@ -276,14 +276,14 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   # RE linking base files (if this dosn't work let me know and try manually)
   wpg --link ~/.config/wpg/templates/org.albert.frontend.widgetboxmodel_themes_RedFlower.qss.base ~/.local/share/albert/org.albert.frontend.widgetboxmodel/themes/RedFlower.qss
   wpg --link ~/.config/wpg/templates/config_waybar_style.css.base ~/.config/waybar/style.css
-  wpg --link ~/.config/wpg/templates/config_sway_config.base ~/.config/sway/config  
+  wpg --link ~/.config/wpg/templates/config_sway_config.base ~/.config/sway/config
 # Vim (CLI text Editor)
   $ins install vim
-  cd ~/   
+  cd ~/
   mkdir ~/.vim
   cd ~/.vim
   git clone https://github.com/deviantfero/wpgtk.vim.git .
-  echo ":colorscheme wpgtkAlt" >> ~/.vimrc  
+  echo ":colorscheme wpgtkAlt" >> ~/.vimrc
   }
   fi
 #kitty (terminal)
@@ -330,6 +330,9 @@ echo "Apps: Atom, Spodify, Keepassxc, LibreOffice, nano, Google Chrome, Franz"
   mkdir ~/.atom
   cd ~/"SwayWM_Build"/dooooots/.atom
   sudo mv * ~/.atom/
+  # Atom Wpgtk Theme Symlink 
+  wpg --link ~/.config/wpg/templates/wpgtk-theme-syntax_styles_colors.less.base ~/.atom/packages/wpgtk-theme-syntax/styles/colors.less
+  wpg --link ~/.config/wpg/templates/wpgtk-one-dark-ui_styles_ui-variables-custom.less.base ~/.atom/packages/wpgtk-one-dark-ui/styles/ui-variables-custom.less
 #Spodify (Music Player)
   sudo flatpak install flathub com.spotify.Client -y
 #keepassxc (Password Manager)
