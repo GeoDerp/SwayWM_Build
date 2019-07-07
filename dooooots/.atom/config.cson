@@ -3,7 +3,7 @@
     autoHideMenuBar: true
     telemetryConsent: "no"
     themes: [
-      "one-dark-ui"
+      "wpgtk-one-dark-ui"
       "wpgtk-theme-syntax"
     ]
   editor:
