@@ -100,7 +100,7 @@ output DVI-D-1 resolution 2560x1440 position 0,0
     bindsym $mod+$alt+c exec google-chrome
 
     #Run Atom
-    bindsym $mod+$alt+a exec atom-beta
+    bindsym $mod+$alt+a exec atom-beta -d
 
     #Run keepassxc
     bindsym $mod+$alt+p exec keepassxc
