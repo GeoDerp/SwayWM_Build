@@ -1,8 +1,8 @@
 ## To SwayWM_Build Users:
-**If you want GTK Themes to work on wpgtk , I recomend downloading gtk-murrine-engine RPM:**   
+**If you want GTK Themes to work on wpgtk , I recomend downloading gtk-murrine-engine RPM and installing the gtk template:**   
    
-**Fedora:** ```sudo dnf install 	gtk-murrine-engine -y ```   
-**openSUSE:** ``` sudo zypper install gtk2-engine-murrine -y ```   
+**Fedora:** ```sudo dnf install gtk-murrine-engine -y && wpg-install.sh -g```   
+**openSUSE:** ``` sudo zypper install gtk2-engine-murrine -y && wpg-install.sh -g```   
 
 # :flower_playing_cards: _wpgtk_
 
