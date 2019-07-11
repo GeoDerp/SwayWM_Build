@@ -1,4 +1,4 @@
-# my-theme-syntax theme
+# wpgtk-theme-syntax
 An Atom Syntax Theme Designed to support wpgtk
   - [**Host Repo**](https://github.com/GeoDerp/wpgtk.atom)
 
