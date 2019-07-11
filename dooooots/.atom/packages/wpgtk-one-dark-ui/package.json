@@ -9,7 +9,7 @@
     "ui"
   ],
   "license": "MIT",
-  "repository": "https://github.com/GeoDerp/SwayWM_Build",
+  "repository": "https://github.com/GeoDerp/wpgtk.atom",
   "main": "lib/main",
   "engines": {
     "atom": ">0.40.0"

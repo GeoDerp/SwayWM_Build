@@ -7,7 +7,7 @@
     "syntax",
     "theme"
   ],
-  "repository": "https://github.com/GeoDerp/SwayWM_Build",
+  "repository": "https://github.com/GeoDerp/wpgtk.atom",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

@@ -1,5 +1,8 @@
 # my-theme-syntax theme
-
 An Atom Syntax Theme Designed to support wpgtk
+  - [**Host Repo**](https://github.com/GeoDerp/wpgtk.atom)
 
-![A screenshot of your theme](https://f.cloud.github.com/assets/69169/2289498/4c3cb0ec-a009-11e3-8dbd-077ee11741e5.gif)
+![Gif](https://raw.githubusercontent.com/GeoDerp/wpgtk.atom/master/thumbnails/fast.gif)
+
+
+*Created from:* [**A Generated Syntax Theme**](https://flight-manual.atom.io/hacking-atom/sections/creating-a-theme/#creating-a-syntax-theme) 
