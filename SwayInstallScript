@@ -278,8 +278,8 @@ echo "Apps: Atom, Spodify, Keepassxc, LibreOffice, nano, Google Chrome, Franz"
   sudo $ins install atom-beta -y
   mkdir -p ~/.atom/packages
   cp ~/SwayWM_Build/dooooots/.atom/config.cson ~/.atom/
-  cd ~/SwayWM_Build/dooooots/.atom/packages
-  sudo mv * ~/.atom/packages
+  cd ~/SwayWM_Build/dooooots/.atom/packages && sudo mv * ~/.atom/packages/
+  cd ~/
   # Atom Wpgtk Theme Symlink 
   wpg --link ~/.config/wpg/templates/wpgtk-theme-syntax_styles_colors.less.base ~/.atom/packages/wpgtk-theme-syntax/styles/colors.less
   wpg --link ~/.config/wpg/templates/wpgtk-one-dark-ui_styles_ui-variables-custom.less.base ~/.atom/packages/wpgtk-one-dark-ui/styles/ui-variables-custom.less
