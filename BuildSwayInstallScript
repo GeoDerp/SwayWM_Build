@@ -335,9 +335,10 @@ echo "Apps: Atom, Spodify, Keepassxc, LibreOffice, nano, Google Chrome, Franz"
   sudo rpm --import https://packagecloud.io/AtomEditor/atom/gpgkey
   sudo sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
   sudo $ins install atom-beta -y
-  mkdir ~/.atom
-  cd ~/"SwayWM_Build"/dooooots/.atom
-  sudo mv * ~/.atom/
+  mkdir -p ~/.atom/packages
+  cp ~/SwayWM_Build/dooooots/.atom/config.cson ~/.atom/
+  cd ~/SwayWM_Build/dooooots/.atom/packages && sudo mv * ~/.atom/packages
+  cd ~/
   # Atom Wpgtk Theme Symlink 
   wpg --link ~/.config/wpg/templates/wpgtk-theme-syntax_styles_colors.less.base ~/.atom/packages/wpgtk-theme-syntax/styles/colors.less
   wpg --link ~/.config/wpg/templates/wpgtk-one-dark-ui_styles_ui-variables-custom.less.base ~/.atom/packages/wpgtk-one-dark-ui/styles/ui-variables-custom.less
