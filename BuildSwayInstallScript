@@ -280,6 +280,9 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   ln -s ~/.local/share/albert/org.albert.frontend.widgetboxmodel/themes/RedFlower.qss ~/.config/wpg/templates/org.albert.frontend.widgetboxmodel_themes_RedFlower.qss
   ln -s ~/.config/waybar/style.css ~/.config/wpg/templates/config_waybar_style.css
   ln -s ~/.config/sway/config ~/.config/wpg/templates/config_sway_config
+  # Starter Wallpaper Set
+  ln -s ~/Pictures/Wallpapers/Wallpaper.jpg ~/.config/wpg/wallpapers/Wallpaper.jpg
+  ln -s ~/.config/wpg/wallpapers/Wallpaper.jpg ~/.config/wpg/.current
   #GTK Link (-i for icons as well, more info at SwayWM_Build/dooooots/wpg/README.md)
   wpg-install.sh -g
 # Vim (CLI text Editor)
