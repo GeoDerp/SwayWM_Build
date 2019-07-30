@@ -278,7 +278,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   wpg --link ~/.config/wpg/templates/config_waybar_style.css.base ~/.config/waybar/style.css
   wpg --link ~/.config/wpg/templates/config_sway_config.base ~/.config/sway/config
 # Vim (CLI text Editor)
-  $ins install vim
+  sudo $ins install vim -y
   cd ~/
   mkdir ~/.vim
   cd ~/.vim
