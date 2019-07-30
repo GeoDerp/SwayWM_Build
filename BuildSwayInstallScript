@@ -277,6 +277,9 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   wpg --link ~/.config/wpg/templates/org.albert.frontend.widgetboxmodel_themes_RedFlower.qss.base ~/.local/share/albert/org.albert.frontend.widgetboxmodel/themes/RedFlower.qss
   wpg --link ~/.config/wpg/templates/config_waybar_style.css.base ~/.config/waybar/style.css
   wpg --link ~/.config/wpg/templates/config_sway_config.base ~/.config/sway/config
+  ln -s ~/.local/share/albert/org.albert.frontend.widgetboxmodel/themes/RedFlower.qss ~/.config/wpg/templates/org.albert.frontend.widgetboxmodel_themes_RedFlower.qss
+  ln -s ~/.config/waybar/style.css ~/.config/wpg/templates/config_waybar_style.css
+  ln -s ~/.config/sway/config ~/.config/wpg/templates/config_sway_config
 # Vim (CLI text Editor)
   sudo $ins install vim -y
   cd ~/
@@ -333,6 +336,8 @@ echo "Apps: Atom, Spodify, Keepassxc, LibreOffice, nano, Google Chrome, Franz"
   # Atom Wpgtk Theme Symlink 
   wpg --link ~/.config/wpg/templates/wpgtk-theme-syntax_styles_colors.less.base ~/.atom/packages/wpgtk-theme-syntax/styles/colors.less
   wpg --link ~/.config/wpg/templates/wpgtk-one-dark-ui_styles_ui-variables-custom.less.base ~/.atom/packages/wpgtk-one-dark-ui/styles/ui-variables-custom.less
+  ln -s ~/.atom/packages/wpgtk-theme-syntax/styles/colors.less ~/.config/wpg/templates/wpgtk-theme-syntax_styles_colors.less
+  ln -s ~/.atom/packages/wpgtk-one-dark-ui/styles/ui-variables-custom.less ~/.config/wpg/templates/wpgtk-one-dark-ui_styles_ui-variables-custom.less
 #Spodify (Music Player)
   sudo flatpak install flathub com.spotify.Client -y
 #keepassxc (Password Manager)
