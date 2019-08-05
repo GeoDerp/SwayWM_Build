@@ -252,7 +252,7 @@ echo "Applying Dark theme, you can use gnome-tweak letter to apply light theme"
   sudo mv * "~/.local/share/albert/org.albert.frontend.widgetboxmodel/themes/"
 #sway (the wm)
   echo "installing packages for special keys"
-  sudo $ins install brightnessctl pulseaudio -y
+  sudo $ins install brightnessctl pulseaudio playerctl -y
   cd ~/SwayWM_Build/dooooots/sway
   mkdir ~/.config/sway
   mv * ~/.config/sway/
