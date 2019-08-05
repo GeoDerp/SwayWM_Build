@@ -334,6 +334,10 @@ bindsym $mod+r mode "resize"
   bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{{print $3}}') +5%
   bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{{print $3}}') -5%
   bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{{print $3}}') toggle
+  bindsym --locked XF86AudioStop exec playerctl stop
+  bindsym --locked XF86AudioPlay exec playerctl play-pause
+  bindsym --locked XF86AudioNext exec playerctl next
+  bindsym --locked XF86AudioPrev exec playerctl previous
   bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
   bindsym XF86MonBrightnessUp exec brightnessctl set +5%
   bindsym print exec grim $(xdg-user-dir PICTURES)/$(date +'%Y-%m-%d-%H%M%S_grim.png')
