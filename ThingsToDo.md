@@ -3,7 +3,9 @@
 
 earlier things to do
 --------------------------------------------------------
-- [ ] Finish implementing Tackle Box + + update readme to support
+- [ ] Finish implementing Tackle Box + update readme to support
+  - https://github.com/simotek/tacklebox
+  - https://github.com/simotek/tackle
 - [ ] implement wpgtk for TackleBox
 - [ ] introduce new terminal or upgrade kitty (find terminal that best suites waybar/sway)
 - [ ] implement waybar modules im using into build, + update readme to support
