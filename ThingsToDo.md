@@ -1,7 +1,8 @@
 # List Of Things To Do
 ### Before I can call it finished:
 
--------------earlier things to do ---------------------
+earlier things to do
+--------------------------------------------------------
 - [ ] Finish implementing Tackle Box + + update readme to support
 - [ ] implement wpgtk for TackleBox
 - [ ] introduce new terminal or upgrade kitty (find terminal that best suites waybar/sway)
