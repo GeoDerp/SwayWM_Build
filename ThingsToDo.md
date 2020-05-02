@@ -40,5 +40,6 @@ earlier things to do
 - [ ] Make a Systemd Timer for wpgtk theme rotation every 10min or so (```sleep 10m && wpg -m```), and implement as an option for users.   
 - [ ] Implement a capibility to auto pull images from a well known source using veribles for preference. For when when the wallpaper gets called to change using wpgtk*(with ALT+SHIFT+W)*
 - [ ] Find the time to create a well documented wiki on how everything works and how you can change things to better suit your wont/needs.
+- [ ] add the ability so everytime you ssh into a particular mashine wpgtk changes the theme to a theme of your choice for that mashine
 
 ***If Anyone would like to help with any of these, or have an idea on what to add to this list, feel free to let me know, and that would be kindly appreciated :grin:***
