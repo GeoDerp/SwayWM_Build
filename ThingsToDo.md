@@ -1,6 +1,12 @@
 # List Of Things To Do
 ### Before I can call it finished:
 
+-------------earlier things to do ---------------------
+- [ ] Finish implementing Tackle Box + + update readme to support
+- [ ] implement wpgtk for TackleBox
+- [ ] introduce new terminal or upgrade kitty (find terminal that best suites waybar/sway)
+- [ ] implement waybar modules im using into build, + update readme to support
+--------------------------------------------------------
 - [x] FIX OPEN SUSE [BUILD PACKAGES](https://build.opensuse.org/project/show/home:GeoDerp:redflower)
 - [x] FIX ALBERT, [*Error.md*](https://github.com/GeoDerp/Fedora-Sway-WM-Build-/blob/master/AlbertErrors.md), [*Issue*](https://github.com/albertlauncher/albert/issues/768)
 [**Update:** it kinda works, it's using x not Wayland and has a tendency to not run on startup (that may be a sway issue)]
@@ -26,7 +32,6 @@
 - [x] check Albert, not starting on boot problem
 - [ ] make and add Hexchat rice?!?! mabie with wpgtk?
 - [x] BRING BACK [WPGTK](https://github.com/deviantfero/wpgtk), for easy theme changing. Don't know how I will use it to change the GTK theme but should be able to customise everything else
-- [ ] Finish implementing fish, Terminology and Tackle Box
 - [x] implement wpgtk.vim
 - [x] After making a dedicated Atom theme, implement wpgtk so it will auto change with the colour scheme (if possible) - **Can Find wpgtk Atom themes [here](https://github.com/GeoDerp/wpgtk.atom)**
 - [ ] Make a Systemd Timer for wpgtk theme rotation every 10min or so (```sleep 10m && wpg -m```), and implement as an option for users.   
