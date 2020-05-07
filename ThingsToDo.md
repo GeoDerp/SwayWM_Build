@@ -16,6 +16,7 @@ earlier things to do
    - https://github.com/Ulauncher/Ulauncher 
    or  
    - https://github.com/Biont/sway-launcher-desktop 
+  - [ ] modify sway config so launcher pops up first thing after refresh 
  - [ ] check if atom is still working  
 
 earlier things to do later
