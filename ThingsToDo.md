@@ -11,6 +11,11 @@ earlier things to do
 - [ ] introduce new terminal or upgrade kitty (find terminal that best suites waybar/sway)
 - [ ] implement waybar modules im using into build, + update readme to support
 - [ ] possibly update install script and build intsall script to another language to add better support and less errors (possiblya nsible)
+- [ ] since albert seems depreciated move to (and implemnt rpm into opensuse-build)
+   - https://github.com/Ulauncher/Ulauncher 
+   or  
+   - https://github.com/Biont/sway-launcher-desktop 
+     
 --------------------------------------------------------
 - [x] FIX OPEN SUSE [BUILD PACKAGES](https://build.opensuse.org/project/show/home:GeoDerp:redflower)
 - [x] FIX ALBERT, [*Error.md*](https://github.com/GeoDerp/Fedora-Sway-WM-Build-/blob/master/AlbertErrors.md), [*Issue*](https://github.com/albertlauncher/albert/issues/768)
