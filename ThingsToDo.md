@@ -10,6 +10,7 @@ earlier things to do
 - [ ] implement wpgtk for TackleBox
 - [ ] introduce new terminal or upgrade kitty (find terminal that best suites waybar/sway)
 - [ ] implement waybar modules im using into build, + update readme to support
+- [ ] possibly update install script and build intsall script to another language to add better support and less errors (possiblya nsible)
 --------------------------------------------------------
 - [x] FIX OPEN SUSE [BUILD PACKAGES](https://build.opensuse.org/project/show/home:GeoDerp:redflower)
 - [x] FIX ALBERT, [*Error.md*](https://github.com/GeoDerp/Fedora-Sway-WM-Build-/blob/master/AlbertErrors.md), [*Issue*](https://github.com/albertlauncher/albert/issues/768)
@@ -30,7 +31,8 @@ earlier things to do
 - [x] Publish on Reddit [The post](https://www.reddit.com/r/unixporn/comments/bo4va6/sway_fedora_30_redflower/)
 - [x] get wf-recorder  working on OBS (**Wont Get working due to ffmpeg**, if you want to download it uncomment from install script)
   - [x] Add key bind in sway .config for wf-recorder
-- [ ] check out oomox and maybe implement it
+  - [ ]see if i can replace ffmpeg to OpenH264
+- [ ] check out oomox and maybe implement it (I personally wont, if someone want to do that and integrate it with wpgtk that will be grate)
 - [x] Implement teamsilver (should work, haven't tested)
 - [x] Find all the dependencies names verients from fedora for opensuse and implement an if opensuse install for [BuildSwayInstallScript Line:69]( https://github.com/GeoDerp/SwayWM_Build/blob/8636e9792867fc92c0ad39fa12368cb2b81edab7/BuildSwayInstallScript#L69)
 - [x] check Albert, not starting on boot problem
