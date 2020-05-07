@@ -10,7 +10,8 @@ earlier things to do
 - [ ] implement wpgtk for TackleBox
 - [ ] introduce new terminal or upgrade kitty (find terminal that best suites waybar/sway)
 - [ ] implement waybar modules im using into build, + update readme to support
-- [ ] possibly update install script and build intsall script to another language to add better support and less errors (possiblya nsible)
+- [ ] possibly update install script and build intsall script to another language to add better support and less errors (possibly ansible)
+  - [ ] make script look nice and understandable
 - [ ] since albert seems depreciated move to (and implemnt rpm into opensuse-build & wpgtk supprt)
    - https://github.com/Ulauncher/Ulauncher 
    or  
