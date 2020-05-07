@@ -3,6 +3,7 @@
 
 earlier things to do
 --------------------------------------------------------
+- [ ] make a basic 3 way hue module for waybar
 - [ ] Finish implementing Tackle Box + update readme to support
   - https://github.com/simotek/tacklebox
   - https://github.com/simotek/tackle
