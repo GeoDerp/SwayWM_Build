@@ -5,7 +5,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     //"modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "custom/weather", "battery#bat2", "clock"], //tray, idle_inhibitor,mpd
+    "modules-right": ["custom/Hue", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "custom/weather", "battery#bat2", "clock"], //tray, idle_inhibitor,mpd
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -112,6 +112,21 @@
          "return-type": "json",
          "exec": "~/.config/waybar/modules/weather.sh"
      },
+     "custom/Hue": {
+          "format": "{icon}",
+          "interval": 700,
+          "return-type": "json",
+          "format-icons": {
+              "off": "",
+              "on": ""
+          },
+          "exec": "~/.config/waybar/modules/Hue.sh"
+          "on-click": "~/.config/waybar/modules/Hue.sh -e up"
+          "on-scroll-up": "~/.config/waybar/modules/Hue.sh -e up"
+          "on-click-middle":  "~/.config/waybar/modules/Hue.sh -e switch"
+          "on-scroll-up": "~/.config/waybar/modules/Hue.sh -e down"
+          "on-click-right": "~/.config/waybar/modules/Hue.sh -e down"
+      },
     "pulseaudio": {
         //"scroll-step": 1,
         "format": "{volume}% {icon}",
