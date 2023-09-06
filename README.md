@@ -1,3 +1,7 @@
+# This repository is set to public archive
+**The latest version is located [here](https://github.com/GeoDerp/My-Sway-Build).**  
+*Feel free to continue use this version as much as you like.*
+
 # Fedora/openSUSE Sway Build
 <a href="https://build.opensuse.org/project/show/home:GeoDerp:redflower"><img src="https://img.shields.io/badge/RPM's-OBS-brightgreen.svg?style=for-the-badge&logo=opensuse"></a>
 <a href="https://github.com/GeoDerp/SwayWM_Build/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-red.svg?style=for-the-badge&logo="></a>
